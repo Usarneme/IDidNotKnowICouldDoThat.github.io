@@ -110,16 +110,16 @@ function displayDivide() {
 }
 function displayEquals() {
 	var resultArray, result;
-	if (displayMessage.contains('+')) {
+	if (displayMessage.includes('+')) {
 		resultArray = displayMessage.split('+');
 		result = parseInt(resultArray[0]) + parseInt(resultArray[1]);
-	} else if (displayMessage.contains('-')) {
+	} else if (displayMessage.includes('-')) {
 		resultArray = displayMessage.split('-');
 		result = parseInt(resultArray[0]) - parseInt(resultArray[1]);
-	} else if (displayMessage.contains('*')) {
+	} else if (displayMessage.includes('*')) {
 		resultArray = displayMessage.split('*');
 		result = parseInt(resultArray[0]) * parseInt(resultArray[1]);
-	} else if (displayMessage.contains('/')) {
+	} else if (displayMessage.includes('/')) {
 		resultArray = displayMessage.split('/');
 		result = parseInt(resultArray[0]) / parseInt(resultArray[1]);
 	} else {
