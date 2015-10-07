@@ -3,6 +3,7 @@ global vars
 **********/
 
 var displayMessage = '';
+var sigFig = 2;
 
 
 /***********
@@ -92,23 +93,24 @@ function displayDivide() {
 	var elMsg = document.getElementById('answer');
 	elMsg.textContent = displayMessage;
 }
+
 function displayEquals() {
 	var resultArray, result;
 	if (displayMessage.includes('+')) {
 		resultArray = displayMessage.split('+');
-		result = parseFloat(resultArray[0]) + parseFloat(resultArray[1]);
+		result = (parseFloat(resultArray[0]) + parseFloat(resultArray[1])).toFixed(sigFig);
 	} else if (displayMessage.includes('-')) {
 		resultArray = displayMessage.split('-');
-		result = parseFloat(resultArray[0]) - parseFloat(resultArray[1]);
+		result = (parseFloat(resultArray[0]) - parseFloat(resultArray[1])).toFixed(sigFig);
 	} else if (displayMessage.includes('*')) {
 		resultArray = displayMessage.split('*');
-		result = parseFloat(resultArray[0]) * parseFloat(resultArray[1]);
+		result = (parseFloat(resultArray[0]) * parseFloat(resultArray[1])).toFixed(sigFig);
 	} else if (displayMessage.includes('/')) {
 		resultArray = displayMessage.split('/');
-		result = parseFloat(resultArray[0]) / parseFloat(resultArray[1]);
+		result = (parseFloat(resultArray[0]) / parseFloat(resultArray[1])).toFixed(sigFig);
 	} else {
 		resultArray = displayMessage.split('%');
-		result = parseFloat(resultArray[0]) % parseFloat(resultArray[1]);
+		result = (parseFloat(resultArray[0]) % parseFloat(resultArray[1])).toFixed(sigFig);
 	}
 	var elMsg = document.getElementById('answer');
 	elMsg.textContent += ' = '+result;
@@ -117,8 +119,7 @@ function displayEquals() {
 
 /*****************
 event listener for
-button clicks:
-0-9, ., +, -, /, *, =
+button clicks
 ******************/
 
 var answerEl = document.getElementById('zero');
@@ -196,3 +197,50 @@ function backSpace() {
 
 var backspaceEl = document.getElementById('backspace');
 backspaceEl.addEventListener('click', backSpace, false);
+
+/***************
+Decimal place 
+chooser. 
+***************/
+
+function decimalZero() {
+	sigFig = 0;
+}
+
+var answerEl = document.getElementById('dec0');
+answerEl.addEventListener('click', decimalZero, false);
+
+function decimalOne() {
+	sigFig = 1;
+}
+
+var answerEl = document.getElementById('dec1');
+answerEl.addEventListener('click', decimalOne, false);
+
+function decimalTwo() {
+	sigFig = 2;
+}
+
+var answerEl = document.getElementById('dec2');
+answerEl.addEventListener('click', decimalTwo, false);
+
+function decimalThree() {
+	sigFig = 3;
+}
+
+var answerEl = document.getElementById('dec3');
+answerEl.addEventListener('click', decimalThree, false);
+
+function decimalFour() {
+	sigFig = 4;
+}
+
+var answerEl = document.getElementById('dec4');
+answerEl.addEventListener('click', decimalFour, false);
+
+function decimalFive() {
+	sigFig = 5;
+}
+
+var answerEl = document.getElementById('dec5');
+answerEl.addEventListener('click', decimalFive, false);
