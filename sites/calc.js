@@ -15,7 +15,9 @@ function displayElement(el) {
 	} else if (el == 'clear') {
 		clearAll();
 	} else if (el == 'backspace') {
-		backspace();
+		backSpace();
+	} else if (el == 'numpad') {
+		// do nothing if the user clicks on part of the screen that is not on a button
 	} else {
 	    displayMessage += el;
 	    var elMsg = document.getElementById('answer');
