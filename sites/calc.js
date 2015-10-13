@@ -5,9 +5,9 @@
 var displayMessage = ''; // what shows in the result field
 var sigFig = 2; // how many decimal places in the result
 
-/**********************************
-* functions to update the display *
-**********************************/
+/********************************************************
+* functions to update the display and calculate answers *
+********************************************************/
 
 function displayElement(el) {
 	if (el == '=') {
@@ -18,6 +18,18 @@ function displayElement(el) {
 		backSpace();
 	} else if (el == 'numpad') {
 		// do nothing if the user clicks on part of the screen that is not on a button
+	} else if (el == 'dec0') {
+		sigFig = 0;
+	} else if (el == 'dec1') {
+		sigFig = 1;
+	} else if (el == 'dec2') {
+		sigFig = 2;
+	} else if (el == 'dec3') {
+		sigFig = 3;
+	} else if (el == 'dec4') {
+		sigFig = 4;
+	} else if (el == 'dec5') {
+		sigFig = 5;
 	} else {
 	    displayMessage += el;
 	    var elMsg = document.getElementById('answer');
@@ -39,16 +51,16 @@ function backSpace() {
 
 function displayEquals() {
 	var resultArray, result; // to contain the left and right side of the operation and result
-	if (displayMessage.contains('+')) {
+	if (displayMessage.indexOf('+') != -1) {
 		resultArray = displayMessage.split('+');
 		result = (parseFloat(resultArray[0]) + parseFloat(resultArray[1])).toFixed(sigFig);
-	} else if (displayMessage.contains('-')) {
+	} else if (displayMessage.indexOf('-') != -1) {
 		resultArray = displayMessage.split('-');
 		result = (parseFloat(resultArray[0]) - parseFloat(resultArray[1])).toFixed(sigFig);
-	} else if (displayMessage.contains('*')) {
+	} else if (displayMessage.indexOf('*') != -1) {
 		resultArray = displayMessage.split('*');
 		result = (parseFloat(resultArray[0]) * parseFloat(resultArray[1])).toFixed(sigFig);
-	} else if (displayMessage.contains('/')) {
+	} else if (displayMessage.indexOf('/') != -1) {
 		resultArray = displayMessage.split('/');
 		result = (parseFloat(resultArray[0]) / parseFloat(resultArray[1])).toFixed(sigFig);
 	} else {
@@ -70,52 +82,3 @@ answerEl.addEventListener('click', function(event) {
     event.stopPropagation()
 
 }, false);
-
-
-
-
-/*************************
-* Decimal place chooser. *
-*************************/
-
-function decimalZero() {
-	sigFig = 0;
-}
-
-var answerEl = document.getElementById('dec0');
-answerEl.addEventListener('click', decimalZero, false);
-
-function decimalOne() {
-	sigFig = 1;
-}
-
-var answerEl = document.getElementById('dec1');
-answerEl.addEventListener('click', decimalOne, false);
-
-function decimalTwo() {
-	sigFig = 2;
-}
-
-var answerEl = document.getElementById('dec2');
-answerEl.addEventListener('click', decimalTwo, false);
-
-function decimalThree() {
-	sigFig = 3;
-}
-
-var answerEl = document.getElementById('dec3');
-answerEl.addEventListener('click', decimalThree, false);
-
-function decimalFour() {
-	sigFig = 4;
-}
-
-var answerEl = document.getElementById('dec4');
-answerEl.addEventListener('click', decimalFour, false);
-
-function decimalFive() {
-	sigFig = 5;
-}
-
-var answerEl = document.getElementById('dec5');
-answerEl.addEventListener('click', decimalFive, false);
