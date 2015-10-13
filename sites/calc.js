@@ -31,18 +31,11 @@ function clearAll() {
 	elMsg.textContent = displayMessage;
 }
 
-var clearEl = document.getElementById('clear');
-clearEl.addEventListener('click', clearAll, false);
-
 function backSpace() {
 	displayMessage = displayMessage.substring(0, (displayMessage.length-1));
 	var elMsg = document.getElementById('answer');
 	elMsg.textContent = displayMessage;
 }
-
-var backspaceEl = document.getElementById('backspace');
-backspaceEl.addEventListener('click', backSpace, false);
-
 
 function displayEquals() {
 	var resultArray, result; // to contain the left and right side of the operation and result
