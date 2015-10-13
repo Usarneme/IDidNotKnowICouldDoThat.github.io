@@ -1,42 +1,46 @@
-/**********
-global vars
-**********/
+/**************
+* global vars *
+**************/
 
-var displayMessage = '';
-var sigFig = 2;
+var displayMessage = ''; // what shows in the result field
+var sigFig = 2; // how many decimal places in the result
 
-/***********
-functions to
-update the
-display
-***********/
+/**********************************
+* functions to update the display *
+**********************************/
 
 function displayElement(el) {
-    displayMessage += el;
-    var elMsg = document.getElementById('answer');
-    elMsg.textContent = displayMessage;
+	if (el == '=') {
+		displayEquals();
+	} else if (el == 'clear') {
+		clearAll();
+	} else if (el == 'backspace') {
+		backspace();
+	} else {
+	    displayMessage += el;
+	    var elMsg = document.getElementById('answer');
+	    elMsg.textContent = displayMessage;
+	}
 }
 
-function displayAdd() {
-	displayMessage += '+';
+function clearAll() {
+	displayMessage = '';
 	var elMsg = document.getElementById('answer');
 	elMsg.textContent = displayMessage;
 }
-function displaySubtract() {
-	displayMessage += '-';
+
+var clearEl = document.getElementById('clear');
+clearEl.addEventListener('click', clearAll, false);
+
+function backSpace() {
+	displayMessage = displayMessage.substring(0, (displayMessage.length-1));
 	var elMsg = document.getElementById('answer');
 	elMsg.textContent = displayMessage;
 }
-function displayMultiply() {
-	displayMessage += '*';
-	var elMsg = document.getElementById('answer');
-	elMsg.textContent = displayMessage;
-}
-function displayDivide() {
-	displayMessage += '/';
-	var elMsg = document.getElementById('answer');
-	elMsg.textContent = displayMessage;
-}
+
+var backspaceEl = document.getElementById('backspace');
+backspaceEl.addEventListener('click', backSpace, false);
+
 
 function displayEquals() {
 	var resultArray, result; // to contain the left and right side of the operation and result
@@ -60,10 +64,9 @@ function displayEquals() {
 	elMsg.textContent += ' = '+result;
 }
 
-/*****************
-event listener for
-button clicks
-*****************/
+/****************************************
+* event listener for button clicks      *
+****************************************/
 
 var answerEl = document.getElementById('numpad');
 answerEl.addEventListener('click', function(event) {
@@ -73,50 +76,12 @@ answerEl.addEventListener('click', function(event) {
 
 }, false);
 
-var answerEl = document.getElementById('add');
-answerEl.addEventListener('click', displayAdd, false);
-
-var answerEl = document.getElementById('subtract');
-answerEl.addEventListener('click', displaySubtract, false);
-
-var answerEl = document.getElementById('multiply');
-answerEl.addEventListener('click', displayMultiply, false);
-
-var answerEl = document.getElementById('divide');
-answerEl.addEventListener('click', displayDivide, false);
-
-var answerEl = document.getElementById('equals');
-answerEl.addEventListener('click', displayEquals, false);
 
 
-/**************
-clear/backspace
-functions and 
-event listeners
-**************/
 
-function clearAll() {
-	displayMessage = '';
-	var elMsg = document.getElementById('answer');
-	elMsg.textContent = displayMessage;
-}
-
-var clearEl = document.getElementById('clear');
-clearEl.addEventListener('click', clearAll, false);
-
-function backSpace() {
-	displayMessage = displayMessage.substring(0, (displayMessage.length-1));
-	var elMsg = document.getElementById('answer');
-	elMsg.textContent = displayMessage;
-}
-
-var backspaceEl = document.getElementById('backspace');
-backspaceEl.addEventListener('click', backSpace, false);
-
-/***************
-Decimal place 
-chooser. 
-***************/
+/*************************
+* Decimal place chooser. *
+*************************/
 
 function decimalZero() {
 	sigFig = 0;

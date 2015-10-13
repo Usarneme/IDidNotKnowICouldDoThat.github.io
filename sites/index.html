@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en-us">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,41 +19,41 @@
 	<body>
 
 	<div class="main-container container">
-		<div class="row outer-container">
+		<div id="numpad" class="row outer-container">
 
 			<div class ="jumbotron col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-5 col-lg-offset-3">
 				<div id="answer" class="container well answer-div"></div>
 				<div class="function-buttons container">
 					<div class="row">
-						<div id="backspace" class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3"><p><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></p></div>
-						<div id="clear" class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3"><p>Clear</p></div>
-						<div id="equals" class="btn btn-primary col-xs-6 col-sm-6 col-md-6 col-lg-6"><p>=</p></div>
+						<div class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3"><p><span id="backspace" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></p></div>
+						<div class="btn btn-primary col-xs-3 col-sm-3 col-md-3 col-lg-3"><p id="clear">Clear</p></div>
+						<div class="btn btn-primary col-xs-6 col-sm-6 col-md-6 col-lg-6"><p id="=">=</p></div>
 					</div>
 				</div>
 				<div class="container">		
 					<div class="row">
 						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-							<div id="numpad" class="row">
-								<div id="1" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>1</p></div>
-								<div id="2" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>2</p></div>
-								<div id="3" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>3</p></div>
-								<div id="4" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>4</p></div>
-								<div id="5" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>5</p></div>
-								<div id="6" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>6</p></div>
-								<div id="7" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>7</p></div>
-								<div id="8" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>8</p></div>
-								<div id="9" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>9</p></div>	
-								<div id="." class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>.</p></div>
-								<div id="0" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>0</p></div>
-								<div id="%" class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>%</p></div>
+							<div class="row">
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="1">1</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="2">2</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="3">3</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="4">4</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="5">5</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="6">6</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="7">7</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="8">8</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="9">9</p></div>	
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id=".">.</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="0">0</p></div>
+								<div class="btn btn-default col-xs-4 col-sm-4 col-md-4 col-lg-4"><p id="%">%</p></div>
 							</div>
 						</div>
 						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 							<div class="row">
-								<div id="multiply" class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p></div>
-								<div id="divide" class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><strong>/</strong></p></div>
-								<div id="subtract" class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></p></div>
-								<div id="add" class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></p></div>
+								<div class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><span id="*" class="glyphicon glyphicon-remove" aria-hidden="true"></span></p></div>
+								<div class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><strong id="/">/</strong></p></div>
+								<div class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><span id="-" class="glyphicon glyphicon-minus" aria-hidden="true"></span></p></div>
+								<div class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12"><p><span id="+" class="glyphicon glyphicon-plus" aria-hidden="true"></span></p></div>
 							</div>
 						</div>
 					</div>
