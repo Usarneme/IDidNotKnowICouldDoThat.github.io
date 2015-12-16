@@ -30,24 +30,23 @@ $select.change(function(){
 
 
 
-// START of IMAGE GALLERY section 
+// START of flashcard section 
 var $overlay = $('<div id="overlay"></div>');
-var $image = $("<img>");
+var $displayedCard = "";
 
-//An image to overlay
-$overlay.append($image);
+//An currently displayed card to the overlay
+$overlay.append($displayedCard);
 
-//Add overlay
+//Add overlay to the html body
 $("body").append($overlay);
   //A caption
 
-//Capture the click event on a link to an image
-$("#imageGallery a").click(function(event){
+//Capture the click event on a link to a flashcard list item
+$("#flashcardCollection li").click(function(event){
   event.preventDefault();
-  var imageLocation = $(this).attr("href");
-  //Update overlay with the image linked in the link
-  $image.attr("src", imageLocation);
-  
+  $displayedCard = "<div class='displayed_flashcard'>" + $(this).text() + "</div>";
+  $overlay.html($displayedCard);
+
   //Show the overlay.
   $overlay.show();
   
@@ -59,4 +58,4 @@ $overlay.click(function(){
   $overlay.hide();
 });
 
-// END of image gallery section
+// END of flashcard section
