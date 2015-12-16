@@ -2,6 +2,20 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+<script src="http://malsup.github.com/jquery.form.js"></script> 
+
+<script> 
+    // wait for the DOM to be loaded 
+    $(document).ready(function() { 
+        // bind 'newCard' and provide a simple callback function 
+        $('#newCard').ajaxForm(function() { 
+            alert("Thank you for your comment!"); 
+        }); 
+    }); 
+</script> 
+
 </head>
 <body>
 	<div id="menu">
@@ -27,7 +41,21 @@
 			<li><p class="front">word3</p><p class="back">definition3</p></li>
 			<li><p class="front">word4</p><p class="back">definition4</p></li>
 			<li><p class="front">word5</p><p class="back">definition5</p></li>
+			<li><p class="front">word0</p><p class="back">definition0</p></li>
+			<li><p class="front">word1</p><p class="back">definition1</p></li>
+			<li><p class="front">word2</p><p class="back">definition2</p></li>
+			<li><p class="front">word3</p><p class="back">definition3</p></li>
+			<li><p class="front">word4</p><p class="back">definition4</p></li>
+			<li><p class="front">word5</p><p class="back">definition5</p></li>
 		</ul>
+	</div>
+
+	<div>
+		<form id="newCard" method="post"> 
+			Word: <input type="text" name="word" /> 
+			Definition: <textarea name="definition"></textarea> 
+			<input type="submit" value="Submit New Card" /> 
+		</form>
 	</div>
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
