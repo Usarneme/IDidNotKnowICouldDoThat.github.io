@@ -50,8 +50,8 @@
     //If another li element exists i.e. another flashcard is in the list after the current cart...
     if($(this).next().is('li')) {
       // Show the next/right button
-      $displayedCard.append("<div class='next_card'>Next</div></div>"); //second ending div for displayed_flashcard start
-    } else { $displayedCard.append("</div>"); } //Closing div for displayed_flashcard
+      $displayedCard.append("<div class='next_card'>Next</div></div>"); //Second ending div for displayed_flashcard opening
+    } else { $displayedCard.append("</div>"); } //Closing div for displayed_flashcard opening
 
     //Show the displayed card.
     $displayedCard.show();
@@ -59,13 +59,11 @@
 
   //TODO: Button on the displayed card that "flips" the card to alternate hide/show the word/definition
 
-  //TODO: Left and right side buttons to go to the next card/previous card; array selection/iteration/next-child?
-
   //When displayedcard is clicked
   $displayedCard.click(function(){
     //Hide the displayedCard
     $displayedCard.hide();
-    $displayedCard = $();
+    $displayedCard.empty();
   });
 // END of flashcard section
 
