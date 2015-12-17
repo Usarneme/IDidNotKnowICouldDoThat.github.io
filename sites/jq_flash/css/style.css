@@ -81,7 +81,15 @@ p {
 }
 
 #flashcardCollection li {
-	border: 5px dotted black;
+	border: 4px dotted black;
+}
+
+.center {
+	margin: 30px auto;
+	padding: 20px;
+	text-align: center;
+	border: 4px dotted black;
+	max-width: 780px;
 }
 
 #overlay {

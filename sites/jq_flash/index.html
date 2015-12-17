@@ -31,9 +31,21 @@
 	<h1>Home</h1>
 	<p>This is the home page.</p>
 
+	<div id="flashcards" class="center">
+		<h3>Click here to run through existing flashcards</h3>
+	</div>
 
-	<div>
-		<h1>Flashcard Cards</h1>
+	<div class="center">
+		<h3>Create a new flash card</h3>
+		<form id="newCard" method="post" class="center">
+			<p>Word: <input type="text" name="word" /></p>
+			<p>Definition: <textarea name="definition"></textarea> </p>
+			<input type="submit" value="Submit New Card" />
+		</form>
+	</div>
+
+	<div class="center">
+		<h3>Flashcard Cards</h3>
 		<ul id="flashcardCollection">
 			<li><p class="front">word0</p><p class="back">definition0</p></li>
 			<li><p class="front">word1</p><p class="back">definition1</p></li>
@@ -50,13 +62,6 @@
 		</ul>
 	</div>
 
-	<div>
-		<form id="newCard" method="post"> 
-			Word: <input type="text" name="word" /> 
-			Definition: <textarea name="definition"></textarea> 
-			<input type="submit" value="Submit New Card" /> 
-		</form>
-	</div>
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
