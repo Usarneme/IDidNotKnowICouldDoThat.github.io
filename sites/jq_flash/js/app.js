@@ -29,15 +29,10 @@
 // END of menu section 
 
 // START of flashcard section 
-  var $overlay = $('<div id="overlay"></div>');
-  var $displayedCard = "";
+  var $displayedCard = $('<div class="displayed_flashcard">');
 
-  //Add currently displayed card to the overlay
-  $overlay.append($displayedCard);
-
-  //Add overlay to the html body
-  $("body").append($overlay);
-    //A caption
+  //Add displayedCard to the html body
+  $("body").append($displayedCard);
 
   //Capture the click event on a link to a flashcard list item
   $("#flashcardCollection li").click(function(event){
@@ -46,33 +41,31 @@
     //If a previous li element exists i.e. another flashcard is in the list before the current card...
     if($(this).prev().is('li')) {
       // Show the previous/last button
-      $displayedCard = "<div class='previous_card'>Prev</div>";
+      $displayedCard.append("<div class='previous_card'>Prev</div>");
     } else {}
 
     // Set the html with the clicked-on card's text inside it
-    $displayedCard.append("<div class='displayed_flashcard'>" + $(this).text() + "</div>");
+    $displayedCard.append($(this).text());
 
     //If another li element exists i.e. another flashcard is in the list after the current cart...
     if($(this).next().is('li')) {
       // Show the next/right button
-      $displayedCard.append("<div class='next_card'>Next</div>");
-    } else {}
+      $displayedCard.append("<div class='next_card'>Next</div></div>"); //second ending div for displayed_flashcard start
+    } else { $displayedCard.append("</div>"); } //Closing div for displayed_flashcard
 
-    // Set the inner html of the overlay to include the displayed card html (not using .append() as that is accretive and would require clearing the variable)
-    $overlay.html($displayedCard);
-
-    //Show the overlay.
-    $overlay.show();
+    //Show the displayed card.
+    $displayedCard.show();
   });
 
   //TODO: Button on the displayed card that "flips" the card to alternate hide/show the word/definition
 
   //TODO: Left and right side buttons to go to the next card/previous card; array selection/iteration/next-child?
 
-  //When overlay is clicked
-  $overlay.click(function(){
-    //Hide the overlay
-    $overlay.hide();
+  //When displayedcard is clicked
+  $displayedCard.click(function(){
+    //Hide the displayedCard
+    $displayedCard.hide();
+    $displayedCard = $();
   });
 // END of flashcard section
 
