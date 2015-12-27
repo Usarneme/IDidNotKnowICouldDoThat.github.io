@@ -20,18 +20,9 @@
 
 	<div id="flashcards" class="center">
 		<h3>Click here to run through existing flashcards</h3>
-		<div id="previous" class="previous_card"><</div>
-		<div id="cardHolder" class="center"></div>
-		<div id="next" class="next_card">></div>
-	</div>
-
-	<div class="center" style="display: none;">
-		<h3>Create a new flash card</h3>
-		<form id="newCard" method="post" class="center">
-			<p>Word: <input type="text" name="word" /></p>
-			<p>Definition: <textarea name="definition"></textarea> </p>
-			<input type="submit" value="Submit New Card" />
-		</form>
+		<div class="previous_card">Push for Previous</div>
+		<div class="current_card"></div>
+		<div class="next_card">Push for Next</div>
 	</div>
 
 	<div class="center">
@@ -51,7 +42,6 @@
 			<li class="card"><div class="question">word11</div><div class="answer">definition11</div></li>
 		</ul>
 	</div>
-
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>

@@ -57,14 +57,6 @@ ul li.selected a {
 	color: #384047;
 }
 
-ul li img {
-	display: block;
-}
-
-a {
-	text-decoration: none;
-}
-
 select {
 	width: 94%;
 	margin: 11px  0 11px 2%;
@@ -76,6 +68,7 @@ h1 {
 	text-align: center;
 	color: #384047;
 }
+
 p {
 	text-align: center;
 	color: #777;
@@ -94,35 +87,27 @@ p {
 	display: block;
 }
 
-.displayed_flashcard {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 30%;
-	height: 20%;
-	margin-left: -15%;
-	margin-top: -10%;
-	color: #fff;
-	padding-top: 5%;
-	background:rgba(0,0,0,0.85);
-	display:none;
-	text-align:center;
+.current_card {
+	width: 50%;
+	margin: auto;
+	display: block;
+	z-index: 40;
 }
 
 .previous_card {
 	width: 20%;
-	display: inline-block;
-	left: 0;
-	margin-left: 0;
+	display: block;
 	float: left;
+	border: 2px solid black;
+	z-index: 50;
 }
 
 .next_card {
 	width: 20%;
-	display: inline-block;
-	right: 0;
-	margin-right: 0;
+	display: block;
 	float: right;
+	border: 2px solid black;
+	z-index: 50;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {

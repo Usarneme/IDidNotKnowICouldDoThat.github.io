@@ -29,78 +29,83 @@
 // END of menu section 
 
 
-// Array of flashcard objects, each card contains a question and answer
-var $flashCardsByClass = $('.card');
-// Which card number in the array we're looking at currently; default first 0
-var selectedCardNumber = 0;
+// Which card number in the array we're looking at currently; default first 0 TODO
+var selectedCardNumber = 4;
 // The text variables holding the card's front/question and back/answer
 var $theQuestion, $theAnswer;
+// Tracker variable for whether the answer or question are showing. answer showing = true
+var answer = false;
 
 function showTheQuestion() {
-  $("#cardHolder")[0].textContent = $flashCardsByClass[selectedCardNumber].children[0].textContent;
-
-  $("#cardHolder").off(); 
-  $("#cardHolder").on("click", showTheAnswer);
-
+  // Get the question from the array of card objects
+  $(".current_card")[0].textContent = $('.card')[selectedCardNumber].children[0].textContent;
+  // Reset the answer var to false as the question is showing
+  answer = false;
   // Methods to check if first or last to display prev/next buttons or not
   isFirstQuestion();
   isLastQuestion();
+  eventBindings();
 }
 
 function showTheAnswer() {
-  $("#cardHolder")[0].textContent = $flashCardsByClass[selectedCardNumber].children[1].textContent;
-
-  $("#cardHolder").off(); 
-  $("#cardHolder").on("click", showTheQuestion);
-
+  // Get the answer from the array of card objects
+  $(".current_card")[0].textContent = $('.card')[selectedCardNumber].children[1].textContent;
+  // Reset the answer var to true as the answer is showing
+  answer = true;
   // Methods to check if first or last to display prev/next buttons or not
   isFirstQuestion();
   isLastQuestion();
+  eventBindings();
 }
 
 function isFirstQuestion() {
   // If the current card is the first
   if (selectedCardNumber <= 0) {
     // hide the previous button element
-    $("#previous").hide();
-    // And bind the next button to the next card in the array
-    $("#next").on("click", showNextQuestion);
+    $(".previous_card").hide();
   } else { } // Do nothing
 }
 
 function isLastQuestion() {
   // If the current card is the last
-  if (selectedCardNumber >= $flashCardsByClass.length) {
+  if (selectedCardNumber >= $('.card').length) {
     // hide the next button element
-    $("#next").hide();
-    // And bind the previous button to the previous card in the array
-    $("#previous").on("click", showPreviousQuestion);
+    $(".next_card").hide();
   } else { } // Do nothing   
 }
 
 function showNextQuestion() {
-  // Increment the card number by +1
+  // Increment the card number up by one
   selectedCardNumber++;
   showTheQuestion();
 }
 
 function showPreviousQuestion() {
-  // Increment the card number by -1
+  // Decrement the card number down by one
   selectedCardNumber--;
   showTheQuestion();
 }
 
-// Initially show the question
+function eventBindings() {
+  // The next button increments the selectedCardNumber up by one
+  $(".next_card").on("click", showNextQuestion);
+
+  // The previous button decrements the selectedCardNumber down by one
+  $(".previous_card").on("click", showPreviousQuestion);
+
+  // If answer is displayed currently...
+  if (answer) {
+    // Bind the current card element to flip the card and show the question
+    $(".current_card").off(); 
+    $(".current_card").on("click", showTheQuestion);
+  } else { // The question is displayed currently...
+      // Bind the current card element to flip the card and show the answer
+      $(".current_card").off(); 
+      $(".current_card").on("click", showTheAnswer);
+  }
+}
+
 $(document).ready(function() {
+  // Initially show the first question
   showTheQuestion();
-  $("#flashcards").html($theQuestion);
 });
-
-// Hide all of them but the currently showing
-// $("#flashcards").children().hide();
-// Show the currently showing question card
-// $(flashCardsByClass)[selectedCardNumber].show();
-
-// card is clicked, answer is shown
-// right button is clicked, next card is shown
-// left button, previous card is shown
