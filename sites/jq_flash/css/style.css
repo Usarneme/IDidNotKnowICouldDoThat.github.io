@@ -91,6 +91,7 @@ p {
 	text-align: center;
 	border: 2px solid black;
 	max-width: 780px;
+	display: block;
 }
 
 .displayed_flashcard {
