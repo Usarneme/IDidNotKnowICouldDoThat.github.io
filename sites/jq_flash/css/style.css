@@ -60,6 +60,7 @@ ul li.selected a {
 ul li img {
 	display: block;
 }
+
 a {
 	text-decoration: none;
 }
@@ -81,19 +82,19 @@ p {
 }
 
 #flashcardCollection li {
-	border: 4px dotted black;
+	border: 2px solid black;
 }
 
 .center {
 	margin: 30px auto;
-	padding: 20px;
+	padding: 10px 20px;
 	text-align: center;
-	border: 4px dotted black;
+	border: 2px solid black;
 	max-width: 780px;
 }
 
 .displayed_flashcard {
-	position:fixed;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	width: 30%;
@@ -101,10 +102,26 @@ p {
 	margin-left: -15%;
 	margin-top: -10%;
 	color: #fff;
-	padding: 5%;
+	padding-top: 5%;
 	background:rgba(0,0,0,0.85);
 	display:none;
 	text-align:center;
+}
+
+.previous_card {
+	width: 20%;
+	display: inline-block;
+	left: 0;
+	margin-left: 0;
+	float: left;
+}
+
+.next_card {
+	width: 20%;
+	display: inline-block;
+	right: 0;
+	margin-right: 0;
+	float: right;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {

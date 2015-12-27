@@ -2,20 +2,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-<script src="http://malsup.github.com/jquery.form.js"></script> 
-
-<script> 
-    // wait for the DOM to be loaded 
-    $(document).ready(function() { 
-        // bind 'newCard' and provide a simple callback function 
-        $('#newCard').ajaxForm(function() { 
-            alert("Thank you for your comment!"); 
-        }); 
-    }); 
-</script> 
-
 </head>
 <body>
 	<div id="menu">
@@ -28,14 +14,15 @@
 			<li><a href="events.html">Events</a></li>
 		</ul>
 	</div>
+	
 	<h1>Home</h1>
 	<p>This is the home page.</p>
 
-	<div id="flashcards" class="center">
+	<div id="flashcards" class="center" style="display: none;">
 		<h3>Click here to run through existing flashcards</h3>
 	</div>
 
-	<div class="center">
+	<div class="center" style="display: none;">
 		<h3>Create a new flash card</h3>
 		<form id="newCard" method="post" class="center">
 			<p>Word: <input type="text" name="word" /></p>
@@ -47,18 +34,18 @@
 	<div class="center">
 		<h3>Flashcard Cards</h3>
 		<ul id="flashcardCollection">
-			<li><p class="front">word0</p><p class="back">definition0</p></li>
-			<li><p class="front">word1</p><p class="back">definition1</p></li>
-			<li><p class="front">word2</p><p class="back">definition2</p></li>
-			<li><p class="front">word3</p><p class="back">definition3</p></li>
-			<li><p class="front">word4</p><p class="back">definition4</p></li>
-			<li><p class="front">word5</p><p class="back">definition5</p></li>
-			<li><p class="front">word0</p><p class="back">definition0</p></li>
-			<li><p class="front">word1</p><p class="back">definition1</p></li>
-			<li><p class="front">word2</p><p class="back">definition2</p></li>
-			<li><p class="front">word3</p><p class="back">definition3</p></li>
-			<li><p class="front">word4</p><p class="back">definition4</p></li>
-			<li><p class="front">word5</p><p class="back">definition5</p></li>
+			<li><div class="question">word0</div><div class="answer">definition0</div></li>
+			<li><div class="question">word1</div><div class="answer">definition1</div></li>
+			<li><div class="question">word2</div><div class="answer">definition2</div></li>
+			<li><div class="question">word3</div><div class="answer">definition3</div></li>
+			<li><div class="question">word4</div><div class="answer">definition4</div></li>
+			<li><div class="question">word5</div><div class="answer">definition5</div></li>
+			<li><div class="question">word0</div><div class="answer">definition0</div></li>
+			<li><div class="question">word1</div><div class="answer">definition1</div></li>
+			<li><div class="question">word2</div><div class="answer">definition2</div></li>
+			<li><div class="question">word3</div><div class="answer">definition3</div></li>
+			<li><div class="question">word4</div><div class="answer">definition4</div></li>
+			<li><div class="question">word5</div><div class="answer">definition5</div></li>
 		</ul>
 	</div>
 
