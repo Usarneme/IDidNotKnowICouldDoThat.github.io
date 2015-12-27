@@ -34,13 +34,15 @@ var selectedCardNumber = 4;
 // The text variables holding the card's front/question and back/answer
 var $theQuestion, $theAnswer;
 // Tracker variable for whether the answer or question are showing. answer showing = true
-var answer = false;
+var answerShowing = false;
+// The total number of cards
+var totalNumberOfCards = $('.card').length;
 
 function showTheQuestion() {
   // Get the question from the array of card objects
   $(".current_card")[0].textContent = $('.card')[selectedCardNumber].children[0].textContent;
   // Reset the answer var to false as the question is showing
-  answer = false;
+  answerShowing = false;
   // Methods to check if first or last to display prev/next buttons or not
   isFirstQuestion();
   isLastQuestion();
@@ -51,7 +53,7 @@ function showTheAnswer() {
   // Get the answer from the array of card objects
   $(".current_card")[0].textContent = $('.card')[selectedCardNumber].children[1].textContent;
   // Reset the answer var to true as the answer is showing
-  answer = true;
+  answerShowing = true;
   // Methods to check if first or last to display prev/next buttons or not
   isFirstQuestion();
   isLastQuestion();
@@ -59,42 +61,50 @@ function showTheAnswer() {
 }
 
 function isFirstQuestion() {
+  $(".previous_card").show();
   // If the current card is the first
   if (selectedCardNumber <= 0) {
     // hide the previous button element
     $(".previous_card").hide();
-  } else { } // Do nothing
+  }
 }
 
 function isLastQuestion() {
+  $(".next_card").show();
   // If the current card is the last
-  if (selectedCardNumber >= $('.card').length) {
+  if (selectedCardNumber >= (totalNumberOfCards - 1)) {
     // hide the next button element
     $(".next_card").hide();
-  } else { } // Do nothing   
+  }   
 }
 
 function showNextQuestion() {
+  console.log("Before sNQ: " + selectedCardNumber);
   // Increment the card number up by one
-  selectedCardNumber++;
+  selectedCardNumber += 1;
   showTheQuestion();
+  console.log("After sNQ: " + selectedCardNumber);
 }
 
 function showPreviousQuestion() {
+  console.log("Before sPQ: " + selectedCardNumber);
   // Decrement the card number down by one
-  selectedCardNumber--;
+  selectedCardNumber -= 1;
   showTheQuestion();
+  console.log("After sPQ: " + selectedCardNumber);
 }
 
 function eventBindings() {
   // The next button increments the selectedCardNumber up by one
+  $(".next_card").off();  
   $(".next_card").on("click", showNextQuestion);
 
   // The previous button decrements the selectedCardNumber down by one
+  $(".previous_card").off();
   $(".previous_card").on("click", showPreviousQuestion);
 
   // If answer is displayed currently...
-  if (answer) {
+  if (answerShowing) {
     // Bind the current card element to flip the card and show the question
     $(".current_card").off(); 
     $(".current_card").on("click", showTheQuestion);
