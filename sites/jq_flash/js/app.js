@@ -29,6 +29,8 @@
 // END of menu section 
 
 var $displayedCard;
+var $flashCardsByClass = $('.question');
+$("#flashcards").html($flashCardsByClass);
 
 $(document).ready(function() {
   initializeHandlers();
@@ -97,8 +99,8 @@ function initializeHandlers() {
   $("#currentC").on("click", function(event) {
     event.preventDefault();
     //Show the other side/flip the card
-    (this).('.question').hide();
-    (this).('.answer').show();
+    $(this).$('.question').hide();
+    $(this).$('.answer').show();
   });
 
                         $('.question').on('click', function() {
