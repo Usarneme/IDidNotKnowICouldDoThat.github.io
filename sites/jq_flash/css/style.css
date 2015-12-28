@@ -8,6 +8,10 @@ body {
 	background: #fff;
 }
 
+div {
+	min-height: 80px;
+}
+
 ul {
 	list-style: none;
 	text-align: center;

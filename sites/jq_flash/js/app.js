@@ -109,9 +109,17 @@ function eventBindings() {
       $(".current_card").off(); 
       $(".current_card").on("click", showTheAnswer);
   }
+
+  // Toggle to show or hide the flashcard collection's card collection of flashcard cards
+  $("#flashcardCollection").off();
+  $("#flashcardCollection").on("click", function() {
+      $("#flashcardCollection").children().toggle();
+  });
 }
 
 $(document).ready(function() {
   // Initially show the first question
   showTheQuestion();
+  // Initially hide the flashcard card set
+  $("#flashcardCollection").children().hide();
 });
