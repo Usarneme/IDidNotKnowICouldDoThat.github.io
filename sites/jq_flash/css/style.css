@@ -8,10 +8,6 @@ body {
 	background: #fff;
 }
 
-div {
-	min-height: 80px;
-}
-
 ul {
 	list-style: none;
 	text-align: center;
@@ -30,6 +26,10 @@ p {
 	padding: 10px 20px;
 	text-align: center;
 	display: block;
+}
+
+.current_card {
+	min-height: 100px;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {

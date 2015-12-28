@@ -111,8 +111,8 @@ function eventBindings() {
   }
 
   // Toggle to show or hide the flashcard collection's card collection of flashcard cards
-  $("#flashcardCollection").off();
-  $("#flashcardCollection").on("click", function() {
+  $(".btn-link").off();
+  $(".btn-link").on("click", function() {
       $("#flashcardCollection").children().toggle();
   });
 }
