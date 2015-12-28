@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
 </head>
 <body>
-	<div id="menu">
-		<ul>
-			<li class="selected"><a href="index.html">Home</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="support.html">Support</a></li>
-			<li><a href="faqs.html">FAQs</a></li>
-			<li><a href="events.html">Events</a></li>
-		</ul>
-	</div>
-	
-	<h1>Home</h1>
-	<p>This is the home page.</p>
 
-	<div id="flashcards" class="center">
-		<h3>Click here to run through existing flashcards</h3>
-		<div class="previous_card">Push for Previous</div>
-		<div class="current_card"></div>
-		<div class="next_card">Push for Next</div>
-	</div>
+	<div class="container jumbotron">
+		<div id="flashcards" class="container container-fluid center">
+			<h3>Click here to run through existing flashcards</h3>
+			<div class="row center">
+				<div class="previous_card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item">Push for Previous</div>
+				<div class="current_card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"></div>
+				<div class="next_card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item">Push for Next</div>
+			</div>
+		</div>
 
-	<div class="center">
-		<h3>Flashcard Cards</h3>
-		<ul id="flashcardCollection">
-			<li class="card"><div class="question">word0</div><div class="answer">definition0</div></li>
-			<li class="card"><div class="question">word1</div><div class="answer">definition1</div></li>
-			<li class="card"><div class="question">word2</div><div class="answer">definition2</div></li>
-			<li class="card"><div class="question">word3</div><div class="answer">definition3</div></li>
-			<li class="card"><div class="question">word4</div><div class="answer">definition4</div></li>
-			<li class="card"><div class="question">word5</div><div class="answer">definition5</div></li>
-			<li class="card"><div class="question">word6</div><div class="answer">definition6</div></li>
-			<li class="card"><div class="question">word7</div><div class="answer">definition7</div></li>
-			<li class="card"><div class="question">word8</div><div class="answer">definition8</div></li>
-			<li class="card"><div class="question">word9</div><div class="answer">definition9</div></li>
-			<li class="card"><div class="question">word10</div><div class="answer">definition10</div></li>
-			<li class="card"><div class="question">word11</div><div class="answer">definition11</div></li>
-		</ul>
+		<div class="container container-fluid center">
+			<h3>Flashcard Cards</h3>
+			<ul id="flashcardCollection" class="row">
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word0</div><div class="answer">definition0</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word1</div><div class="answer">definition1</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word2</div><div class="answer">definition2</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word3</div><div class="answer">definition3</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word4</div><div class="answer">definition4</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word5</div><div class="answer">definition5</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word6</div><div class="answer">definition6</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word7</div><div class="answer">definition7</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word8</div><div class="answer">definition8</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word9</div><div class="answer">definition9</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word10</div><div class="answer">definition10</div></li>
+				<li class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 well item"><div class="question">word11</div><div class="answer">definition11</div></li>
+			</ul>
+		</div>
 	</div>
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

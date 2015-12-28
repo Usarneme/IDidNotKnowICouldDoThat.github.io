@@ -79,19 +79,15 @@ function isLastQuestion() {
 }
 
 function showNextQuestion() {
-  console.log("Before sNQ: " + selectedCardNumber);
   // Increment the card number up by one
   selectedCardNumber += 1;
   showTheQuestion();
-  console.log("After sNQ: " + selectedCardNumber);
 }
 
 function showPreviousQuestion() {
-  console.log("Before sPQ: " + selectedCardNumber);
   // Decrement the card number down by one
   selectedCardNumber -= 1;
   showTheQuestion();
-  console.log("After sPQ: " + selectedCardNumber);
 }
 
 function eventBindings() {

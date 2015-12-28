@@ -8,116 +8,30 @@ body {
 	background: #fff;
 }
 
-#menu {
-	background: #384047;
-	height: 60px;
-	padding: 0 5px 0;
-	text-align: center;
-}
-
-#menu ul li {
-	display: inline-block;
-	width: 84px;
-	text-align: center;
-	padding: 8px;
-	margin:10px;
-}
-
 ul {
 	list-style: none;
-	margin: 0 auto;
-	padding: 0;
-	display: block;
-	max-width: 780px;
 	text-align: center;
 }
-
 
 ul li {
-	display: inline-block;
-	width: 84px;
 	text-align: center;
-	padding: 8px;
-	margin:10px;
-}
-
-
-ul li a {
-	color: #fff;
-	width: 100%;
-	line-height: 60px;
-	text-decoration: none;
-}
-
-ul li.selected {
-	background: #fff;
-}
-
-ul li.selected a {
-	color: #384047;
-}
-
-select {
-	width: 94%;
-	margin: 11px  0 11px 2%;
-	float: left;
-}
-
-h1 {
-	margin: 40px 0 10px;
-	text-align: center;
-	color: #384047;
 }
 
 p {
 	text-align: center;
-	color: #777;
-}
-
-#flashcardCollection li {
-	border: 2px solid black;
 }
 
 .center {
 	margin: 30px auto;
 	padding: 10px 20px;
 	text-align: center;
-	border: 2px solid black;
-	max-width: 780px;
 	display: block;
-}
-
-.current_card {
-	width: 50%;
-	margin: auto;
-	display: block;
-	z-index: 40;
-}
-
-.previous_card {
-	width: 20%;
-	display: block;
-	float: left;
-	border: 2px solid black;
-	z-index: 50;
-}
-
-.next_card {
-	width: 20%;
-	display: block;
-	float: right;
-	border: 2px solid black;
-	z-index: 50;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {
-  #menu ul {
-    display:none;
-  }
+
 }
 
 @media (min-width: 568px) {
-  #menu select, #menu button {
-    display:none;
-  }
+
 }
