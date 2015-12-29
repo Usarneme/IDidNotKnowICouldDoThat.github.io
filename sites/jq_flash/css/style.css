@@ -30,6 +30,8 @@ p {
 
 .current_card {
 	min-height: 100px;
+	white-space: pre-wrap;
+	width: 100%;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {

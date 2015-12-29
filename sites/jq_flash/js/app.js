@@ -1,41 +1,10 @@
-// Menu Section
-  //Create a select and append to #menu
-  var $select = $("<select></select>");
-  $("#menu").append($select);
-
-  //Cycle over menu links
-  $("#menu a").each(function(){
-    var $anchor = $(this);
-    //Create an option
-    var $option = $("<option></option>");
-
-    //Deal with selected options depending on current page
-    if($anchor.parent().hasClass("selected")) {
-      $option.prop("selected", true);
-    }
-    //option's value is the href
-    $option.val($anchor.attr("href"));
-    //option's text is the text of link
-    $option.text($anchor.text());
-    //append option to select
-    $select.append($option);
-  });
-
-  //Bind change listener to the select
-  $select.change(function(){
-    //Go to select's location
-    window.location = $select.val();
-  });
-// END of menu section 
-
-
-// Which card number in the array we're looking at currently; default first 0 TODO
-var selectedCardNumber = 4;
+// Which card number in the array we're looking at currently; default first 0
+var selectedCardNumber = 0;
 // The text variables holding the card's front/question and back/answer
 var $theQuestion, $theAnswer;
 // Tracker variable for whether the answer or question are showing. answer showing = true
 var answerShowing = false;
-// The total number of cards
+// The total number of cards kept in var for code readability
 var totalNumberOfCards = $('.card').length;
 
 function showTheQuestion() {
@@ -43,7 +12,7 @@ function showTheQuestion() {
   $(".current_card")[0].textContent = $('.card')[selectedCardNumber].children[0].textContent;
   // Reset the answer var to false as the question is showing
   answerShowing = false;
-  // Methods to check if first or last to display prev/next buttons or not
+  // Methods to check if card is the first or last to display prev/next buttons or not
   isFirstQuestion();
   isLastQuestion();
   eventBindings();
@@ -61,19 +30,21 @@ function showTheAnswer() {
 }
 
 function isFirstQuestion() {
+  // Show the previous card button by default
   $(".previous_card").show();
-  // If the current card is the first
+  // If the current card is the first...
   if (selectedCardNumber <= 0) {
-    // hide the previous button element
+    // hide the previous card button element
     $(".previous_card").hide();
   }
 }
 
 function isLastQuestion() {
+  // Show the next card button by default
   $(".next_card").show();
-  // If the current card is the last
+  // If the current card is the last...
   if (selectedCardNumber >= (totalNumberOfCards - 1)) {
-    // hide the next button element
+    // hide the next card button element
     $(".next_card").hide();
   }   
 }
@@ -110,7 +81,7 @@ function eventBindings() {
       $(".current_card").on("click", showTheAnswer);
   }
 
-  // Toggle to show or hide the flashcard collection's card collection of flashcard cards
+  // Toggle to show or hide the set of cards
   $(".btn-link").off();
   $(".btn-link").on("click", function() {
       $("#flashcardCollection").children().toggle();
