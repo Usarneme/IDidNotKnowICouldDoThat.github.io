@@ -1,0 +1,23 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+body {
+	background: #fff;
+}
+
+.color_card {
+	background-color: rgba(20, 20, 20, .5);
+	min-height: 100px;
+	padding: 5px;
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+
+}
+
+@media (min-width: 568px) {
+
+}
