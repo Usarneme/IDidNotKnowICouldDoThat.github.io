@@ -95,6 +95,11 @@ $(document).ready(function() {
   $("#flashcardCollection").children().hide();
 });
 
+// Work in progress for the submit new card form and buttons
+// It needs to be able to add a key:value pair to the array "flashcards" below
+// e.preventDefault();
+// add the card (key:value) to the array
+// re-load the DOM so all cards in the array are in the list
 
 // FLashcard key:value array
 var flashcards = [
