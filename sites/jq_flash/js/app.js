@@ -30,34 +30,44 @@ function showTheAnswer() {
 }
 
 function isFirstQuestion() {
+  // Reset condition before checking
+  $(".previous_card").prop('disabled', false);
   // Show the previous card button by default
   $(".previous_card").show();
   // If the current card is the first...
   if (selectedCardNumber <= 0) {
-    // hide the previous card button element
-    $(".previous_card").hide();
+    // Disable the previous card button element
+    $(".previous_card").prop('disabled', true);
   }
 }
 
 function isLastQuestion() {
+  // Reset condition before checking
+  $(".next_card").prop('disabled', false);
   // Show the next card button by default
   $(".next_card").show();
   // If the current card is the last...
   if (selectedCardNumber >= (totalNumberOfCards - 1)) {
-    // hide the next card button element
-    $(".next_card").hide();
-  }   
+    // Disable the next card button element
+    $(".next_card").prop('disabled', true);
+  }
 }
 
 function showNextQuestion() {
-  // Increment the card number up by one
-  selectedCardNumber += 1;
+  // If there are more cards/questions available
+  if (!($(".next_card").prop('disabled'))) {
+    // Increment the card number up by one
+    selectedCardNumber += 1;
+  } else {}
   showTheQuestion();
 }
 
 function showPreviousQuestion() {
-  // Decrement the card number down by one
-  selectedCardNumber -= 1;
+  // If there are previous cards/questions available
+  if (!($(".previous_card").prop('disabled'))) {
+    // Decrement the card number down by one
+    selectedCardNumber -= 1;
+  } else {}
   showTheQuestion();
 }
 
@@ -89,8 +99,13 @@ function eventBindings() {
 }
 
 $(document).ready(function() {
+  // Initially enable both next and previous buttons
+  $(".previous_card").prop('disabled', false);
+  $(".next_card").prop('disabled', false);
+
   // Initially show the first question
   showTheQuestion();
+
   // Initially hide the flashcard card set
   $("#flashcardCollection").children().hide();
 });

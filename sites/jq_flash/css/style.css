@@ -6,32 +6,16 @@
 
 body {
 	background: #fff;
+	text-align: center;
 }
 
 ul {
 	list-style: none;
-	text-align: center;
-}
-
-ul li {
-	text-align: center;
-}
-
-p {
-	text-align: center;
-}
-
-.center {
-	margin: 30px auto;
-	padding: 10px 20px;
-	text-align: center;
-	display: block;
 }
 
 .current_card {
 	min-height: 100px;
 	white-space: pre-wrap;
-	width: 100%;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {

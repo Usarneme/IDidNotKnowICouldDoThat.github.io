@@ -18,18 +18,28 @@
 </head>
 <body>
 
-	<div class="container jumbotron">
+	<div class="container">
 		<div id="flashcards" class="container container-fluid center">
 			<h2>Flashcards</h2>
 			Click on the card to show the reverse side
 			<div class="row center">
-				<div class="previous_card col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 btn btn-info btn-lg btn-block">Previous Card</div>
-				<div class="current_card col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 btn btn-primary btn-lg btn-block">Flip card</div>
-				<div class="next_card col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 btn btn-info btn-lg btn-block">Next Card</div>
+				<div class="previous_card col-xs-2 btn well">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous Card</span>
+				</div>
+
+				<div class="current_card col-xs-8 btn well">Flip card</div>
+				
+				<div class="next_card col-xs-2 btn well">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next Card</span>
+				</div>
 			</div>
 		</div>
 
-		<div class="new_card center">
+		<div class="new_card center well">
+		<h4>Create a new flashcard</h4>
+		Enter the front and back and hit submit
 			<form class="form-inline">
 			    <div class="form-group">
 			        <label class="sr-only" for="inputNewCardFront">New card front</label>
