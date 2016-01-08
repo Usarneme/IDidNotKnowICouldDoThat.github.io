@@ -94,3 +94,25 @@ $(document).ready(function() {
   // Initially hide the flashcard card set
   $("#flashcardCollection").children().hide();
 });
+
+
+// FLashcard key:value array
+var flashcards = [
+  {'ribera' : 'riverbank or shore'},
+  {'posada' : 'inn or lodging'},
+  {'señaladas' : 'appointed or posted or marked'},
+  {'ventura' : 'risky or dangerous undertaking'},
+  {'hallar' : 'find (something lost) or discover or come upon'},
+  {'ahondar' : 'deepen or delve into'},
+  {'deleite' : 'delight or pleasure'},
+  {'alabar' : 'to praise'},
+  {'provecho' : 'benefit or profit or advantage'},
+  {'animas' : 'soul (in purgatory) or bore (as in cannon)'},
+  {'sayete' : 'war tunic'},
+  {'truhan' : 'shameless (adj) or rascal (n)'},
+  {'loar' : 'to praise or to laud'},
+  {'holgar' : 'be idle or be unnecessary'},
+  {'maña' : 'knack/aptitude or swindle/hustle'},
+  {'aldea' : 'small village or small town'},
+  {'molienda' : 'mill'},
+];
