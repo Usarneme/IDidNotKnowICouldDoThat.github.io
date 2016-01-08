@@ -31,7 +31,14 @@ form {
 }
 
 @media (min-width: 320px) and (max-width: 568px) {
+	.previous_card, .next_card {
+		min-height: 40px;
+		white-space: pre-wrap;
+	}
 
+	#current {
+		min-height: 40px;
+	}
 }
 
 @media (min-width: 568px) {
