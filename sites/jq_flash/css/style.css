@@ -13,9 +13,21 @@ ul {
 	list-style: none;
 }
 
-.current_card {
+.previous_card, .next_card {
 	min-height: 100px;
 	white-space: pre-wrap;
+}
+
+#current {
+	min-height: 140px;
+}
+
+.new_card {
+	width: 100%;
+}
+
+form {
+	margin-top: 25px;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {
