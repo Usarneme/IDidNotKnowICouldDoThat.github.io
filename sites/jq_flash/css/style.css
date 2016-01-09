@@ -1,11 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-}
-
 body {
-	background: #fff;
 	text-align: center;
 }
 
@@ -13,14 +6,16 @@ ul {
 	list-style: none;
 }
 
-.previous_card, .next_card {
-	min-height: 100px;
+ul.row {
+	padding-left: 0 !important;
+}
+
+.previous_card, .next_card, .current_card {
+	min-height: 150px;
 	white-space: pre-wrap;
 }
 
-#current {
-	min-height: 140px;
-}
+/*
 
 .new_card {
 	width: 100%;
@@ -44,3 +39,5 @@ form {
 @media (min-width: 568px) {
 
 }
+
+*/
