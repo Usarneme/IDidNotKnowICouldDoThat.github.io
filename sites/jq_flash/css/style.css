@@ -10,11 +10,13 @@ ul.row {
 	padding-left: 0 !important;
 }
 
-.previous_card, .next_card, .current_card {
-	min-height: 150px;
+.previous_card, .next_card, .current_card, .card {
 	white-space: pre-wrap;
 }
 
+.current_card {
+	min-height: 150px;
+}
 /*
 
 .new_card {
