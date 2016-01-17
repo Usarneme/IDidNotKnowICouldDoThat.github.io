@@ -71,6 +71,18 @@ function showPreviousQuestion() {
   showTheQuestion();
 }
 
+function showFlashcardSet() {
+  var theHtml;
+  for ( var i = 0; i < $flashcards.length; i++ ) {
+    theHtml = '<li class="card col-xs-12 col-sm-6 col-md-4 alert"><div class="question">';
+    theHtml += $flashcards[ i ].front;
+    theHtml += '</div><div class="answer">';
+    theHtml += $flashcards[ i ].back;
+    theHtml += '</div></li>';
+  }
+  console.log( theHtml );
+}
+
 function eventBindings() {
   // The next button increments the selectedCardNumber up by one
   $(".next_card").off();  
@@ -92,8 +104,8 @@ function eventBindings() {
   }
 
   // Toggle to show or hide the set of cards
-  $(".btn-link").off();
-  $(".btn-link").on("click", function() {
+  $(".clo").off();
+  $(".clo").on("click", function() {
       $("#flashcardCollection").children().toggle();
   });
 }
@@ -108,6 +120,8 @@ $(document).ready(function() {
 
   // Initially hide the flashcard card set
   $("#flashcardCollection").children().hide();
+
+  showFlashcardSet();
 });
 
 // Work in progress for the submit new card form and buttons
@@ -115,24 +129,94 @@ $(document).ready(function() {
 // e.preventDefault();
 // add the card (key:value) to the array
 // re-load the DOM so all cards in the array are in the list
+// $flashcards.push();
+
 
 // FLashcard key:value array
-var flashcards = [
-  {'ribera' : 'riverbank or shore'},
-  {'posada' : 'inn or lodging'},
-  {'señaladas' : 'appointed or posted or marked'},
-  {'ventura' : 'risky or dangerous undertaking'},
-  {'hallar' : 'find (something lost) or discover or come upon'},
-  {'ahondar' : 'deepen or delve into'},
-  {'deleite' : 'delight or pleasure'},
-  {'alabar' : 'to praise'},
-  {'provecho' : 'benefit or profit or advantage'},
-  {'animas' : 'soul (in purgatory) or bore (as in cannon)'},
-  {'sayete' : 'war tunic'},
-  {'truhan' : 'shameless (adj) or rascal (n)'},
-  {'loar' : 'to praise or to laud'},
-  {'holgar' : 'be idle or be unnecessary'},
-  {'maña' : 'knack/aptitude or swindle/hustle'},
-  {'aldea' : 'small village or small town'},
-  {'molienda' : 'mill'},
+var $flashcards = [
+  { 
+    "front" : "ribera",
+    "back" : "riverbank or shore"
+  },
+  { 
+    "front" : "posada",
+    "back" : "inn or lodging"
+  },
+  { 
+    "front" : "señaladas",
+    "back" : "appointed, posted or marked"
+  },
+  { 
+    "front" : "ventura",
+    "back" : "risky or dangerous undertaking"
+  },
+  { 
+    "front" : "hallar",
+    "back" : "find (something lost), discover, or come upon"
+  },
+  { 
+    "front" : "ahondar",
+    "back" : "deepend, delve into"
+  },
+  { 
+    "front" : "deleite",
+    "back" : "delight, pleasure"
+  },
+  { 
+    "front" : "alabar",
+    "back" : "to praise"
+  },
+  { 
+    "front" : "provecho",
+    "back" : "benefit, profit, advantage"
+  },
+  { 
+    "front" : "animas",
+    "back" : "soul (in purgatory), bore (as in cannon)"
+  },
+  { 
+    "front" : "sayete",
+    "back" : "war tunic"
+  },
+  { 
+    "front" : "truhan",
+    "back" : "shameless (adj), rascal (n)"
+  },
+  { 
+    "front" : "loar",
+    "back" : "to praise, to laud"
+  },
+  { 
+    "front" : "holgar",
+    "back" : "to be idle or unnecessary"
+  },
+  { 
+    "front" : "maña",
+    "back" : "knack/aptitude, swindle/hustle"
+  },
+  { 
+    "front" : "aldea",
+    "back" : "village or small town"
+  },
+
+  { 
+    "front" : "molienda",
+    "back" : "mill"
+  },
+
+  { 
+    "front" : "caldero",
+    "back" : "cauldron"
+  },
+  
+  { 
+    "front" : "mozuelo",
+    "back" : "lad (f. gal)"
+  },
+  
+  { 
+    "front" : "agudeza",
+    "back" : "sharp (both for blade or quick wit)"
+  },
+
 ];
