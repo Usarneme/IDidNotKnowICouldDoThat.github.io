@@ -6,6 +6,8 @@ var $theQuestion, $theAnswer;
 var answerShowing = false;
 // The total number of cards kept in var for code readability
 var totalNumberOfCards = $('.card').length;
+// The built up set of html styled flashcards from the json object
+var theHtml = "";
 
 function showTheQuestion() {
   // Get the question from the array of card objects
@@ -72,15 +74,15 @@ function showPreviousQuestion() {
 }
 
 function showFlashcardSet() {
-  var theHtml;
+  theHtml = "";
   for ( var i = 0; i < $flashcards.length; i++ ) {
-    theHtml = '<li class="card col-xs-12 col-sm-6 col-md-4 alert"><div class="question">';
+    theHtml += '<li class="card col-xs-12 col-sm-6 col-md-4 alert"><div class="question">';
     theHtml += $flashcards[ i ].front;
     theHtml += '</div><div class="answer">';
     theHtml += $flashcards[ i ].back;
     theHtml += '</div></li>';
   }
-  console.log( theHtml );
+  $("#js_ul").html(theHtml);
 }
 
 function eventBindings() {
@@ -106,8 +108,12 @@ function eventBindings() {
   // Toggle to show or hide the set of cards
   $(".clo").off();
   $(".clo").on("click", function() {
-      $("#flashcardCollection").children().toggle();
+    $("#flashcardCollection").children().toggle();
   });
+
+  // Toggle to show or hide the set of cards from the JSON object
+  $(".clo2").off();
+  $(".clo2").on("click", showFlashcardSet() );
 }
 
 $(document).ready(function() {
@@ -120,8 +126,6 @@ $(document).ready(function() {
 
   // Initially hide the flashcard card set
   $("#flashcardCollection").children().hide();
-
-  showFlashcardSet();
 });
 
 // Work in progress for the submit new card form and buttons
