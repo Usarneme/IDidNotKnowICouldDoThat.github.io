@@ -6,7 +6,7 @@ var $theQuestion, $theAnswer;
 var answerShowing = false;
 // The total number of cards kept in var for code readability
 var totalNumberOfCards = $('.card').length;
-// The built up set of html styled flashcards from the json object
+// The built up set of html styled flashcards from the array of javascript objects
 var theHtml = "";
 
 function showTheQuestion() {
@@ -73,15 +73,17 @@ function showPreviousQuestion() {
   showTheQuestion();
 }
 
-function showFlashcardSet() {
-  theHtml = "";
-  for ( var i = 0; i < $flashcards.length; i++ ) {
+function buildFlashcardSet() {
+  theHtml = ""; // reset the variable so cards aren't duplicated over and over
+  $.each($flashcards, function(index, value) { // for each object in the $flashcards array
     theHtml += '<li class="card col-xs-12 col-sm-6 col-md-4 alert"><div class="question">';
-    theHtml += $flashcards[ i ].front;
+    theHtml += $flashcards[index].front;
     theHtml += '</div><div class="answer">';
-    theHtml += $flashcards[ i ].back;
+    theHtml += $flashcards[index].back;
     theHtml += '</div></li>';
-  }
+    // console log test condition
+    console.log($flashcards[index].front, $flashcards[index].back);
+  }); // end of each
   $("#js_ul").html(theHtml);
 }
 
@@ -111,9 +113,15 @@ function eventBindings() {
     $("#flashcardCollection").children().toggle();
   });
 
-  // Toggle to show or hide the set of cards from the JSON object
+  // Toggle to show or hide the set of generated flashcards (generated from e.g.: the object being updated with a new card)
   $(".clo2").off();
-  $(".clo2").on("click", showFlashcardSet() );
+  $(".clo2").on("click", function() {
+    $("#js_ul").children().toggle();
+  });
+
+  // If the addCard submit button is pressed, generate a new flashcard set for the page including the newly added card
+  $("#addCardSubmitButton").off();
+  $("#addCardSubmitButton").on("click", buildFlashcardSet() );
 }
 
 $(document).ready(function() {
