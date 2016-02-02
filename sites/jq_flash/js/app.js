@@ -73,6 +73,17 @@ function showPreviousQuestion() {
   showTheQuestion();
 }
 
+function addNewFlashcard() {
+  $("form").submit(function(evt) {
+    evt.preventDefault();
+    var url = $(this).attr("action"); // There is no action attribute at this time
+    var formData = $(this).serialize(); // JSON data won't work without a webserver
+    $.post(url, formData, function(response) {
+      buildFlashcardSet();
+    }); //end of post 
+  }); //end of submit
+}
+
 function buildFlashcardSet() {
   theHtml = ""; // reset the variable so cards aren't duplicated over and over
   $.each($flashcards, function(index, value) { // for each object in the $flashcards array
@@ -119,9 +130,9 @@ function eventBindings() {
     $("#js_ul").children().toggle();
   });
 
-  // If the addCard submit button is pressed, generate a new flashcard set for the page including the newly added card
+  // If the addCard submit button is pressed, add this new card to the $flashcard set array
   $("#addCardSubmitButton").off();
-  $("#addCardSubmitButton").on("click", buildFlashcardSet() );
+  $("#addCardSubmitButton").on("click", addNewFlashcard() );
 }
 
 $(document).ready(function() {
