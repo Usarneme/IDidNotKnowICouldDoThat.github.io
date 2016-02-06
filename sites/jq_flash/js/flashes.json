@@ -1,0 +1,89 @@
+// This JSON file contains the flashcard key:value array
+
+$flashcards = [
+  { 
+    "front" : "ribera",
+    "back" : "riverbank or shore"
+  },
+  { 
+    "front" : "posada",
+    "back" : "inn or lodging"
+  },
+  { 
+    "front" : "señaladas",
+    "back" : "appointed, posted or marked"
+  },
+  { 
+    "front" : "ventura",
+    "back" : "risky or dangerous undertaking"
+  },
+  { 
+    "front" : "hallar",
+    "back" : "find (something lost), discover, or come upon"
+  },
+  { 
+    "front" : "ahondar",
+    "back" : "deepend, delve into"
+  },
+  { 
+    "front" : "deleite",
+    "back" : "delight, pleasure"
+  },
+  { 
+    "front" : "alabar",
+    "back" : "to praise"
+  },
+  { 
+    "front" : "provecho",
+    "back" : "benefit, profit, advantage"
+  },
+  { 
+    "front" : "animas",
+    "back" : "soul (in purgatory), bore (as in cannon)"
+  },
+  { 
+    "front" : "sayete",
+    "back" : "war tunic"
+  },
+  { 
+    "front" : "truhan",
+    "back" : "shameless (adj), rascal (n)"
+  },
+  { 
+    "front" : "loar",
+    "back" : "to praise, to laud"
+  },
+  { 
+    "front" : "holgar",
+    "back" : "to be idle or unnecessary"
+  },
+  { 
+    "front" : "maña",
+    "back" : "knack/aptitude, swindle/hustle"
+  },
+  { 
+    "front" : "aldea",
+    "back" : "village or small town"
+  },
+
+  { 
+    "front" : "molienda",
+    "back" : "mill"
+  },
+
+  { 
+    "front" : "caldero",
+    "back" : "cauldron"
+  },
+  
+  { 
+    "front" : "mozuelo",
+    "back" : "lad (f. gal)"
+  },
+  
+  { 
+    "front" : "agudeza",
+    "back" : "sharp (both for blade or quick wit)"
+  },
+
+];

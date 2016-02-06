@@ -10,22 +10,15 @@ ul.row {
 	padding-left: 0 !important;
 }
 
-.previous_card, .next_card, .current_card, .card {
+.previous_card, .next_card, #current {
 	white-space: pre-wrap;
 }
 
-.current_card {
+#current {
 	min-height: 150px;
 }
+
 /*
-
-.new_card {
-	width: 100%;
-}
-
-form {
-	margin-top: 25px;
-}
 
 @media (min-width: 320px) and (max-width: 568px) {
 	.previous_card, .next_card {
