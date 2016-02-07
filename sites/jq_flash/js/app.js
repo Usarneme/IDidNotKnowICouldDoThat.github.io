@@ -64,8 +64,11 @@ function showPreviousQuestion() {
 
 function addNewFlashcard() {
   $("form").submit(function(evt) {
-    evt.preventDefault();
-    console.log( $(this) );
+    evt.preventDefault(); // Shh baby is ok
+    $flashcards.push({
+      front:document.getElementById("inputNewCardFront").value, 
+      back:document.getElementById("inputNewCardBack").value
+    }); //end of push
   }); //end of submit
 }
 
@@ -79,12 +82,12 @@ function eventBindings() {
   // If the answer is displayed currently...
   if (answerShowing) {
     // When the button is clicked flip the card and show the question
-    $(".current_card").off(); 
-    $(".current_card").on("click", showTheQuestion);
+    $("#current").off(); 
+    $("#current").on("click", showTheQuestion);
   } else { 
       // Otherwise the question is showing. Click on the card to flip it and show the answer
-      $(".current_card").off(); 
-      $(".current_card").on("click", showTheAnswer);
+      $("#current").off(); 
+      $("#current").on("click", showTheAnswer);
   }
 
   // When the addCard submit button is pressed, run the addNewFlashcard function
