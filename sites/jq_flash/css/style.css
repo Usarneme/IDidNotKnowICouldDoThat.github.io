@@ -18,6 +18,11 @@ ul.row {
 	min-height: 150px;
 }
 
+#inputNewCardFront:after {
+	content:"\a";
+    white-space: pre;
+}
+
 /*
 
 @media (min-width: 320px) and (max-width: 568px) {

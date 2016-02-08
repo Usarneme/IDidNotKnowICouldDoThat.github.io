@@ -19,7 +19,7 @@
 <body>
 
 	<div class="container">
-		<div id="flashcards" class="container container-fluid well">
+		<div id="flashcards" class="container container-fluid">
 			<h2>Flashcards</h2>
 			<p>Click on the card to show the reverse side</p>
 			<div class="row">
@@ -37,23 +37,23 @@
 			</div>
 		</div>
 
-		<div class="new_card container container-fluid well">
+		<div class="new_card container container-fluid">
 		<h3>Create a new flashcard</h3>
 		<p>Enter the front and back and hit submit</p>
 			<form class="form-inline">
 			    <div class="form-group">
-			        <label class="sr-only" for="inputNewCardBack">New card back</label>
-			        <input type="text" class="form-control" id="inputNewCardBack" placeholder="New card front...">
+			        <label class="sr-only" for="inputNewCardFront">New card front</label>
+			        <input type="text" class="form-control" id="inputNewCardFront" placeholder="New card front...">
 			    </div>
 			    <div class="form-group">
-			        <label class="sr-only" for="inputNewCardFront">New card front</label>
-			        <input type="text" class="form-control" id="inputNewCardFront" placeholder="New card back...">
+			        <label class="sr-only" for="inputNewCardBack">New card back</label>
+			        <input type="text" class="form-control" id="inputNewCardBack" placeholder="New card back...">
 			    </div>
 			    <button id="addCardSubmitButton" type="submit" class="btn btn-primary">Add flashcard!</button>
 			</form>
 		</div>
 
-		<div class="container container-fluid well">
+		<div id="cardSet" class="container container-fluid">
 			<h3>Flashcard Set - JS Object</h3>
 			<p><span class="container container-fluid btn btn-lg btn-link btn-block">Push to hide/show card set</span></p>
 			<div class="container container-fluid">

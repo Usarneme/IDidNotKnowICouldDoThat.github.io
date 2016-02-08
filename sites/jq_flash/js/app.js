@@ -64,7 +64,7 @@ function showPreviousQuestion() {
 
 function addNewFlashcard() {
   $("form").submit(function(evt) {
-    evt.preventDefault(); // Shh baby is ok
+    evt.preventDefault(); // Shh bby is ok
     $flashcards.push({
       front:document.getElementById("inputNewCardFront").value, 
       back:document.getElementById("inputNewCardBack").value
@@ -98,6 +98,7 @@ function eventBindings() {
 $(document).ready(function() {
   // Initially show the first question
   showTheQuestion();
+  $('#cardSet').children().hide();
 }); // End of document.ready
 
 $flashcards = [ // Array of flashcard objects each with a front and back
