@@ -1,5 +1,6 @@
 body {
 	text-align: center;
+	background-color: darkcyan;
 }
 
 ul {
@@ -21,6 +22,14 @@ ul.row {
 #inputNewCardFront:after {
 	content:"\a";
     white-space: pre;
+}
+
+#flashcards {
+	max-width: 350px;
+}
+
+.well {
+	font-size: x-large;
 }
 
 /*
