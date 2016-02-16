@@ -93,12 +93,12 @@ function eventBindings() {
   // When the addCard submit button is pressed, run the addNewFlashcard function
   $("#addCardSubmitButton").off();
   $("#addCardSubmitButton").on("click", addNewFlashcard);
-}
+
+} // End of eventBindings
 
 $(document).ready(function() {
   // Initially show the first question
   showTheQuestion();
-  $('#cardSet').children().hide();
 }); // End of document.ready
 
 $flashcards = [ // Array of flashcard objects each with a front and back

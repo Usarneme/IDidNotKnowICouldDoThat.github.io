@@ -1,52 +1,55 @@
 body {
 	text-align: center;
-	background-color: darkcyan;
-}
-
-ul {
-	list-style: none;
-}
-
-ul.row {
-	padding-left: 0 !important;
-}
-
-.previous_card, .next_card, #current {
-	white-space: pre-wrap;
+	border-radius: 0;
+	background-color: #3399FF;
 }
 
 #current {
-	min-height: 150px;
+	white-space: pre-wrap;
 }
 
-#inputNewCardFront:after {
-	content:"\a";
-    white-space: pre;
+#current, .previous_card, .next_card {
+	min-height: 150px;
+	border-radius: 0;
+}
+
+#current {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 #flashcards {
-	max-width: 350px;
+	max-width: 400px;
 }
 
-.well {
+#current {
 	font-size: x-large;
 }
 
-/*
-
-@media (min-width: 320px) and (max-width: 568px) {
-	.previous_card, .next_card {
-		min-height: 40px;
-		white-space: pre-wrap;
-	}
-
-	#current {
-		min-height: 80px;
-	}
+.form-control, .btn {
+	border-radius: 0;
+	border: 1px solid black;
+	color: #000;
 }
 
-@media (min-width: 568px) {
-
+#new_card {
+	margin-top: 100px;
 }
 
-*/
+.previous_card {
+	border-right: 0;	
+}
+
+.next_card {
+	border-left: 0;
+}
+
+@media screen and (min-width: 750px) {
+	.container { /* Reset for bootstrap weirdness */
+		width: initial;
+	}
+
+	.form-control, .btn {
+		margin-bottom: 15px;
+	}
+}
