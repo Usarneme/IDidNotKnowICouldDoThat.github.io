@@ -70,6 +70,17 @@ function addNewFlashcard() {
       back:document.getElementById("inputNewCardBack").value
     }); //end of push
   }); //end of submit
+
+  // TODO show a popup dialog to inform the user their flashcard was added
+
+  // Set the selected card number to the pushed/newly added flashcard's index value
+  //TODO Why does it show the length of the $flashcards set before the newly added card increments it's total???
+  selectedCardNumber = ($flashcards.length - 1);
+  // Show the newly added card's question side
+  showTheQuestion();
+  // Reset the form contents 
+  //TODO Why does it send "" empty strings to the $flashcards set if the reset is after the submit action???
+  // $("form")[0].reset();
 }
 
 function eventBindings() {
