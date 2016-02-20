@@ -1,40 +1,33 @@
 body {
 	text-align: center;
-	border-radius: 0;
-	background-color: #3399FF;
 }
 
 #current_card, #previous_card, #next_card {
 	min-height: 150px;
-	border-radius: 0;
 }
 
 #current_card {
+	background-color: #3399FF;
 	white-space: pre-wrap;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	font-size: x-large;
+	font-size: x-large; 
 }
 
 #previous_card {
-	border-right: 0;	
+	border-right: 0;
 }
 
 #next_card {
 	border-left: 0;
 }
 
-#new_card {
-	margin-top: 100px;
-}
-
 #flashcards, #new_card {
+	background-color: #3399FF;
 	max-width: 400px;
+	margin-top: 50px;
 }
 
 .form-control, .btn {
-	border-radius: 0;
-	border: 1px solid black;
+	border-radius: 0;	
 	color: #000;
 }
 
