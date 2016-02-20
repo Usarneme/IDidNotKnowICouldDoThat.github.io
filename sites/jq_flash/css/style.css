@@ -1,15 +1,18 @@
 body {
 	text-align: center;
+	background-color: #eee;
 }
 
 #current_card, #previous_card, #next_card {
 	min-height: 150px;
+	padding-top: 50px;
 }
 
 #current_card {
 	background-color: #3399FF;
 	white-space: pre-wrap;
 	font-size: x-large; 
+	text-shadow: 1px 1px 1px #fff;
 }
 
 #previous_card {
@@ -23,12 +26,36 @@ body {
 #flashcards, #new_card {
 	background-color: #3399FF;
 	max-width: 400px;
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 .form-control, .btn {
 	border-radius: 0;	
 	color: #000;
+}
+
+.header {
+	background-color: #384047;
+	height: 80px;
+	padding: 5px;
+	text-align: center;
+}
+
+h2 {
+	text-shadow: 1px 1px 1px #000;
+	margin-top: 0;
+	text-align: center;
+	color: #3399FF;
+}
+
+h3 {
+	text-shadow: 1px 1px 1px #fff;	
+}
+
+p {
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+	color: #3399FF;
 }
 
 @media screen and (min-width: 750px) {
