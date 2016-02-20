@@ -1,111 +1,118 @@
 // Which card in the flashcard array we're looking at currently; default setting is the first/zeroeth card
 var selectedCardNumber = 0;
-// Tracker variable for whether the answer or question are showing. If the answer is showing, then it's value is true
-var answerShowing = false;
+// Tracker variable for whether the front (the question side) is showing.
+var frontShowing = true;
 
-function showTheQuestion() {
-  // Display the front/question of the selected card
-  document.getElementById("current").textContent = $flashcards[selectedCardNumber].front;
-  // Since the question is displayed, the answerShowing var is set to false
-  answerShowing = false;
-  // If the card is the first in the set, disable the prev button
+function showASideOfTheCard() {
+  if (frontShowing) { // If the front of the card is showing...
+    // ..then show the front
+    document.getElementById('current_card').innerHTML = $flashcards[selectedCardNumber].front;
+    frontShowing = true;
+  } else { // If the back of the card is showing...
+    // ...then show the back
+    document.getElementById('current_card').innerHTML = $flashcards[selectedCardNumber].back;
+    frontShowing = false;
+  }
+  // Disable the next and previous buttons if there are no more cards before or after the current card
   isFirstQuestion();
-  // If the card is the last in the set, disable the next button
   isLastQuestion();
-  // Method to reset the event bindings since the elements on the page changed
-  eventBindings();
 }
 
-function showTheAnswer() { // Same as showTheQuestion but, you know, for the answer
-  document.getElementById("current").textContent = $flashcards[selectedCardNumber].back;
-  answerShowing = true;
-  isFirstQuestion();
-  isLastQuestion();
-  eventBindings();
+function flipCard() {
+  if (frontShowing) {
+    frontShowing = false;
+  } else {
+    frontShowing = true;
+  }
+  showASideOfTheCard();
 }
 
 function isFirstQuestion() {
-  // Reset condition before checking
-  $(".previous_card").prop('disabled', false);
   // If the current card is the first...
   if (selectedCardNumber <= 0) {
     // Disable the previous card button element
-    $(".previous_card").prop('disabled', true);
+    document.getElementById('previous_card').className = "disabled col-xs-1 col-sm-2 btn";
+  } else {
+    document.getElementById('previous_card').className = "col-xs-1 col-sm-2 btn";
   }
 }
 
 function isLastQuestion() {
-  // Reset condition before checking
-  $(".next_card").prop('disabled', false);
   // If the current card is the last...
   if (selectedCardNumber >= ($flashcards.length - 1)) {
     // Disable the next card button element
-    $(".next_card").prop('disabled', true);
+    document.getElementById('next_card').className = "disabled col-xs-1 col-sm-2 btn";
+  } else {
+    document.getElementById('next_card').className = "col-xs-1 col-sm-2 btn";
   }
 }
 
 function showNextQuestion() {
   // If there are more cards/questions available
-  if (!($(".next_card").prop('disabled'))) {
+  if (!(document.getElementById('next_card').classList[0] == 'disabled')) {
     // Increment the card number up by one
     selectedCardNumber += 1;
   } else {}
-  showTheQuestion();
+  showASideOfTheCard();
 }
 
 function showPreviousQuestion() {
   // If there are previous cards/questions available
-  if (!($(".previous_card").prop('disabled'))) {
+  if (!(document.getElementById('previous_card').classList[0] == 'disabled')) {
     // Decrement the card number down by one
     selectedCardNumber -= 1;
   } else {}
-  showTheQuestion();
+  showASideOfTheCard();
 }
 
 function addNewFlashcard() {
-  $("form").submit(function(evt) {
-    evt.preventDefault(); // Shh bby is ok
-    $flashcards.push({
-      front:document.getElementById("inputNewCardFront").value, 
-      back:document.getElementById("inputNewCardBack").value
+  $flashcards.push({
+    front:document.getElementById('inputNewCardFront').value, 
+    back:document.getElementById('inputNewCardBack').value
     }); //end of push
     // Reset the form contents 
-    $("form")[0].reset();
+    document.getElementById('form').reset();
     // Set the selected card number to the pushed/newly added flashcard's index value
     selectedCardNumber = ($flashcards.length - 1);
     // Show the newly added card's question side
-    showTheQuestion();
-  }); //end of submit
+    frontShowing = true;
+    showASideOfTheCard();
+    //TODO reset the focus to the FrontCard field
+    document.getElementById('inputNewCardFront').focus();
 }
 
-function eventBindings() {
-  $(".next_card").off();  
-  $(".next_card").on("click", showNextQuestion);
+$(document).ready(function() {
 
-  $(".previous_card").off();
-  $(".previous_card").on("click", showPreviousQuestion);
+  // Press the next card button, run the next card function 
+  document.getElementById('next_card').addEventListener('click', function(e) {
+    showNextQuestion();
+  });
 
-  // If the answer is displayed currently...
-  if (answerShowing) {
-    // When the button is clicked flip the card and show the question
-    $("#current").off(); 
-    $("#current").on("click", showTheQuestion);
-  } else { 
-      // Otherwise the question is showing. Click on the card to flip it and show the answer
-      $("#current").off(); 
-      $("#current").on("click", showTheAnswer);
-  }
+  // Press the previous card button, run the previous card function
+  document.getElementById('previous_card').addEventListener('click', function(e) {
+    showPreviousQuestion();
+  });
+
+  // When the current card div is pressed, flip the card
+  document.getElementById('current_card').addEventListener('click', function(e) {
+    flipCard();
+  });
 
   // When the addCard submit button is pressed, run the addNewFlashcard function
-  $("#addCardSubmitButton").off();
-  $("#addCardSubmitButton").on("click", addNewFlashcard);
+  document.getElementById('addCardSubmitButton').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    addNewFlashcard();
+  }); 
 
-} // End of eventBindings
+  // Initially show the front of the first card
+  showASideOfTheCard();
 
-$(document).ready(function() {
-  // Initially show the first question
-  showTheQuestion();
 }); // End of document.ready
+
+
+
+
 
 $flashcards = [ // Array of flashcard objects each with a front and back
   { 

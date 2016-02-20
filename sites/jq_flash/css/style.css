@@ -4,44 +4,38 @@ body {
 	background-color: #3399FF;
 }
 
-#current {
-	white-space: pre-wrap;
-}
-
-#current, .previous_card, .next_card {
+#current_card, #previous_card, #next_card {
 	min-height: 150px;
 	border-radius: 0;
 }
 
-#current {
+#current_card {
+	white-space: pre-wrap;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-}
-
-#flashcards, #new_card {
-	max-width: 400px;
-}
-
-#current {
 	font-size: x-large;
 }
 
-.form-control, .btn {
-	border-radius: 0;
-	border: 1px solid black;
-	color: #000;
+#previous_card {
+	border-right: 0;	
+}
+
+#next_card {
+	border-left: 0;
 }
 
 #new_card {
 	margin-top: 100px;
 }
 
-.previous_card {
-	border-right: 0;	
+#flashcards, #new_card {
+	max-width: 400px;
 }
 
-.next_card {
-	border-left: 0;
+.form-control, .btn {
+	border-radius: 0;
+	border: 1px solid black;
+	color: #000;
 }
 
 @media screen and (min-width: 750px) {
