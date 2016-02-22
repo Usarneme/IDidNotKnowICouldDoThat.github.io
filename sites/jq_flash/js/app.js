@@ -89,16 +89,13 @@ function addNewFlashcards() {
   var newCardsString = document.getElementById('inputManyNewCards').value;
   // Split into an array by newline
   var pairArray = newCardsString.split(',');
-  console.log(pairArray);
-  for (var i=0; 0>=pairArray.length; i += 2) {
-    console.log(i);
+  for (i = 0; i < pairArray.length; i+=2) { 
     $flashcards.push({
       front: pairArray[i],
       back: pairArray[i+1]
     }); // end of push
-    console.log( pairArray[i] );
   } // end of for loop
-  // Reset the form contents 
+  // Reset the field contents 
   document.getElementById('inputManyNewCards').value = '';
   // Set the selected card number to the pushed/newly added flashcard's index value
   selectedCardNumber = ($flashcards.length - 1);
