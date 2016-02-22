@@ -38,30 +38,35 @@
 					<span class="sr-only">Next Card</span>
 				</div>
 			</div>
+			<div id="buckets" class="row hidden">
+				<div id="bucket1" class="col-xs-6 btn">
+					<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Yes</span>
+				</div>
+				<div id="bucket2" class="col-xs-6 btn">
+					<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> No</span>
+				</div>
+				<p>Did you answer the question correctly?</p>
+			</div>
 		</div>
 
 		<div id="new_card" class="container container-fluid">
 		<h3>Add a new flashcard</h3>
-			<form id="form" class="form-inline">
-				<div class="container container-fluid">
-					<div class="row">
-					    <div class="form-group">
-					        <label class="sr-only" for="inputNewCardFront">New card front</label>
-					        <input type="text" class="form-control" id="inputNewCardFront" placeholder="New card front...">
-					    </div>
-					    <div class="form-group">
-					        <label class="sr-only" for="inputNewCardBack">New card back</label>
-					        <input type="text" class="form-control" id="inputNewCardBack" placeholder="New card back...">
-					    </div>
-					    <div class="">
-						    <button id="addCardSubmitButton" class="btn">Add flashcard!</button>
-						</div>
-					</div><!--end of row-->
-				</div><!--end of container-->
-			</form>
+		<span id="singleShowing" class="btn">One at a time</span><span id="multipleShowing" class="btn">A bunch at a time</span>
+			<div id="singleAdd">
+		        <input type="text" class="form-control" id="inputNewCardFront" placeholder="New card front...">
+		        <input type="text" class="form-control" id="inputNewCardBack" placeholder="New card back...">
+			    <button id="addCardSubmitButton" class="btn">Add flashcard!</button>
+			</div><!--end of singleAdd div-->
+
+			<div id="multipleAdd" class="hidden">
+		        <input type="text" class="form-control" id="inputManyNewCards" placeholder="Add multiple cards here...">
+		        Add as many cards as you like separated by a comma such as: question1, answer1, house, casa, question3, answer3.
+			    <button id="addManyCardsSubmitButton" class="btn">Add flashcards!</button>
+			</div><!--end of multipleAdd div-->
+
 		</div><!--end of new_card div-->
 
-	</div>
+	</div><!--end of container_wrapper div-->
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

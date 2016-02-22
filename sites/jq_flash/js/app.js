@@ -21,8 +21,10 @@ function showASideOfTheCard() {
 function flipCard() {
   if (frontShowing) {
     frontShowing = false;
+    document.getElementById('buckets').className = "row";
   } else {
     frontShowing = true;
+    document.getElementById('buckets').className = "row hidden";
   }
   showASideOfTheCard();
 }
@@ -71,14 +73,41 @@ function addNewFlashcard() {
     back:document.getElementById('inputNewCardBack').value
     }); //end of push
     // Reset the form contents 
-    document.getElementById('form').reset();
+    document.getElementById('inputNewCardFront').value = '';
+    document.getElementById('inputNewCardBack').value = '';
     // Set the selected card number to the pushed/newly added flashcard's index value
     selectedCardNumber = ($flashcards.length - 1);
     // Show the newly added card's question side
     frontShowing = true;
     showASideOfTheCard();
-    //TODO reset the focus to the FrontCard field
+    // Reset the focus to the FrontCard field
     document.getElementById('inputNewCardFront').focus();
+}
+
+function addNewFlashcards() {
+  console.log('Beginning of addNewFlashcards method');
+  var newCardsString = document.getElementById('inputManyNewCards').value;
+  // Split into an array by newline
+  var pairArray = newCardsString.split(',');
+  console.log(pairArray);
+  for (var i=0; 0>=pairArray.length; i += 2) {
+    console.log(i);
+    $flashcards.push({
+      front: pairArray[i],
+      back: pairArray[i+1]
+    }); // end of push
+    console.log( pairArray[i] );
+  } // end of for loop
+  // Reset the form contents 
+  document.getElementById('inputManyNewCards').value = '';
+  // Set the selected card number to the pushed/newly added flashcard's index value
+  selectedCardNumber = ($flashcards.length - 1);
+  // Show the newly added card's question side
+  frontShowing = true;
+  showASideOfTheCard();
+  // Reset the focus to the FrontCard field
+  document.getElementById('inputManyNewCards').focus();
+  console.log('End of addNewFlashcards method');
 }
 
 $(document).ready(function() {
@@ -105,6 +134,23 @@ $(document).ready(function() {
     addNewFlashcard();
   }); 
 
+  // When the addManyCards submit button is pressed, run the addNewFlashcards function
+  document.getElementById('addManyCardsSubmitButton').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    addNewFlashcards();
+  }); 
+
+  document.getElementById('singleShowing').addEventListener('click', function(e) {
+    document.getElementById('singleAdd').className = 'visible';
+    document.getElementById('multipleAdd').className = 'hidden';
+  });
+
+  document.getElementById('multipleShowing').addEventListener('click', function(e) {
+    document.getElementById('multipleAdd').className = 'visible';
+    document.getElementById('singleAdd').className = 'hidden';
+  });
+
   // Initially show the front of the first card
   showASideOfTheCard();
 
@@ -112,7 +158,9 @@ $(document).ready(function() {
 
 
 
+$flashcardsRight = [];
 
+$flashcardsWrong = [];
 
 $flashcards = [ // Array of flashcard objects each with a front and back
   { 

@@ -4,7 +4,7 @@ body {
 }
 
 #current_card, #previous_card, #next_card {
-	min-height: 150px;
+	min-height: 175px;
 	padding-top: 50px;
 }
 
@@ -24,9 +24,25 @@ body {
 }
 
 #flashcards, #new_card {
+	min-height: 300px;
+}
+
+#inputManyNewCards {
+	min-height: 100px;
+}
+
+#flashcards, #new_card {
 	background-color: #3399FF;
-	max-width: 400px;
+	max-width: 450px;
 	margin-top: 40px;
+}
+
+#bucket1 {
+	background-color: #00d43e;
+}
+
+#bucket2 {
+	background-color: #d11313;
 }
 
 .form-control, .btn {
