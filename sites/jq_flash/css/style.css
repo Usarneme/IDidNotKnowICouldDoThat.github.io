@@ -37,12 +37,22 @@ body {
 	margin-top: 40px;
 }
 
-#bucket1 {
+#buckets {
+	margin-top: 30px;
+}
+
+#bucketRight {
 	background-color: #00d43e;
 }
 
-#bucket2 {
+#bucketWrong {
 	background-color: #d11313;
+}
+
+#wrongSize, #rightSize {
+	background-color: lightgrey;
+	border-radius: 25px;
+	max-width: 25px;
 }
 
 .form-control, .btn {

@@ -67,8 +67,37 @@ function showPreviousQuestion() {
   showASideOfTheCard();
 }
 
+function addToWrongBucket() {
+  var theCard = {
+    front:$flashcards.splice(selectedCardNumber,0)[0][0],
+    back:$flashcards.splice(selectedCardNumber,1)[0][1]    
+  };
+  // Push the current card to the flashcardsWrong bucket
+  $flashcardsWrong.push( theCard ); // end of push 
+  // Update the count of the cards in the wrong bucket
+  document.getElementById('wrongSize').innerHTML = $flashcardsWrong.length;
+  // Show a different flashcard
+  selectedCardNumber = ($flashcards.length - 1);
+  flipCard();
+  showASideOfTheCard();
+}
+
+function addToRightBucket() {
+  var theCard = {
+    front:$flashcards.splice(selectedCardNumber,0)[0][0],
+    back:$flashcards.splice(selectedCardNumber,1)[0][1]    
+  };
+  // Push the current card to the flashcardsRight bucket
+  $flashcardsRight.push( theCard ); // end of push 
+  // Update the count of the cards in the right bucket
+  document.getElementById('rightSize').innerHTML = $flashcardsRight.length;
+  selectedCardNumber = ($flashcards.length - 1);
+  flipCard();
+  showASideOfTheCard();
+}
+
 function addNewFlashcard() {
-  $flashcards.push({
+  $flashcardsWrong.push({
     front:document.getElementById('inputNewCardFront').value, 
     back:document.getElementById('inputNewCardBack').value
     }); //end of push
@@ -108,7 +137,6 @@ function addNewFlashcards() {
 }
 
 $(document).ready(function() {
-
   // Press the next card button, run the next card function 
   document.getElementById('next_card').addEventListener('click', function(e) {
     showNextQuestion();
@@ -122,6 +150,14 @@ $(document).ready(function() {
   // When the current card div is pressed, flip the card
   document.getElementById('current_card').addEventListener('click', function(e) {
     flipCard();
+  });
+
+  document.getElementById('bucketWrong').addEventListener('click', function(e) {
+    addToWrongBucket();
+  });
+
+  document.getElementById('bucketRight').addEventListener('click', function(e) {
+    addToRightBucket();
   });
 
   // When the addCard submit button is pressed, run the addNewFlashcard function
@@ -138,6 +174,7 @@ $(document).ready(function() {
     addNewFlashcards();
   }); 
 
+  // Toggle between displaying the add multiple and add single flashcard tabs
   document.getElementById('singleShowing').addEventListener('click', function(e) {
     document.getElementById('singleAdd').className = 'visible';
     document.getElementById('multipleAdd').className = 'hidden';
@@ -152,8 +189,6 @@ $(document).ready(function() {
   showASideOfTheCard();
 
 }); // End of document.ready
-
-
 
 $flashcardsRight = [];
 
@@ -243,6 +278,5 @@ $flashcards = [ // Array of flashcard objects each with a front and back
   { 
     "front" : "agudeza",
     "back" : "sharp (both for blade or quick wit)"
-  },
-
+  }
 ];
