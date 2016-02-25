@@ -68,12 +68,8 @@ function showPreviousQuestion() {
 }
 
 function addToWrongBucket() {
-  var theCard = {
-    front:$flashcards.splice(selectedCardNumber,0)[0][0],
-    back:$flashcards.splice(selectedCardNumber,1)[0][1]    
-  };
   // Push the current card to the flashcardsWrong bucket
-  $flashcardsWrong.push( theCard ); // end of push 
+  $flashcardsWrong.push( $flashcards.splice(selectedCardNumber,1) ); // end of push 
   // Update the count of the cards in the wrong bucket
   document.getElementById('wrongSize').innerHTML = $flashcardsWrong.length;
   // Show a different flashcard
@@ -83,12 +79,8 @@ function addToWrongBucket() {
 }
 
 function addToRightBucket() {
-  var theCard = {
-    front:$flashcards.splice(selectedCardNumber,0)[0][0],
-    back:$flashcards.splice(selectedCardNumber,1)[0][1]    
-  };
   // Push the current card to the flashcardsRight bucket
-  $flashcardsRight.push( theCard ); // end of push 
+  $flashcardsRight.push( $flashcards.splice(selectedCardNumber,1) ); // end of push 
   // Update the count of the cards in the right bucket
   document.getElementById('rightSize').innerHTML = $flashcardsRight.length;
   selectedCardNumber = ($flashcards.length - 1);
