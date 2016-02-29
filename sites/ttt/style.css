@@ -9,6 +9,10 @@ body {
 	min-height: 80px;
 }
 
+.selected {
+	background-color: #f0f0f0;
+}
+
 .wrapper {
 	margin-top: 40px;
 	max-width: 600px;

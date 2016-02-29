@@ -21,25 +21,25 @@
 	<div class="header">
 		<h2>Tic Tac Toe Type Game</h2>
 		<div class="container">
-		<p>Who goes first?</p>
-			<div class="row">
-				<div class="btn btn-default col-xs-3 col-xs-offset-3"><p id="x">X</p></div>
-				<div class="btn btn-default col-xs-3"><p id="o">O</p></div>
+			<div id="turn" class="row">
+				<div id="x" class="btn btn-default col-xs-3 col-xs-offset-3 selected"><p>X</p></div>
+				<div id="o" class="btn btn-default col-xs-3"><p>O</p></div>
 			</div>
+			<p>Whose turn is it</p>
 		</div>
 	</div>
 
 	<div class="container wrapper">
-		<div class="row">
-			<div class="btn btn-default col-xs-4"><p id="1"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="2"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="3"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="4"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="5"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="6"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="7"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="8"></p></div>
-			<div class="btn btn-default col-xs-4"><p id="9"></p></div>	
+		<div id="gameBoard" class="row">
+			<div id="1" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="2" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="3" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="4" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="5" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="6" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="7" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="8" class="btn btn-default col-xs-4"><p></p></div>
+			<div id="9" class="btn btn-default col-xs-4"><p></p></div>
 		</div>
 	</div><!--end of container wrapper div-->
 
@@ -49,6 +49,6 @@
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="ttt.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
