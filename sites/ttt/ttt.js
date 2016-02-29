@@ -3,7 +3,7 @@ var currentPlayer = 'x';
 
 function changeTurn() {
 	if (currentPlayer === 'x') { 
-		currentPlayer = 'y';
+		currentPlayer = 'o';
 	} else { 
 		currentPlayer = 'x';
 	}
@@ -25,7 +25,7 @@ function updateSquare(e) {
 			document.getElementById('o').className = "btn btn-default col-xs-3";
 		}
 	}
-	checkForWin();
+	checkForWin(currentPlayer);
 	checkIfBoardIsFull();
 	changeTurn();
 } // end of updateSquare function
@@ -43,69 +43,69 @@ function checkIfBoardIsFull() {
 	}
 } // end of check if board is full function
 
-function checkForWin() { 
+function checkForWin(currPlayer) { 
 	// look for diagonal win
-	if ( (document.getElementById('1').firstChild.innerHTML &&
-	document.getElementById('5').firstChild.innerHTML &&
-	document.getElementById('9').firstChild.innerHTML) == currentPlayer ) 
+	if ( (document.getElementById('1').firstChild.innerHTML &
+	document.getElementById('5').firstChild.innerHTML &
+	document.getElementById('9').firstChild.innerHTML) == currPlayer ) 
 	{ 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('3').firstChild.innerHTML &&
-	document.getElementById('5').firstChild.innerHTML &&
-	document.getElementById('7').firstChild.innerHTML) == currentPlayer ) 
+	if ( (document.getElementById('3').firstChild.innerHTML &
+	document.getElementById('5').firstChild.innerHTML &
+	document.getElementById('7').firstChild.innerHTML) == currPlayer ) 
 	{ 
 		displaySuccess();
 		return;
 	} else {}
 
 	// look for horizontal win
-	if ( (document.getElementById('1').firstChild.innerHTML &&
-	document.getElementById('2').firstChild.innerHTML &&
-	document.getElementById('3').firstChild.innerHTML) == currentPlayer ) 
+	if ( (document.getElementById('1').firstChild.innerHTML &
+	document.getElementById('2').firstChild.innerHTML &
+	document.getElementById('3').firstChild.innerHTML) == currPlayer ) 
 	{ 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('4').firstChild.innerHTML &&
-	document.getElementById('5').firstChild.innerHTML &&
-	document.getElementById('6').firstChild.innerHTML) == currentPlayer )
+	if ( (document.getElementById('4').firstChild.innerHTML &
+	document.getElementById('5').firstChild.innerHTML &
+	document.getElementById('6').firstChild.innerHTML) == currPlayer )
 	{ 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('7').firstChild.innerHTML &&
-	document.getElementById('8').firstChild.innerHTML &&
-	document.getElementById('9').firstChild.innerHTML) == currentPlayer )
+	if ( (document.getElementById('7').firstChild.innerHTML &
+	document.getElementById('8').firstChild.innerHTML &
+	document.getElementById('9').firstChild.innerHTML) == currPlayer )
 	{ 
 		displaySuccess();
 		return;
 	} else {}
 
 	// look for vertical win 
-	if ( (document.getElementById('1').firstChild.innerHTML &&
-	document.getElementById('4').firstChild.innerHTML &&
-	document.getElementById('7').firstChild.innerHTML) == currentPlayer ) 
+	if ( (document.getElementById('1').firstChild.innerHTML &
+	document.getElementById('4').firstChild.innerHTML &
+	document.getElementById('7').firstChild.innerHTML) == currPlayer ) 
 	{ 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('2').firstChild.innerHTML &&
-	document.getElementById('5').firstChild.innerHTML &&
-	document.getElementById('8').firstChild.innerHTML) == currentPlayer ) 
+	if ( (document.getElementById('2').firstChild.innerHTML &
+	document.getElementById('5').firstChild.innerHTML &
+	document.getElementById('8').firstChild.innerHTML) == currPlayer ) 
 	{ 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('3').firstChild.innerHTML &&
-	document.getElementById('6').firstChild.innerHTML &&
-	document.getElementById('9').firstChild.innerHTML) == currentPlayer )
+	if ( (document.getElementById('3').firstChild.innerHTML &
+	document.getElementById('6').firstChild.innerHTML &
+	document.getElementById('9').firstChild.innerHTML) == currPlayer )
  	{ 
 		displaySuccess();
 		return;
