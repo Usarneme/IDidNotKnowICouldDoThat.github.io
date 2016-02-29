@@ -3,6 +3,10 @@ body {
 	background-color: #eee;
 }
 
+div > p {
+	padding-top: 20px;
+}
+
 .btn {
 	border-radius: 0;	
 	color: #000;
