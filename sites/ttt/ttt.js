@@ -45,68 +45,92 @@ function checkIfBoardIsFull() {
 
 function checkForWin(currPlayer) { 
 	// look for diagonal win
-	if ( (document.getElementById('1').firstChild.innerHTML &
-	document.getElementById('5').firstChild.innerHTML &
-	document.getElementById('9').firstChild.innerHTML) == currPlayer ) 
-	{ 
+	if ( 
+	(document.getElementById('1').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('5').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('1-5-9 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('3').firstChild.innerHTML &
-	document.getElementById('5').firstChild.innerHTML &
-	document.getElementById('7').firstChild.innerHTML) == currPlayer ) 
-	{ 
+	if ( 
+	(document.getElementById('3').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('5').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('7').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('3-5-7 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
 
 	// look for horizontal win
-	if ( (document.getElementById('1').firstChild.innerHTML &
-	document.getElementById('2').firstChild.innerHTML &
-	document.getElementById('3').firstChild.innerHTML) == currPlayer ) 
-	{ 
+	if ( 
+	(document.getElementById('1').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('2').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('3').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('1-2-3 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('4').firstChild.innerHTML &
-	document.getElementById('5').firstChild.innerHTML &
-	document.getElementById('6').firstChild.innerHTML) == currPlayer )
-	{ 
+	if ( 
+	(document.getElementById('4').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('5').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('6').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('4-5-6 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('7').firstChild.innerHTML &
-	document.getElementById('8').firstChild.innerHTML &
-	document.getElementById('9').firstChild.innerHTML) == currPlayer )
-	{ 
+	if ( 
+	(document.getElementById('7').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('8').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('7-8-9 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
 
 	// look for vertical win 
-	if ( (document.getElementById('1').firstChild.innerHTML &
-	document.getElementById('4').firstChild.innerHTML &
-	document.getElementById('7').firstChild.innerHTML) == currPlayer ) 
-	{ 
+	if ( 
+	(document.getElementById('1').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('4').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('7').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('1-4-7 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('2').firstChild.innerHTML &
-	document.getElementById('5').firstChild.innerHTML &
-	document.getElementById('8').firstChild.innerHTML) == currPlayer ) 
-	{ 
+	if ( 
+	(document.getElementById('2').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('5').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('8').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('2-5-8 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
 
-	if ( (document.getElementById('3').firstChild.innerHTML &
-	document.getElementById('6').firstChild.innerHTML &
-	document.getElementById('9').firstChild.innerHTML) == currPlayer )
- 	{ 
+	if ( 
+	(document.getElementById('3').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('6').firstChild.innerHTML == currPlayer) &&
+	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
+	) 
+	{
+		console.log('3-6-9 win by: '+ currentPlayer); 
 		displaySuccess();
 		return;
 	} else {}
