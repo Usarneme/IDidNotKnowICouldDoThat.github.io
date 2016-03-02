@@ -13,7 +13,7 @@ function updateSquare(e) {
 	var element = document.getElementById(e.target.id);
 	if (e.target.id == 'gameBoard') { //do nothing 
 	} else {
-		if (currentPlayer === 'x') {
+		if (currentPlayer == 'x') {
 			element.firstChild.innerHTML = 'x';
 			element.className = "btn btn-default col-xs-4 disabled";
 			document.getElementById('x').className = "btn btn-default col-xs-3 col-xs-offset-3";
@@ -51,7 +51,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('1-5-9 win by: '+ currentPlayer); 
+		document.getElementById('1').style.background = '#69d800';
+		document.getElementById('5').style.background = '#69d800';
+		document.getElementById('9').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -62,7 +64,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('7').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('3-5-7 win by: '+ currentPlayer); 
+		document.getElementById('3').style.background = '#69d800';
+		document.getElementById('5').style.background = '#69d800';
+		document.getElementById('7').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -74,7 +78,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('3').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('1-2-3 win by: '+ currentPlayer); 
+		document.getElementById('1').style.background = '#69d800';
+		document.getElementById('2').style.background = '#69d800';
+		document.getElementById('3').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -85,7 +91,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('6').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('4-5-6 win by: '+ currentPlayer); 
+		document.getElementById('4').style.background = '#69d800';
+		document.getElementById('5').style.background = '#69d800';
+		document.getElementById('6').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -96,7 +104,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('7-8-9 win by: '+ currentPlayer); 
+		document.getElementById('7').style.background = '#69d800';
+		document.getElementById('8').style.background = '#69d800';
+		document.getElementById('9').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -108,7 +118,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('7').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('1-4-7 win by: '+ currentPlayer); 
+		document.getElementById('1').style.background = '#69d800';
+		document.getElementById('4').style.background = '#69d800';
+		document.getElementById('7').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -119,7 +131,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('8').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('2-5-8 win by: '+ currentPlayer); 
+		document.getElementById('2').style.background = '#69d800';
+		document.getElementById('5').style.background = '#69d800';
+		document.getElementById('8').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -130,7 +144,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		console.log('3-6-9 win by: '+ currentPlayer); 
+		document.getElementById('9').style.background = '#69d800';
+		document.getElementById('6').style.background = '#69d800';
+		document.getElementById('3').style.background = '#69d800';
 		displaySuccess();
 		return;
 	} else {}
@@ -178,11 +194,7 @@ $(document).ready(function() {
 	}); 
 
 	document.getElementById('gameBoard').addEventListener('click', function(e) { 
-		if (e.target.id == 'gameBoard') { 
-			// do nothing
-		} else { 
 		updateSquare(e);
-		}
 	}); 
 
 }); // end of document.ready

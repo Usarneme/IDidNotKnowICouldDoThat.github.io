@@ -9,12 +9,13 @@ div > p {
 
 .btn {
 	border-radius: 0;	
-	color: #000;
+	color: #fff;
+	background-color: #0069d8;
 	min-height: 80px;
 }
 
 .selected {
-	background-color: #f0f0f0;
+	background-color: #ebeef1;
 }
 
 .wrapper {
@@ -23,7 +24,7 @@ div > p {
 }
 
 .header {
-	background-color: #384047;
+	background-color: #0069d8;
 	padding: 5px;
 	text-align: center;
 }
@@ -34,21 +35,15 @@ div > p {
 	width: 100%;
 }
 
-h2 {
+h2, h3, p, .btn, .btn-disabled {
 	text-shadow: 1px 1px 1px #000;
+	color: #fff;
 	margin-top: 0;
 	text-align: center;
-	color: #3399FF;
-}
-
-h3 {
-	text-shadow: 1px 1px 1px #fff;	
 }
 
 p {
-	text-shadow: 1px 1px 1px #000;
-	text-align: center;
-	color: #3399FF;
+	font-weight: bolder;
 }
 
 @media screen and (min-width: 750px) {
