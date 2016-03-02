@@ -137,15 +137,30 @@ function checkForWin(currPlayer) {
 } // end of checkForWin function
 
 function displaySuccess() { 
-	var theElement = document.getElementById('victory');
-	theElement.innerHTML += "<p>" + currentPlayer.toUpperCase() + " has won! Great job, " + currentPlayer.toUpperCase() + "!</p>";
-	theElement.className = "success";
+	if (document.getElementById('victory').className != "hidden") {
+		// do nothing since victory was previously achieved in this game
+	} else {
+		var theElement = document.getElementById('victory');
+		theElement.innerHTML += "<p>" + currentPlayer.toUpperCase() + " has won! Great job, " + currentPlayer.toUpperCase() + "!</p>";
+		theElement.className = "success";
+
+		document.getElementById('resetWin').addEventListener('click', function(e) { 
+			location.reload(false);
+		}); // end of event listener
+	} // end of else
 } // end of displaySuccess function
 
 function displayLoss() { 
-	var theElement = document.getElementById('loss');
-	theElement.innerHTML += "<p>Nobody has won.</p>";
-	theElement.className = "success";
+	if (document.getElementById('victory').className != "hidden") {
+		// do nothing since victory was achieved with a full game board
+	} else {
+		var theElement = document.getElementById('loss');
+		theElement.innerHTML += "<p>Nobody has won.</p>";
+		theElement.className = "success";
+		document.getElementById('resetLoss').addEventListener('click', function(e) { 
+			location.reload(false);
+		});
+	}
 } // end of displayLoss function
 
 $(document).ready(function() {
@@ -169,13 +184,5 @@ $(document).ready(function() {
 		updateSquare(e);
 		}
 	}); 
-
-	document.getElementById('resetWin').addEventListener('click', function(e) { 
-		location.reload(); 
-	});
-
-	document.getElementById('resetLoss').addEventListener('click', function(e) { 
-		location.reload();
-	});
 
 }); // end of document.ready
