@@ -1,49 +1,48 @@
 body {
 	text-align: center;
-	background-color: #eee;
+	background-color: #d6d6d6;
 }
 
 div > p {
 	padding-top: 20px;
 }
 
-.btn {
+.btn, #x, #o, .success {
 	border-radius: 0;	
-	color: #fff;
-	background-color: #0069d8;
 	min-height: 80px;
+	font-weight: bold;
+	font-size: large;
+}
+
+#x, #o {
+	min-height: 0;
+}
+
+.reset {
+	margin-top: 35px;
+	font-weight: normal;
+	font-size: normal;
 }
 
 .selected {
-	background-color: #ebeef1;
+	background-color: #db9743;
 }
 
-.wrapper {
+.container {
 	margin-top: 40px;
 	max-width: 600px;
 }
 
 .header {
-	background-color: #0069d8;
+	background-color: #d26002;
 	padding: 5px;
 	text-align: center;
 }
 
 .footer {
 	bottom: 0;
-	position: absolute;
 	width: 100%;
-}
-
-h2, h3, p, .btn, .btn-disabled {
-	text-shadow: 1px 1px 1px #000;
-	color: #fff;
-	margin-top: 0;
-	text-align: center;
-}
-
-p {
-	font-weight: bolder;
+	position: absolute;
 }
 
 @media screen and (min-width: 750px) {

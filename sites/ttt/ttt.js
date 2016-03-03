@@ -1,14 +1,6 @@
 // Variable to track whose turn it is
 var currentPlayer = 'x';
 
-function changeTurn() {
-	if (currentPlayer === 'x') { 
-		currentPlayer = 'o';
-	} else { 
-		currentPlayer = 'x';
-	}
-} // end of changeTurn function
-
 function updateSquare(e) { 
 	var element = document.getElementById(e.target.id);
 	if (e.target.id == 'gameBoard') { //do nothing 
@@ -16,19 +8,27 @@ function updateSquare(e) {
 		if (currentPlayer == 'x') {
 			element.firstChild.innerHTML = 'x';
 			element.className = "btn btn-default col-xs-4 disabled";
-			document.getElementById('x').className = "btn btn-default col-xs-3 col-xs-offset-3";
-			document.getElementById('o').className = "btn btn-default col-xs-3 selected";
+			document.getElementById('x').className = "col-xs-3 col-xs-offset-3";
+			document.getElementById('o').className = "col-xs-3 selected";
 		} else {
 			element.firstChild.innerHTML = 'o';
 			element.className = "btn btn-default col-xs-4 disabled";
-			document.getElementById('x').className = "btn btn-default col-xs-3 col-xs-offset-3 selected";
-			document.getElementById('o').className = "btn btn-default col-xs-3";
+			document.getElementById('x').className = "col-xs-3 col-xs-offset-3 selected";
+			document.getElementById('o').className = "col-xs-3";
 		}
 	}
 	checkForWin(currentPlayer);
 	checkIfBoardIsFull();
 	changeTurn();
 } // end of updateSquare function
+
+function changeTurn() {
+	if (currentPlayer === 'x') { 
+		currentPlayer = 'o';
+	} else { 
+		currentPlayer = 'x';
+	}
+} // end of changeTurn function
 
 function checkIfBoardIsFull() { 
 	var counter = 0;
@@ -51,9 +51,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('1').style.background = '#69d800';
-		document.getElementById('5').style.background = '#69d800';
-		document.getElementById('9').style.background = '#69d800';
+		document.getElementById('1').style.background = '#7cff00';
+		document.getElementById('5').style.background = '#7cff00';
+		document.getElementById('9').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -64,9 +64,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('7').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('3').style.background = '#69d800';
-		document.getElementById('5').style.background = '#69d800';
-		document.getElementById('7').style.background = '#69d800';
+		document.getElementById('3').style.background = '#7cff00';
+		document.getElementById('5').style.background = '#7cff00';
+		document.getElementById('7').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -78,9 +78,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('3').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('1').style.background = '#69d800';
-		document.getElementById('2').style.background = '#69d800';
-		document.getElementById('3').style.background = '#69d800';
+		document.getElementById('1').style.background = '#7cff00';
+		document.getElementById('2').style.background = '#7cff00';
+		document.getElementById('3').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -91,9 +91,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('6').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('4').style.background = '#69d800';
-		document.getElementById('5').style.background = '#69d800';
-		document.getElementById('6').style.background = '#69d800';
+		document.getElementById('4').style.background = '#7cff00';
+		document.getElementById('5').style.background = '#7cff00';
+		document.getElementById('6').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -104,9 +104,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('7').style.background = '#69d800';
-		document.getElementById('8').style.background = '#69d800';
-		document.getElementById('9').style.background = '#69d800';
+		document.getElementById('7').style.background = '#7cff00';
+		document.getElementById('8').style.background = '#7cff00';
+		document.getElementById('9').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -118,9 +118,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('7').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('1').style.background = '#69d800';
-		document.getElementById('4').style.background = '#69d800';
-		document.getElementById('7').style.background = '#69d800';
+		document.getElementById('1').style.background = '#7cff00';
+		document.getElementById('4').style.background = '#7cff00';
+		document.getElementById('7').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -131,9 +131,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('8').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('2').style.background = '#69d800';
-		document.getElementById('5').style.background = '#69d800';
-		document.getElementById('8').style.background = '#69d800';
+		document.getElementById('2').style.background = '#7cff00';
+		document.getElementById('5').style.background = '#7cff00';
+		document.getElementById('8').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -144,9 +144,9 @@ function checkForWin(currPlayer) {
 	(document.getElementById('9').firstChild.innerHTML == currPlayer) 
 	) 
 	{
-		document.getElementById('9').style.background = '#69d800';
-		document.getElementById('6').style.background = '#69d800';
-		document.getElementById('3').style.background = '#69d800';
+		document.getElementById('9').style.background = '#7cff00';
+		document.getElementById('6').style.background = '#7cff00';
+		document.getElementById('3').style.background = '#7cff00';
 		displaySuccess();
 		return;
 	} else {}
@@ -157,10 +157,12 @@ function displaySuccess() {
 		// do nothing since victory was previously achieved in this game
 	} else {
 		var theElement = document.getElementById('victory');
-		theElement.innerHTML += "<p>" + currentPlayer.toUpperCase() + " has won! Great job, " + currentPlayer.toUpperCase() + "!</p>";
-		theElement.className = "success";
+		theElement.innerHTML = currentPlayer.toUpperCase() + " has won! Great job, " + currentPlayer.toUpperCase() + "!";
+		theElement.className = "jumbotron success";
 
-		document.getElementById('resetWin').addEventListener('click', function(e) { 
+		var resetWin = document.getElementById('resetWin');
+		resetWin.className = "btn btn-default reset";
+		resetWin.addEventListener('click', function(e) { 
 			location.reload(false);
 		}); // end of event listener
 	} // end of else
@@ -171,28 +173,18 @@ function displayLoss() {
 		// do nothing since victory was achieved with a full game board
 	} else {
 		var theElement = document.getElementById('loss');
-		theElement.innerHTML += "<p>Nobody has won.</p>";
-		theElement.className = "success";
-		document.getElementById('resetLoss').addEventListener('click', function(e) { 
+		theElement.innerHTML = "<p>Nobody has won.</p>";
+		theElement.className = "jumbotron success";
+
+		var resetLoss = document.getElementById('resetLoss');
+		resetLoss.className = "btn btn-default reset";
+		resetLoss.addEventListener('click', function(e) { 
 			location.reload(false);
 		});
 	}
 } // end of displayLoss function
 
 $(document).ready(function() {
-
-	document.getElementById('x').addEventListener('click', function(e) {
-		document.getElementById('o').className = "btn btn-default col-xs-3";
-		document.getElementById('x').className = "btn btn-default col-xs-3 col-xs-offset-3 selected";
-		changeTurn();
-	}); 
-
-	document.getElementById('o').addEventListener('click', function(e) {
-		document.getElementById('x').className = "btn btn-default col-xs-3 col-xs-offset-3";
-		document.getElementById('o').className = "btn btn-default col-xs-3 selected";
-		changeTurn();
-	}); 
-
 	document.getElementById('gameBoard').addEventListener('click', function(e) { 
 		updateSquare(e);
 	}); 

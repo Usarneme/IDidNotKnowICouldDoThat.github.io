@@ -22,12 +22,15 @@
 		<h2>Tic Tac Toe Type Game</h2>
 		<div class="container">
 			<div id="turn" class="row">
-				<div id="x" class="btn btn-default col-xs-3 col-xs-offset-3 selected"><p>X</p></div>
-				<div id="o" class="btn btn-default col-xs-3"><p>O</p></div>
+				<div id="x" class="col-xs-3 col-xs-offset-3 selected">X</div>
+				<div id="o" class="col-xs-3">O</div>
 			</div>
-			<p>Whose turn is it</p>
+			<p>Now playing</p>
 		</div>
 	</div>
+
+	<div id="victory" class="hidden"></div>
+	<div id="loss" class="hidden"></div>
 
 	<div class="container wrapper">
 		<div id="gameBoard" class="row">
@@ -43,24 +46,8 @@
 		</div>
 	</div><!--end of container wrapper div-->
 
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-6 col-xs-offset-3">
-				<div id="victory" class="hidden">
-					<p>Would you like to play again?</p>
-					<div id="resetWin" class="btn btn-default"><p>Click here to reset</p></div>
-				</div>
-				<div id="loss" class="hidden">
-					<p>Would you like to play again?</p>
-					<div id="resetLoss" class="btn btn-default"><p>Click here to reset</p></div>
-				</div>
-			</div>
-		</div><!--end of row-->
-	</div><!--end of container-->
-
-	<div class="footer hidden-xs hidden-sm">
-		<h2>Tic Tac Toe Type Game</h2>
-	</div>
+	<div id="resetWin" class="hidden"><p>Click here to play again</p></div>
+	<div id="resetLoss" class="hidden"><p>Click here to play again</p></div>
 
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
