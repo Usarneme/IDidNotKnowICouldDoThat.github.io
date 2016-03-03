@@ -8,13 +8,13 @@ function updateSquare(e) {
 		if (currentPlayer == 'x') {
 			element.firstChild.innerHTML = 'x';
 			element.className = "btn btn-default col-xs-4 disabled";
-			document.getElementById('x').className = "col-xs-3 col-xs-offset-3";
-			document.getElementById('o').className = "col-xs-3 selected";
+			document.getElementById('x').className = "col-xs-1 col-xs-offset-5";
+			document.getElementById('o').className = "col-xs-1 selected";
 		} else {
 			element.firstChild.innerHTML = 'o';
 			element.className = "btn btn-default col-xs-4 disabled";
-			document.getElementById('x').className = "col-xs-3 col-xs-offset-3 selected";
-			document.getElementById('o').className = "col-xs-3";
+			document.getElementById('x').className = "col-xs-1 col-xs-offset-5 selected";
+			document.getElementById('o').className = "col-xs-1";
 		}
 	}
 	checkForWin(currentPlayer);
@@ -173,7 +173,7 @@ function displayLoss() {
 		// do nothing since victory was achieved with a full game board
 	} else {
 		var theElement = document.getElementById('loss');
-		theElement.innerHTML = "<p>Nobody has won.</p>";
+		theElement.innerHTML = "Nobody has won.";
 		theElement.className = "jumbotron success";
 
 		var resetLoss = document.getElementById('resetLoss');
