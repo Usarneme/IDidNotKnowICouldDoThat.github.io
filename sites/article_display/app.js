@@ -3,7 +3,7 @@ var json = "";
 
 // Parse the file contents so I can work with them
 var client = new XMLHttpRequest();
-client.open('GET', '/book2.json');
+client.open('GET', 'https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/article_display/book2.json');
 client.onreadystatechange = function() {
 	json = $.parseJSON(client.responseText)
 }
