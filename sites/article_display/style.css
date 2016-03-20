@@ -15,9 +15,9 @@ body {
   min-height: 100%;
   min-width: 100%;
   position: relative;
-  background-image: url('https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg');
+  background-image: url('./mountain.jpeg');
   background-size: cover;
-  font-size: large;
+  font-size: x-large;
 }
 
 #header {
