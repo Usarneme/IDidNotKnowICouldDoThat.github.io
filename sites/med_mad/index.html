@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <button id="getNewArticle" class="wrapper">
+  <section class="wrapper">
 
     <div id="header">
       Meditations by Marcus Aurelius
@@ -18,11 +18,17 @@
 
     <div id="madlib_holder" class="hidden"></div>
 
+    <div id="queries">
+      <label>Please enter a </label>
+      <input id="answer" type="text">
+      <button id="toSubmit">Submit</button>
+    </div>
+
     <div id="footer">
       &copy 2016 - Click anywhere to load a new Meditation
     </div>
 
-  </button>
+  </section>
 
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="app.js" type="text/JavaScript"></script>

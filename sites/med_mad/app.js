@@ -1,47 +1,50 @@
-// String holder for json data
-var json2, json3, json4;
-var coin = 0;
+// to hold the before, parts of speech, and after madlibs
+var madlib_raw = [];
+var madlib_pos = [];
+var madlib_complete = [];
 
-// Parse the file contents so I can work with them
-var client2 = new XMLHttpRequest();
-client2.open('GET', 'https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/article_display/book2.json');
-client2.onreadystatechange = function() {
-	json2 = $.parseJSON(client2.responseText)
-}
-client2.send();
+function getPartOfSpeech() {
+	// find the index of the opening {
+	var begin = madlib_pos.indexOf('{');
+	// find the index of the next } +2 to include the ending curly braces
+	var end = (madlib_pos.indexOf('}') + 2);
+	// remove the hidden class to show the part of speech question
+//	document.getElementById('queries').className = "";
+	// return the substring
+	return madlib_pos.substring(begin+2, end-2);
+};
 
-// Parse the file contents so I can work with them
-var client3 = new XMLHttpRequest();
-client3.open('GET', 'https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/article_display/book3.json');
-client3.onreadystatechange = function() {
-	json3 = $.parseJSON(client3.responseText)
-}
-client3.send();
+function updateMadlib(currentQuestion, currentAnswer) {
+	//take the answer submitted by the user and replace the word in the array with it
+	madlib_pos = madlib_pos.replace(currentQuestion, currentAnswer);
+};
 
-// Parse the file contents so I can work with them
-var client4 = new XMLHttpRequest();
-client4.open('GET', 'https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/article_display/book4.json');
-client4.onreadystatechange = function() {
-	json4 = $.parseJSON(client4.responseText)
-}
-client4.send();
+function showResult() {
+	document.getElementById('madlib_holder').textContent = madlib_raw;
+	document.getElementById('madlib_holder').className = "";
+};
 
-// Event listener to request a random article when the button is clicked
-document.getElementById('getNewArticle').addEventListener('click', function(e) {
+// event listener for when a user enters a madlib answer word
+document.getElementById('toSubmit').addEventListener('submit', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
-	if (coin === 0) {
-		coin = 2;
-		var rand = Math.floor((Math.random() * json2.length));
-		document.getElementById('madlib_holder').textContent = json2[rand][(rand+1)];
-	} else if (coin > 1) {
-			coin = 1;
-			var rand = Math.floor((Math.random() * json3.length));
-			document.getElementById('madlib_holder').textContent = json3[rand][(rand+1)];
-			} else {
-					coin = 0;
-					var rand = Math.floor((Math.random() * json4.length));
-					document.getElementById('madlib_holder').textContent = json4[rand][(rand+1)];
-			}
-	document.getElementById('madlib_holder').className = "";
+	console.log(e);
+//	updateMadlib(getPartOfSpeech(), currentAnswer);
 });
+
+$(document).ready(function() {
+	madlib_pos = madlib_raw;
+	// while the parts of speech holding madlib contains {{keys}}...
+//	while (madlib_pos.indexOf('}') != -1) {
+		// query the user for a part of speech word
+		getPartOfSpeech();
+//	}
+});
+
+/**************************
+* The array containing the
+* Mad Libs with their parts
+* of speech words identified.
+***************************/
+
+madlib_raw = "Remember how long thou hast already put off these things, and how often a certain {{noun}} and {{noun}} as it were, having been {{verb}} unto thee by the {{noun}}, thou hast neglected it. It is high time for thee to {{verb}} the true nature both of the {{noun}}, whereof thou art a part; and of that {{noun}} and {{noun}} of the world, from whom, as a channel from the spring, thou thyself didst {{verb}}; and that there is but a certain limit of {{noun}} appointed unto thee, which if thou shalt not make use of to {{verb}} and {{verb}} the many distempers of thy {{noun}}, it will pass away and thou with it, and never after {{verb}}.";
