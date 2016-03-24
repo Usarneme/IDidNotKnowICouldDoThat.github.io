@@ -16,13 +16,20 @@ function getPartOfSpeech() {
 
 function queryUserForWord(pos) {
 	// Ask the user for a word to replace the part of speech provided
-	var userAnswer = "blahblahblah";
-	return userAnswer;
+	var userAnswer = prompt("Please input a " + pos + ": ");
+	if (userAnswer != null) {
+		return userAnswer;
+	} else {
+		alert("Please answer the question, Dave.");
+		queryUserForWord();
+	}
 };
 
 function updateMadlib(pos, currentWord) {
+	var posWithBrackets = "{{" + pos + "}}";
 	//take the answer submitted by the user and replace the word in the array with it
-	madlib_pos = madlib_pos.replace(currentQuestion, currentAnswer);
+	madlib_pos = madlib_pos.replace(posWithBrackets, currentWord);
+	console.log(pos + "replaced with " + currentWord);
 };
 
 function showResult() {
@@ -30,6 +37,7 @@ function showResult() {
 	document.getElementById('madlib_holder').className = "";
 };
 
+/*
 // event listener for when a user enters a madlib answer word
 document.getElementById('toSubmit').addEventListener('submit', function(e) {
 	e.preventDefault();
@@ -39,11 +47,12 @@ document.getElementById('toSubmit').addEventListener('submit', function(e) {
 	//
 //	updateMadlib(getPartOfSpeech(), currentAnswer);
 });
+*/
 
 $(document).ready(function() {
 	madlib_pos = madlib_raw;
 	// while the parts of speech holding madlib contains {{keys}}...
-//	while (madlib_pos.indexOf('}') != -1) {
+	while (madlib_pos.indexOf('}') != -1) {
 		// Pull the next part of speech from the madlib_pos array
 		var pos = getPartOfSpeech();
 		// Query the user for a word to replace the above-gotten part of speech
@@ -52,7 +61,7 @@ $(document).ready(function() {
 		updateMadlib(pos, currentWord);
 		// This repeats until there are no more instances of {{whatever}} in madlib_pos
 		// At which point we escape the loop
-//	}
+	}
 	// Display the resulting madlib_complete
 	showResult();
 });
