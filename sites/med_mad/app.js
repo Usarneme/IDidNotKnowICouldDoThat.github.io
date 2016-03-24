@@ -1,4 +1,4 @@
-// to hold the before, parts of speech, and after madlibs
+// to hold the before (with {}s), the parts of speech (in process), and completed madlib
 var madlib_raw = [];
 var madlib_pos = [];
 var madlib_complete = [];
@@ -14,13 +14,19 @@ function getPartOfSpeech() {
 	return madlib_pos.substring(begin+2, end-2);
 };
 
-function updateMadlib(currentQuestion, currentAnswer) {
+function queryUserForWord(pos) {
+	// Ask the user for a word to replace the part of speech provided
+	var userAnswer = "blahblahblah";
+	return userAnswer;
+};
+
+function updateMadlib(pos, currentWord) {
 	//take the answer submitted by the user and replace the word in the array with it
 	madlib_pos = madlib_pos.replace(currentQuestion, currentAnswer);
 };
 
 function showResult() {
-	document.getElementById('madlib_holder').textContent = madlib_raw;
+	document.getElementById('madlib_holder').textContent = madlib_pos;
 	document.getElementById('madlib_holder').className = "";
 };
 
@@ -29,6 +35,8 @@ document.getElementById('toSubmit').addEventListener('submit', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	console.log(e);
+	// Get the part of speech from the madlib_pos array AND
+	//
 //	updateMadlib(getPartOfSpeech(), currentAnswer);
 });
 
@@ -36,9 +44,17 @@ $(document).ready(function() {
 	madlib_pos = madlib_raw;
 	// while the parts of speech holding madlib contains {{keys}}...
 //	while (madlib_pos.indexOf('}') != -1) {
-		// query the user for a part of speech word
-		getPartOfSpeech();
+		// Pull the next part of speech from the madlib_pos array
+		var pos = getPartOfSpeech();
+		// Query the user for a word to replace the above-gotten part of speech
+		var currentWord = queryUserForWord(pos);
+		// Replace the part of speech in the madlib_pos array with the user's word from above
+		updateMadlib(pos, currentWord);
+		// This repeats until there are no more instances of {{whatever}} in madlib_pos
+		// At which point we escape the loop
 //	}
+	// Display the resulting madlib_complete
+	showResult();
 });
 
 /**************************
