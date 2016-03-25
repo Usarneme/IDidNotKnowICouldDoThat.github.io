@@ -5,19 +5,20 @@ var madlib_complete = [];
 // To hold the json data containing the madlibs
 var json = "";
 
-function selectRandomMadlib() {
+function getRawData(xmlhrAddress) {
 	var client = new XMLHttpRequest();
-	console.log("Response text1: " + client.responseText);
-	client.open('GET', 'https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
-	client.onreadystatechange = function() {
-		json = JSON.parse(client.responseText);
-		console.log("Response text2: " + client.responseText);
-	}
+	client.open('GET', xmlhrAddress, false);
+//	client.onreadystatechange = function() {
+//		json = JSON.parse(client.responseText);
+//	}
 	client.send();
-	console.log("Response text3: " + client.responseText);
+	// Sync code
+	json = JSON.parse(client.responseText);
+}
 
-	var rand = Math.floor((Math.random() * Object.keys(json).length));
-	var theText = json.valueOf(rand);
+function selectRandomMadlib() {
+	var rand = Math.floor((Math.random() * json.passages.length));
+	var theText = json.passages[rand];
 	document.getElementById('madlib_holder').textContent = theText;
 	return theText;
 }
@@ -69,6 +70,9 @@ document.getElementById('toSubmit').addEventListener('submit', function(e) {
 */
 
 $(document).ready(function() {
+	// Get the (originally json) data from its source
+	var rawData = getRawData('https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
+	// Pick a random passage from the raw data
 	madlib_pos = selectRandomMadlib();
 	// while the parts of speech holding madlib contains {{keys}}...
 	while (madlib_pos.indexOf('}') != -1) {
