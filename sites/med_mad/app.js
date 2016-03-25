@@ -2,6 +2,23 @@
 var madlib_raw = [];
 var madlib_pos = [];
 var madlib_complete = [];
+// To hold the json data containing the madlibs
+var json = "";
+
+function selectRandomMadlib() {
+	var client = new XMLHttpRequest();
+	client.open('GET', 'https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
+	client.onreadystatechange = function() {
+		console.log("Response type: " + client.responseType);
+		json = JSON.parse(client.response)
+	}
+	client.send();
+
+	var rand = Math.floor((Math.random() * json.length));
+	var theText = json[rand][(rand+1)];
+	document.getElementById('madlib_holder').textContent = theText;
+	return theText;
+}
 
 function getPartOfSpeech() {
 	// find the index of the opening {
@@ -50,7 +67,7 @@ document.getElementById('toSubmit').addEventListener('submit', function(e) {
 */
 
 $(document).ready(function() {
-	madlib_pos = madlib_raw;
+	madlib_pos = selectRandomMadlib();
 	// while the parts of speech holding madlib contains {{keys}}...
 	while (madlib_pos.indexOf('}') != -1) {
 		// Pull the next part of speech from the madlib_pos array
