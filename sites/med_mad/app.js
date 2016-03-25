@@ -1,28 +1,31 @@
-// to hold the before (with {}s), the parts of speech (in process), and completed madlib
-var madlib_raw = [];
+// The working madlib (with the parts of speech), and completed madlib
 var madlib_pos = [];
-var madlib_complete = [];
 // To hold the json data containing the madlibs
 var json = "";
 
+// @param xmlhrAddress : The url of the requested data file (assumed to be json)
+// returns data as an object
 function getRawData(xmlhrAddress) {
 	var client = new XMLHttpRequest();
 	client.open('GET', xmlhrAddress, false);
+// Async code
 //	client.onreadystatechange = function() {
 //		json = JSON.parse(client.responseText);
 //	}
 	client.send();
 	// Sync code
-	json = JSON.parse(client.responseText);
+	return JSON.parse(client.responseText);
 }
 
-function selectRandomMadlib() {
-	var rand = Math.floor((Math.random() * json.passages.length));
-	var theText = json.passages[rand];
-	document.getElementById('madlib_holder').textContent = theText;
-	return theText;
+// Gets a random passage selected from an array passed as a parameter.
+// Returns the passage as a string.
+function getRandomPassage(inputArray) {
+	var rand = Math.floor((Math.random() * inputArray.passages.length));
+	return inputArray.passages[rand];
 }
 
+// Finds the next instance of a keyword identified by {{}} bracket enclosure
+// Returns the keyword within the {{}} brackets
 function getPartOfSpeech() {
 	// find the index of the opening {
 	var begin = madlib_pos.indexOf('{');
@@ -45,10 +48,14 @@ function queryUserForWord(pos) {
 	}
 };
 
+// This function replaces the part of speech {{key}} with the word supplied by the user
 function updateMadlib(pos, currentWord) {
+	// Build the part of speech up to the key so it matches for replacement
+	// i.e.: pos = noun => {{noun}}
 	var posWithBrackets = "{{" + pos + "}}";
-	//take the answer submitted by the user and replace the word in the array with it
+	// Take the answer submitted by the user and replace the word in the array with it
 	madlib_pos = madlib_pos.replace(posWithBrackets, currentWord);
+	// Testing log
 	console.log(pos + "replaced with " + currentWord);
 };
 
@@ -70,10 +77,10 @@ document.getElementById('toSubmit').addEventListener('submit', function(e) {
 */
 
 $(document).ready(function() {
-	// Get the (originally json) data from its source
-	var rawData = getRawData('https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
-	// Pick a random passage from the raw data
-	madlib_pos = selectRandomMadlib();
+	// Get the data from the url, returned as an Object
+	var rawDataObject = getRawData('https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
+	// Pick a random passage from the raw data, assign it to the working / in-game array
+	madlib_pos = getRandomPassage(rawDataObject);
 	// while the parts of speech holding madlib contains {{keys}}...
 	while (madlib_pos.indexOf('}') != -1) {
 		// Pull the next part of speech from the madlib_pos array
@@ -85,14 +92,6 @@ $(document).ready(function() {
 		// This repeats until there are no more instances of {{whatever}} in madlib_pos
 		// At which point we escape the loop
 	}
-	// Display the resulting madlib_complete
+	// Display the resulting madlib
 	showResult();
 });
-
-/**************************
-* The array containing the
-* Mad Libs with their parts
-* of speech words identified.
-***************************/
-
-madlib_raw = "Remember how long thou hast already put off these things, and how often a certain {{noun}} and {{noun}} as it were, having been {{verb}} unto thee by the {{noun}}, thou hast neglected it. It is high time for thee to {{verb}} the true nature both of the {{noun}}, whereof thou art a part; and of that {{noun}} and {{noun}} of the world, from whom, as a channel from the spring, thou thyself didst {{verb}}; and that there is but a certain limit of {{noun}} appointed unto thee, which if thou shalt not make use of to {{verb}} and {{verb}} the many distempers of thy {{noun}}, it will pass away and thou with it, and never after {{verb}}.";
