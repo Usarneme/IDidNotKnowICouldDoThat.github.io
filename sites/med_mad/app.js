@@ -7,15 +7,17 @@ var json = "";
 
 function selectRandomMadlib() {
 	var client = new XMLHttpRequest();
+	console.log("Response text1: " + client.responseText);
 	client.open('GET', 'https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
 	client.onreadystatechange = function() {
-		console.log("Response type: " + client.responseType);
-		json = JSON.parse(client.response)
+		json = JSON.parse(client.responseText);
+		console.log("Response text2: " + client.responseText);
 	}
 	client.send();
+	console.log("Response text3: " + client.responseText);
 
-	var rand = Math.floor((Math.random() * json.length));
-	var theText = json[rand][(rand+1)];
+	var rand = Math.floor((Math.random() * Object.keys(json).length));
+	var theText = json.valueOf(rand);
 	document.getElementById('madlib_holder').textContent = theText;
 	return theText;
 }
