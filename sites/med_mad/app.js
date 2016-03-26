@@ -68,9 +68,9 @@ function testForKey(value, index, array) {
 			// A noun, an adverb, etc.
 			if (value.substring(2, 3) === 'a') {
 				// Update html with the word without the brackets
-				theHtml += 'Please enter an ' + noBracketValue;
+				theHtml += 'Please enter an ' + noBracketValue + ' ';
 			} else {
-				theHtml += 'Please enter a ' + noBracketValue;
+				theHtml += 'Please enter a ' + noBracketValue + ' ';
 			} //end of else
 			theHtml += '<input type="text" id="' + noBracketValue + '">' + '<br />';
 		} //end of if starts with bracket
@@ -130,15 +130,18 @@ function startNewGame() {
 	madlib_pos = '';
 	document.getElementById('madlib_holder').className = 'hidden';
 	document.getElementById('madlib_holder').innerHTML = '';
+	// Remove all the inputs generated in previous madlib games from the queries div
+	var myNode = document.getElementById("inputForm");
+	while (myNode.firstChild) {
+	    myNode.removeChild(myNode.firstChild);
+	}
+	theHtml = '';
+	// Make the queries div visible on screen
 	document.getElementById('queries').className = 'visible';
 	// Get the data from the url, returned as an Object
 	var rawDataObject = getRawData('https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
-	console.log('getRawData completed.');
-
 	// Pick a random passage from the raw data, assign it to the working / in-game array
 	madlib_pos = getRandomPassage(rawDataObject);
-	console.log('getRandomPassge completed. ');
-
 	// Build up an html form for the user to input the words correlated to the parts of speech needed in the madlib_pos string
 	buildQueryForm(madlib_pos);
 }
