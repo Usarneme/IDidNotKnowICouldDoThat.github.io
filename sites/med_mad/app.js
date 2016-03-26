@@ -4,6 +4,7 @@ var madlib_pos = [];
 var json = "";
 var pos = "";
 var currentWord = "";
+var theHtml = '';
 
 // @param xmlhrAddress : The url of the requested data file (assumed to be json)
 // returns data as an object
@@ -49,44 +50,29 @@ function splitPassageIntoArray(passage) {
 	return wordArray;
 }
 
-function queryUserForWord(pos) {
-	var theForm = document.getElementById('queries');
-	theForm.className = 'visible';
-	// A noun, an adverb, etc.
-	if (pos.substring(0, 1) === 'a') {
-		theForm.innerHTML += 'Please enter an ' + pos;
-
-		console.log('444');
-
-	} else {
-		theForm.innerHTML += 'Please enter a ' + pos;
-
-		console.log('555');
-
-	}
-}
-
 // Pull out all the {{keys}} and build a form with text input for each
 function buildQueryForm(passage) {
-	var theHtml = '';
 	var wordArray = splitPassageIntoArray(passage);
-	wordArray.foreach( testForKey(value, index, array, theHtml) );
+	wordArray.forEach( testForKey );
 	// Write the html to the document
 	document.getElementById('inputForm').innerHTML += theHtml;
+	// Un-hide the submit button
+	document.getElementById('submitButton').className = 'vidible';
 };
 
-function testForKey(value, index, array, theHtml) {
-		// If the first character is a bracker
+function testForKey(value, index, array) {
+		// If the first character is a bracket
 		if (value.substring(0, 1) === '{') {
-			// Then it's a key and should be included in the query form
-			theHtml += '<input type="text" id="' + index + '">';
+			var noBracketValue = value.substring(2, (value.length-2));
+			console.log('The nobracketvalue in testforkey is: ' + noBracketValue);
 			// A noun, an adverb, etc.
 			if (value.substring(2, 3) === 'a') {
 				// Update html with the word without the brackets
-				theHtml += 'Please enter an ' + value.substring(2, value.length-2);
+				theHtml += 'Please enter an ' + noBracketValue;
 			} else {
-				theForm.innerHTML += 'Please enter a ' + value.substring(2, value.length-2);
+				theHtml += 'Please enter a ' + noBracketValue;
 			} //end of else
+			theHtml += '<input type="text" id="' + noBracketValue + '">' + '<br />';
 		} //end of if starts with bracket
 		else {} // do nothing as the selected word is not a key
 }
@@ -114,18 +100,6 @@ function showResult() {
 
 };
 
-/*
-// event listener for when a user enters a madlib answer word
-document.getElementById('toSubmit').addEventListener('submit', function(e) {
-	e.preventDefault();
-	e.stopPropagation();
-	console.log(e);
-	// Get the part of speech from the madlib_pos array AND
-	//
-//	updateMadlib(getPartOfSpeech(), currentAnswer);
-});
-*/
-
 // Event handlers
 document.getElementById('resetButton').addEventListener('click', function(e) {
 		startNewGame();
@@ -134,13 +108,29 @@ document.getElementById('resetButton').addEventListener('click', function(e) {
 document.getElementById('submitButton').addEventListener('click', function(e) {
 //	e.preventDefault();
 //	e.stopPropagation();
-	var userText = document.getElementById('userText').value;
-	console.log('The button was clicked and submitted this word: ' + userText);
-	// Replace the part of speech in the madlib_pos array with the user's word from above
-	updateMadlib(pos, userText);
+console.log('Submit button clicked.');
+	// Get values from all of the items in the form element
+	var formChildren = document.getElementById('inputForm').children;
+	for (i=0; i<formChildren.length; i++) {
+		var userText = formChildren[i].value;
+		pos = formChildren[i].id;
+		console.log(i + ' formChild is: ' + formChildren[i].value + ' with id: ' + formChildren[i].id);
+		// If the input is valid...
+		if (userText != undefined) {
+			// Replace the part of speech in the madlib_pos array with the user's word from above
+			updateMadlib(pos, userText);
+		} else { } //do nothing as the userText is invalid
+	} // end of for loop
+	console.log('End of submit button click actions, now displaying completed madlib');
+	showResult();
 });
 
 function startNewGame() {
+	// Reset game elements to blank
+	madlib_pos = '';
+	document.getElementById('madlib_holder').className = 'hidden';
+	document.getElementById('madlib_holder').innerHTML = '';
+	document.getElementById('queries').className = 'visible';
 	// Get the data from the url, returned as an Object
 	var rawDataObject = getRawData('https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
 	console.log('getRawData completed.');
@@ -148,12 +138,7 @@ function startNewGame() {
 	// Pick a random passage from the raw data, assign it to the working / in-game array
 	madlib_pos = getRandomPassage(rawDataObject);
 	console.log('getRandomPassge completed. ');
-	var i = 0;
-	for (var prop in madlib_pos) {
-		i++;
-	}
-	numberOfKeys = i;
 
-	// Display the resulting madlib
-	showResult();
+	// Build up an html form for the user to input the words correlated to the parts of speech needed in the madlib_pos string
+	buildQueryForm(madlib_pos);
 }
