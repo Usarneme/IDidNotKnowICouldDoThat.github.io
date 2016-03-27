@@ -63,14 +63,19 @@ function buildQueryForm(passage) {
 function testForKey(value, index, array) {
 		// If the first character is a bracket
 		if (value.substring(0, 1) === '{') {
+			var cleanValue = '';
 			var noBracketValue = value.substring(2, (value.length-2));
-			console.log('The nobracketvalue in testforkey is: ' + noBracketValue);
+			if (noBracketValue.indexOf('_') != -1) {
+				cleanValue = noBracketValue.replace('_', ' ');
+			} else {
+				cleanValue = noBracketValue
+				}
 			// A noun, an adverb, etc.
 			if (value.substring(2, 3) === 'a') {
 				// Update html with the word without the brackets
-				theHtml += 'Please enter an ' + noBracketValue + ' ';
+				theHtml += 'Please enter an ' + cleanValue + ' ';
 			} else {
-				theHtml += 'Please enter a ' + noBracketValue + ' ';
+				theHtml += 'Please enter a ' + cleanValue + ' ';
 			} //end of else
 			theHtml += '<input type="text" id="' + noBracketValue + '">' + '<br />';
 		} //end of if starts with bracket

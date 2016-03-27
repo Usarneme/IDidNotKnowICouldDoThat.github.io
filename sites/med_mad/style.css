@@ -1,5 +1,8 @@
 * {
   text-align: center;
+  font-size:1.1em;
+  text-shadow: 1px 1px 1px #000;
+  color: #fff;
 }
 
 html,
@@ -7,8 +10,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  text-shadow: 1px 1px 1px #000;
-  color: #fff;
+  line-height: 150%;
 }
 
 .wrapper {
@@ -17,7 +19,6 @@ body {
   min-width: 100%;
   background-image: url('./mountain.jpeg');
   background-size: cover;
-  font-size: x-large;
 }
 
 #header {
@@ -27,10 +28,27 @@ body {
 #madlib_holder {
   background: rgba(10, 10, 10, 0.5);
 }
+
 #madlib_holder, #queries {
-  padding: 40px;
-  padding-bottom: 60px;   /* Height of the footer */
-  line-height: 150%;
+  padding: 60px;
+}
+
+#submitButton, #resetButton {
+  margin-top: 30px;
+  max-height: 80px;
+  width: 100%;
+  border:2px solid #cfdcec;
+  overflow:hidden;
+  background: rgba(10,10,10,0.2);
+  box-shadow: 0 0 2px gray;
+}
+
+#submitButton:hover, #resetButton:hover {
+  background: rgba(10,10,10,0.6);
+}
+
+input {
+  background: rgba(10,10,10,0.2);
 }
 
 .hidden {
@@ -39,7 +57,7 @@ body {
 
 #answer {
   color: #000;
-  background-color: transparent;
+  background-color: rgba(10,10,10,0.2);
 }
 
 #footer {
@@ -47,4 +65,12 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+    .inner {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
