@@ -1,32 +1,37 @@
 // The working madlib (with the parts of speech)
 var madlib_pos = [];
 // To hold the json data containing the madlibs, the part of speech, and current user input word
-var json = "";
-var pos = "";
-var currentWord = "";
+var pos = '';
+var currentWord = '';
 var theHtml = '';
+var stuff = '';
 
 // @param xmlhrAddress : The url of the requested data file (assumed to be json)
 // returns data as an object
-function getRawData(xmlhrAddress) {
-	var client = new XMLHttpRequest();
-	client.open('GET', xmlhrAddress, false);
-// Async code
-//	client.onreadystatechange = function() {
-//		json = JSON.parse(client.responseText);
-//	}
-	client.send();
-	// Sync code
-	console.log('111');
-	return JSON.parse(client.responseText);
-}
+function getRawData(url) {
+      return new Promise(function(resolve, reject) {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url);
+          xhr.onreadystatechange = handleResponse;
+          xhr.onerror = function(error) { reject(error); };
+          xhr.send();
+
+          function handleResponse() {
+              if(this.readyState === this.DONE)
+                  if(this.status === 200) {
+                      resolve(JSON.parse(this.responseText));
+                  } else {
+                      reject(this.statusText);
+                  }
+          } //end of handleRequest
+      }); //end of return Promise
+} //end of getRawData
 
 // Gets a random passage selected from an array passed as a parameter.
 // Returns the passage as a string.
 function getRandomPassage(inputArray) {
-	var rand = Math.floor((Math.random() * inputArray.passages.length));
-	console.log('222');
-	return inputArray.passages[rand];
+	var rand = Math.floor((Math.random() * inputArray.length));
+	return inputArray[rand];
 }
 
 // Finds the next instance of a keyword identified by {{}} bracket enclosure
@@ -89,8 +94,6 @@ function updateMadlib(pos, currentWord) {
 	var posWithBrackets = "{{" + pos + "}}";
 	// Take the answer submitted by the user and replace the word in the array with it
 	madlib_pos = madlib_pos.replace(posWithBrackets, currentWord);
-	// Testing log
-	console.log(pos + " replaced with " + currentWord);
 };
 
 function showResult() {
@@ -100,9 +103,6 @@ function showResult() {
 	document.getElementById('madlib_holder').textContent = madlib_pos;
 	// Remove the hidden class from the madlib_holder div
 	document.getElementById('madlib_holder').className = 'visible';
-
-	console.log('showResult completed');
-
 };
 
 // Event handlers
@@ -111,22 +111,17 @@ document.getElementById('resetButton').addEventListener('click', function(e) {
 });
 
 document.getElementById('submitButton').addEventListener('click', function(e) {
-//	e.preventDefault();
-//	e.stopPropagation();
-console.log('Submit button clicked.');
 	// Get values from all of the items in the form element
 	var formChildren = document.getElementById('inputForm').children;
 	for (i=0; i<formChildren.length; i++) {
 		var userText = formChildren[i].value;
 		pos = formChildren[i].id;
-		console.log(i + ' formChild is: ' + formChildren[i].value + ' with id: ' + formChildren[i].id);
 		// If the input is valid...
 		if (userText != undefined) {
 			// Replace the part of speech in the madlib_pos array with the user's word from above
 			updateMadlib(pos, userText);
 		} else { } //do nothing as the userText is invalid
 	} // end of for loop
-	console.log('End of submit button click actions, now displaying completed madlib');
 	showResult();
 });
 
@@ -144,9 +139,9 @@ function startNewGame() {
 	// Make the queries div visible on screen
 	document.getElementById('queries').className = 'visible';
 	// Get the data from the url, returned as an Object
-	var rawDataObject = getRawData('https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json');
-	// Pick a random passage from the raw data, assign it to the working / in-game array
-	madlib_pos = getRandomPassage(rawDataObject);
-	// Build up an html form for the user to input the words correlated to the parts of speech needed in the madlib_pos string
-	buildQueryForm(madlib_pos);
+	getRawData('https://raw.githubusercontent.com/IDidNotKnowICouldDoThat/IDidNotKnowICouldDoThat.github.io/master/sites/med_mad/book2.json')
+	.then(function(response) {
+		madlib_pos = getRandomPassage(response.passages);
+		buildQueryForm(madlib_pos);
+	});
 }
