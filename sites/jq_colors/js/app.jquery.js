@@ -1,6 +1,5 @@
 /*
- the JavaScript version
- TODO
+ the jQuery version
 */
 
 function getNumbers() {
@@ -20,7 +19,7 @@ function eventBindings() {
 };
 
 $(document).ready(function() {
-  for(var i=1; i<=1032; i++) {
+  for(var i=1; i<=980; i++) {
     $('div.theWrapper').append('<div id=\"'+i+'\"></div>');
   }
   $('div.theWrapper').children().addClass('color_card');
