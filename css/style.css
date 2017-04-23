@@ -1,7 +1,11 @@
 /* stylesheet */
 
 body {
-	font-size: 1.85em;
+	background-color: gainsboro;
+}
+
+a,p {
+	font-size: 1.2em;
 }
 
 header {
@@ -14,6 +18,10 @@ header {
 
 .jumbotron {
 	padding: 40px;
+}
+
+.social {
+	display: none;
 }
 
 footer {
