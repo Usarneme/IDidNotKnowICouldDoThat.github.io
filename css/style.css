@@ -9,7 +9,8 @@ body {
 }
 
 .jumbotron {
-	padding: 10px 15px;
+	background-color: #F8F8F;
+	padding: 10px 10px;
 	margin: 30px 10px;
 }
 
@@ -23,7 +24,7 @@ h1 {
 }
 
 h2 {
-	text-align: center;	
+	text-align: center;
 }
 
 .nav>li>a {
