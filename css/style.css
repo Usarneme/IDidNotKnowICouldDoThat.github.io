@@ -5,17 +5,14 @@ body {
 }
 
 #splash {
-	margin-top: 105px;
+	margin-top: 115px;
 }
 
-#devicons {
-	font-size: 4em;
-}
-
-.col-sm-2 {
-	padding-left: 0;
-	padding-right: 0;
-	margin: auto;
+.icons {
+	margin: 15px;
+	padding: 15px;
+	font-size: 100%;
+	text-align: center;
 }
 
 .jumbotron {
@@ -37,8 +34,25 @@ h2 {
 	text-align: center;
 }
 
+p {
+	word-wrap: break-word;
+}
+
+#devicons {
+	font-size: 3em;
+}
+
+#more {
+	font-size: initial;
+}
+
 .project {
 	padding: 10px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 footer {
@@ -58,7 +72,7 @@ footer {
 	}
 
 	#devicons {
-		font-size: 10em;
+		font-size: 6em;
 	}
 
 	hr {
