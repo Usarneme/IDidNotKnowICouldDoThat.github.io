@@ -2,6 +2,7 @@
 
 body {
 	background-color: gainsboro;
+	word-wrap: break-word;
 }
 
 #splash {
@@ -85,7 +86,7 @@ footer {
 	}
 
 	.jumbotron {
-		margin: 50px;
+		margin: 50px auto;
 	}
 
 	.jumbotron p {
