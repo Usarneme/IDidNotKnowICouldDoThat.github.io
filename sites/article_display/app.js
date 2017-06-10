@@ -45,4 +45,5 @@ document.getElementById('get_new_article').addEventListener('click', function(e)
 			}
 	console.log('Setting madlib_holder to visible.');
 	document.getElementById('madlib_holder').className = "";
+	document.getElementById('header').className = "after";
 });
