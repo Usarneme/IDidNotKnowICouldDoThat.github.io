@@ -27,7 +27,7 @@ client4.onreadystatechange = function() {
 client4.send();
 
 // Event listener to request a random article when the button is clicked
-document.getElementById('getNewArticle').addEventListener('click', function(e) {
+document.getElementById('get_new_article').addEventListener('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	if (coin === 0) {
@@ -43,5 +43,6 @@ document.getElementById('getNewArticle').addEventListener('click', function(e) {
 					var rand = Math.floor((Math.random() * json4.length));
 					document.getElementById('madlib_holder').textContent = json4[rand][(rand+1)];
 			}
+	console.log('Setting madlib_holder to visible.');
 	document.getElementById('madlib_holder').className = "";
 });
