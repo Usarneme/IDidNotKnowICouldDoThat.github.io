@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="It is amazing what you can do with a little patience and a library card">
     <meta name="author" content="Tom Geraghty">
-    <title>Task List Application</title>
+    <title>Task List</title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Site Wide CSS -->
@@ -32,7 +32,7 @@
       <div id="wrapper">
 
         <div>
-          <h1>Tasks</h1>
+          <h2>Task List</h2>
         </div>
         <p>
           <label for="new-task">Add an Item</label><input id="new-task" type="text"><button>Add</button>
@@ -40,14 +40,22 @@
 
         <h4>Todo</h4>
         <ul id="incomplete-tasks">
-          <li><input type="checkbox"><label>Pay Bills</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
-          <li class="editMode"><input type="checkbox"><label>Go Shopping</label><input type="text" value="Go Shopping"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+          <li>
+            <input type="checkbox"><label>Pay Bills</label>
+            <input type="text"><button class="edit">Edit</button><button class="delete">Delete</button>
+          </li>
+          <li class="editMode">
+            <input type="checkbox"><label>Go Shopping</label>
+            <input type="text" value="Go Shopping"><button class="edit">Edit</button><button class="delete">Delete</button>
+          </li>
 
         </ul>
 
         <h4>Completed</h4>
         <ul id="completed-tasks">
-          <li><input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+          <li>
+            <input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button>
+          </li>
         </ul>
 
       </div>
