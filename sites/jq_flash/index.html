@@ -1,77 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-     <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8">
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="It is amazing what you can do with a little patience and a library card">
+    <meta name="author" content="Tom Geraghty">
+    <title>Flashcards</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Site Wide CSS -->
+    <link href="/IDidNotKnowICouldDoThat.github.io/css/style.css" rel="stylesheet">
+    <!-- Site Specific CSS -->
+		<link href="css/style.css" rel="stylesheet" type="text/css" charset="utf-8">
 </head>
-<body>
 
-	<div class="header">
-		<h2>Flashcards</h2>
-		<p>Click on the card to show the reverse side</p>
-	</div>
+<body id="page-top">
 
-	<div class="container wrapper">
-		<div id="flashcards" class="container container-fluid">
-			<div class="row">
-				<div id="previous_card" class="col-xs-1 col-sm-2 btn">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous Card</span>
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <header>
+              <h1>Projects of Great Interest <small>by me.</small></h1>
+          </header>
+      </div>
+  </nav>
+
+  <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
+    <article>
+      <div id="wrapper">
+
+				<div class="header">
+					<h2>Flashcards</h2>
+					<p>Click on the card to show the reverse side</p>
 				</div>
 
-				<div id="current_card" class="col-xs-10 col-sm-8 btn">Flip card</div>
-				
-				<div id="next_card" class="col-xs-1 col-sm-2 btn">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next Card</span>
-				</div>
-			</div>
-			<div id="buckets" class="row hidden">
-				<div id="bucketWrong" class="col-xs-6 btn">
-					<div id="wrongSize">0</div>
-					<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> No</span>
-				</div>
-				<div id="bucketRight" class="col-xs-6 btn">
-					<div id="rightSize">0</div>
-					<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Yes</span>
-				</div>
-				<p>Did you answer the question correctly?</p>
-			</div>
-		</div>
+				<div class="container wrapper">
+					<div id="flashcards" class="container container-fluid">
+						<div class="row">
+							<div id="previous_card" class="col-xs-1 col-sm-2 btn">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous Card</span>
+							</div>
 
-		<div id="new_card" class="container container-fluid">
-		<h3>Add a new flashcard</h3>
-		<span id="singleShowing" class="btn">One at a time</span><span id="multipleShowing" class="btn">A bunch at a time</span>
-			<div id="singleAdd">
-		        <input type="text" class="form-control" id="inputNewCardFront" placeholder="New card front...">
-		        <input type="text" class="form-control" id="inputNewCardBack" placeholder="New card back...">
-			    <button id="addCardSubmitButton" class="btn">Add flashcard!</button>
-			</div><!--end of singleAdd div-->
+							<div id="current_card" class="col-xs-10 col-sm-8 btn">Flip card</div>
 
-			<div id="multipleAdd" class="hidden">
-		        <input type="text" class="form-control" id="inputManyNewCards" placeholder="Add multiple cards here...">
-		        Add as many cards as you like separated by a comma such as: question1, answer1, house, casa, question3, answer3.
-			    <button id="addManyCardsSubmitButton" class="btn">Add flashcards!</button>
-			</div><!--end of multipleAdd div-->
+							<div id="next_card" class="col-xs-1 col-sm-2 btn">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next Card</span>
+							</div>
+						</div>
+						<div id="buckets" class="row hidden">
+							<div id="bucketWrong" class="col-xs-6 btn">
+								<div id="wrongSize">0</div>
+								<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> No</span>
+							</div>
+							<div id="bucketRight" class="col-xs-6 btn">
+								<div id="rightSize">0</div>
+								<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Yes</span>
+							</div>
+							<p>Did you answer the question correctly?</p>
+						</div>
+					</div>
 
-		</div><!--end of new_card div-->
+					<div id="new_card" class="container container-fluid">
+					<h4>Add a new flashcard</h4>
+					<span id="singleShowing" class="btn">One at a time</span><span id="multipleShowing" class="btn">A bunch at a time</span>
+						<div id="singleAdd">
+					        <input type="text" class="form-control" id="inputNewCardFront" placeholder="New card front...">
+					        <input type="text" class="form-control" id="inputNewCardBack" placeholder="New card back...">
+						    <button id="addCardSubmitButton" class="btn">Add flashcard!</button>
+						</div><!--end of singleAdd div-->
 
-	</div><!--end of container_wrapper div-->
+						<div id="multipleAdd" class="hidden">
+					        <input type="text" class="form-control" id="inputManyNewCards" placeholder="Add multiple cards here...">
+					        Add as many cards as you like separated by a comma such as: question1, answer1, house, casa, question3, answer3.
+						    <button id="addManyCardsSubmitButton" class="btn">Add flashcards!</button>
+						</div><!--end of multipleAdd div-->
 
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+					</div><!--end of new_card div-->
+
+				</div><!--end of container_wrapper div-->
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center">
+      <div class="footer-above">
+          <div class="container">
+              <div class="row">
+
+                  <div class="footer-col col-md-4">
+                      <h3>I HOPE YOU REALLY ENJOYED MY PROJECTS TODAY THANKS!</h3>
+                  </div>
+
+                  <hr>
+
+                  <div class="social footer-col col-md-4">
+                      <h3>Social Media!</h3>
+                      <ul class="list-inline">
+                          <li>
+                              <a href="https://www.linkedin.com/in/tom-geraghty-b3853215" class="btn-social btn-outline">
+                                  <i class="fa fa-fw fa-linkedin">LinkedIn</i>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://github.com/IDidNotKnowICouldDoThat/" class="btn-social btn-outline">
+                                  <i class="fa fa-fw fa-github">GitHub</i>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="mailto:ididnotknowicoulddothat@gmail.com" class="btn-social btn-outline">
+                                  <i class="fa fa-fw fa-linkedin">Email</i>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <hr>
+
+                  <div class="footer-col col-md-4">
+                      <h3>My Other Projects!</h3>
+                      <p>
+                        Solutions to <a href="https://github.com/IDidNotKnowICouldDoThat/JSExercises/tree/master/javascript">JavaScript Coding Challenges.</a>
+                      </p>
+                      <p>
+                        Or view my <a href="http://github.com/IDidNotKnowICouldDoThat/">GitHub repositories.</a>
+                      </p>
+                  </div>
+
+              </div><!--end of row-->
+
+              <!-- Scroll To Top Button -->
+              <div class="pull-right">
+                <a href="#">^</a>
+              </div>
+
+          </div><!--end of container-->
+      </div><!--end of footer-above-->
+
+      <div class="footer-below">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      &copy; 2017
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/IDidNotKnowICouldDoThat.github.io/js/bootstrap.min.js"></script>
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

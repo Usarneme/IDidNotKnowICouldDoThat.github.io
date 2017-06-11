@@ -1,7 +1,13 @@
 p {
 	text-align: center;
-	width: 100%;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+div#wrapper {
+	padding: 140px 0;
+	margin: auto;
+}
+
+.btn {
+	font-size: 1.5em;
+	border-radius: 0;
 }

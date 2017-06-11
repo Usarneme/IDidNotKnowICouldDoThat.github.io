@@ -2,7 +2,7 @@
  the JavaScript version
 */
 
-const boxes = 1032;
+const boxes = 3000;
 
 function getNumbers() {
   return 1 + Math.floor(Math.random() * 255);

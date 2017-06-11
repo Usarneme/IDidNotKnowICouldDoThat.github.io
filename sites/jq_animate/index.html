@@ -1,101 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-     <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="It is amazing what you can do with a little patience and a library card">
+    <meta name="author" content="Tom Geraghty">
+    <title>Animations in jQuery</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Site Wide CSS -->
+    <link href="/IDidNotKnowICouldDoThat.github.io/css/style.css" rel="stylesheet">
+    <!-- Site Specific CSS -->
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" title="no title" charset="utf-8">
 
 </head>
-<body>
 
-<div class="container jumbotron">
-	<span class="horizontal_span btn btn-primary">Fade in/out horizontally</span>
-	<div class="column horizontal_div">
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-	</div>
-</div>
+<body id="page-top">
 
-<div class="container jumbotron">
-	<span class="vertical_span btn btn-primary">Fade in/out vertically</span>
-	<div class="column vertical_div">
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-		<div class="row">
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-			<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
-		</div>
-	</div>
-</div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <header>
+              <h1>Projects of Great Interest <small>by me.</small></h1>
+          </header>
+      </div>
+  </nav>
 
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+  <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
+    <article>
+      <div id="wrapper">
+
+				<div class="container jumbotron">
+					<span class="horizontal_span btn btn-primary">Fade in/out horizontally</span>
+					<div class="column horizontal_div">
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container jumbotron">
+					<span class="vertical_span btn btn-primary">Fade in/out vertically</span>
+					<div class="column vertical_div">
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+						<div class="row">
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+							<div class="color_card col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-1"></div>
+						</div>
+					</div>
+				</div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center">
+      <div class="footer-above">
+          <div class="container">
+              <div class="row">
+
+                  <div class="footer-col col-md-4">
+                      <h3>I HOPE YOU REALLY ENJOYED MY PROJECTS TODAY THANKS!</h3>
+                  </div>
+
+                  <hr>
+
+                  <div class="social footer-col col-md-4">
+                      <h3>Social Media!</h3>
+                      <ul class="list-inline">
+                          <li>
+                              <a href="https://www.linkedin.com/in/tom-geraghty-b3853215" class="btn-social btn-outline">
+                                  <i class="fa fa-fw fa-linkedin">LinkedIn</i>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://github.com/IDidNotKnowICouldDoThat/" class="btn-social btn-outline">
+                                  <i class="fa fa-fw fa-github">GitHub</i>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="mailto:ididnotknowicoulddothat@gmail.com" class="btn-social btn-outline">
+                                  <i class="fa fa-fw fa-linkedin">Email</i>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <hr>
+
+                  <div class="footer-col col-md-4">
+                      <h3>My Other Projects!</h3>
+                      <p>
+                        Solutions to <a href="https://github.com/IDidNotKnowICouldDoThat/JSExercises/tree/master/javascript">JavaScript Coding Challenges.</a>
+                      </p>
+                      <p>
+                        Or view my <a href="http://github.com/IDidNotKnowICouldDoThat/">GitHub repositories.</a>
+                      </p>
+                  </div>
+
+              </div><!--end of row-->
+
+              <!-- Scroll To Top Button -->
+              <div class="pull-right">
+                <a href="#">^</a>
+              </div>
+
+          </div><!--end of container-->
+      </div><!--end of footer-above-->
+
+      <div class="footer-below">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      &copy; 2017
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
