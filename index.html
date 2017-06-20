@@ -22,19 +22,22 @@
 		<h1 class="name"><a href="#">Projects of Great Interest </a></h1>
 	</header>
 
-  <div class="container banner primary">
-    <div class="main-image">
-		    <img class="logo" src="img/me_square.jpg" alt="Tom">
-    </div>
-    <div class="primary-text">
-  		<h2 class="headline">Hi, I'm Tom!</h2>
-      <hr>
-  		<span class="tagline">I've been writing a lot of code! Below are some of the projects I've created with HTML, CSS, and JavaScript (and some libraries) which have a visual element. Just clicking on them will open a new tab so you can check them out. <br /><small>It won't take but a minute.</small></span>
-    </div>
+  <div class="container hero">
+    <img class="logo" src="img/me_square.jpg" alt="Tom">
+		<h2 class="headline">Hi, I'm Tom!</h2>
+    <p class="center">Aspiring Web Designer and Developer</p>
 	</div><!--/.banner-->
 
   <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
     <article>
+      <div class="container banner">
+        <h2>Thanks for looking!</h2>
+        <hr>
+        <p class="tagline">
+          I've been writing a lot of code! Below are some of the projects I've created with HTML, CSS, and JavaScript (and some libraries) which have a visual element. Just clicking on them will open a new tab so you can check them out. <br /><small>It won't take but a minute.</small>
+        </p>
+      </div>
+
       <!-- Projects Section -->
       <section id="projects">
         <div class="projects-container">
@@ -57,7 +60,7 @@
             <p><small>for the maths</small></p>
             <p>
               <div class="notes">
-                  A five function + - * / % calculator built in vanilla JavaScript. Also allows you to set the number of decimal places to show in the result.
+                  A four function + - * / calculator built in vanilla JavaScript.
               </div>
             </p>
           </div>
@@ -112,24 +115,24 @@
 
           <div class="project">
             <header>
-              <h3><a href="sites/med_mad/" target="_blank">Stoic Madlib Game</a></h3>
-            </header>
-            <p><small>for Marcus</small></p>
-            <p>
-              <div class="notes">
-                  A web app version of the purportedly popular madlib game using as a source material Meditations by Marcus Aurelius.
-              </div>
-            </p>
-          </div>
-
-          <div class="project">
-            <header>
               <h3><a href="sites/drawing_app/" target="_blank">Draw and Paint</a></h3>
             </header>
             <p><small>ars gratia artis</small></p>
             <p>
               <div class="notes">
                   A simple web application for painting in the browser. You can create new color palettes and make lines with them!
+              </div>
+            </p>
+          </div>
+
+          <div class="project">
+            <header>
+              <h3><a href="sites/med_mad/" target="_blank">Stoic Madlib Game</a></h3>
+            </header>
+            <p><small>for Marcus</small></p>
+            <p>
+              <div class="notes">
+                  A web app version of the purportedly popular madlib game using as a source material Meditations by Marcus Aurelius.
               </div>
             </p>
           </div>
@@ -160,7 +163,6 @@
           <i class="icons devicon-linux-plain"></i>
           <i class="icons devicon-moodle-plain"></i>
           <i class="icons devicon-mysql-plain"></i>
-          <h4 class="learn">And more everyday</h4>
         </div>
       </div>
 
