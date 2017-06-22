@@ -1,5 +1,4 @@
 /* stylesheet */
-
 body {
 	margin: 0;
 	line-height: 125%;
@@ -23,17 +22,17 @@ body {
 
 h1 {
 	color: #FFF;
-	font-size: 2em;
+	font-size: 2rem;
 }
 
 h2,
 h3 {
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	text-align: center;
 }
 
 small {
-	font-size: 0.75em;
+	font-size: 0.75rem;
 }
 
 a {
@@ -110,7 +109,7 @@ hr {
 	padding: 10px;
 	max-width: 100%;
 	flex-wrap: wrap;
-	min-width: 380px;
+	min-width: 23.750rem;
 	margin-top: 30px;
 }
 
@@ -165,9 +164,9 @@ hr {
 	color: #FFF;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 47.94rem) {
 	body {
-		font-size: 1.25em;
+		font-size: 1.25rem;
 	}
 
 	.banner {
@@ -191,7 +190,7 @@ hr {
 	}
 
 	.icons {
-		font-size: 3em;
+		font-size: 3rem;
 	}
 
 	.thanks {
@@ -204,9 +203,9 @@ hr {
 
 }
 
-@media (min-width: 1979px) {
+@media (min-width: 67.438rem) {
 	body {
-		font-size: 1.5em;
+		font-size: 1.5rem;
 	}
 
 	.projects-container,
