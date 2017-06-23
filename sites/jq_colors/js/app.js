@@ -2,10 +2,12 @@
  the JavaScript version
 */
 
-const boxes = 3000;
+const boxes = 1000;
+var min = 0,
+    max = 255;
 
 function getNumbers() {
-  return 1 + Math.floor(Math.random() * 255);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function changeColor() {
@@ -28,6 +30,16 @@ function makeBoxes() {
     current.className = 'color_card';
     wrap.appendChild(current);
   }
+}
+
+function setMin(newValue) {
+  min = newValue;
+	document.getElementById("rangeMin").innerHTML=newValue;
+}
+
+function setMax(newValue) {
+  max = newValue;
+	document.getElementById("rangeMax").innerHTML=newValue;
 }
 
 function eventBindings() {

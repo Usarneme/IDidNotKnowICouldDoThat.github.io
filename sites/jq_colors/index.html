@@ -29,6 +29,19 @@
   <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
     <article>
 			<div id="wrapper" class="theWrapper"></div>
+      <div class="clearfix"></div>
+      <div class="sliders">
+        <h3>Set the min and max color values 0-255</h3>
+        <input type="range" min="0" max="255" step="1" onchange="setMin(this.value)" />
+        Min: <span id="rangeMin">0</span>
+        <input type="range" min="0" max="255" step="1" onchange="setMax(this.value)" />
+        Max: <span id="rangeMax">255</span>
+      </div>
+    </article>
+    <article>
+			<div id="wrapper2" class="theWrapper2">
+
+      </div>
     </article>
   </main>
 
