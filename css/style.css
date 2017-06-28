@@ -8,7 +8,8 @@ body {
 
 .sitename {
 	max-width: 90%;
-	padding: 5px;
+	line-height: 105%;
+	text-align: center;
 }
 
 .main-header,
@@ -36,7 +37,7 @@ h3 {
 }
 
 small {
-	font-size: 0.75rem;
+	font-size: 0.8rem;
 }
 
 a {
@@ -141,8 +142,8 @@ hr {
 .icons {
 	flex-grow: 1;
 	padding: 10px;
-	font-size: 2.5em;
 	flex-wrap: wrap;
+	font-size: 2.5em;
 	justify-content: space-around;
 }
 
@@ -150,12 +151,15 @@ hr {
 	order: -1;
 }
 
-.main-footer > hr {
-	display: none;
+.thanks > h3 {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
 }
 
-.main-footer > div > h3 {
-	padding-bottom: 20px;
+.main-footer > hr {
+	display: none;
 }
 
 .footer-col {
@@ -172,6 +176,10 @@ hr {
 @media (min-width: 47.94rem) {
 	body {
 		font-size: 1.15em;
+	}
+
+	small {
+		font-size: 0.85rem;
 	}
 
 	.banner {
