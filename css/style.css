@@ -19,15 +19,16 @@ body {
 	justify-content: center;
 }
 
-.exercism,
 .main-footer {
 	display:flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
-.exercism {
-	display: none;
+.main-footer > a,
+.footer-col > a,
+.footer-col > ul > li > a {
+	color: #fff;
 }
 
 .main-header {
@@ -56,12 +57,15 @@ small {
 
 a {
 	color: #000;
-	line-height: 175%;
 	text-decoration: none;
 }
 
 hr {
 	margin-bottom: 20px;
+}
+
+li {
+	margin-top: 1rem;
 }
 
 .main-header,
@@ -71,8 +75,8 @@ hr {
 }
 
 .banner {
-	padding: 40px;
-	margin: 40px auto;
+	padding: 1rem;
+	margin: 2rem auto;
 	background: #F8F8F8;
 }
 
@@ -99,7 +103,17 @@ hr {
 	max-width: 55vw;
 	max-height: 55vw;
 	border-radius: 50%;
-	border: 2px slategrey dotted;
+	border: 2px slategrey solid;
+}
+
+.btn {
+	margin: .5rem;
+	padding: .5rem;
+	max-width: 40rem;
+	line-height: 125%;
+	text-align: center;
+	border-radius: 1em;
+	border: 1px slategrey solid;
 }
 
 .headline {
@@ -120,18 +134,26 @@ hr {
 }
 
 #projects,
-.exercism-links {
+.exercism,
+.exercism-links,
+.links {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
 }
 
+.treehouse-link {
+	flex-grow: 1;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+	justify-content: space-around;
+}
+
 .exercise,
-.project,
-.exercism-links > a {
+.project {
 	flex: 1;
-	padding: .5rem;
+	padding: .65rem;
 	flex-wrap: wrap;
 	max-width: 100%;
 	margin-top: 30px;
@@ -141,6 +163,7 @@ hr {
 .project:hover,
 .project:active {
 	background: #bbbccc;
+	border-radius: 1rem;
 	transition-duration: .35s;
 }
 
@@ -159,23 +182,20 @@ hr {
 	text-align: center;
 }
 
-.other > ul > li,
 .exercism-links {
 	padding: .5rem;
 }
 
-.other > ul > li > a,
-.exercism-links > a {
-	padding: .5rem;
-	text-align: center;
-}
-
-.other > ul > li > a:hover,
-.other > ul > li > a:active,
+.btn:hover,
+.btn:active,
 .exercism-links > a:hover,
 .exercism-links > a:active {
 	background: #bbbccc;
 	transition-duration: .35s;
+}
+
+.exercism-hidden {
+	display: none;
 }
 
 #devicons {
@@ -209,10 +229,10 @@ hr {
 
 .footer-col {
 	flex: 1;
-	margin-bottom: 1px;
-	padding: 1.4rem;
+	padding: 2rem 0;
 	min-width: 15rem;
 	line-height: 125%;
+	margin-bottom: 1px;
 }
 
 .footer-bottom {
@@ -233,8 +253,8 @@ hr {
 	}
 
 	.banner {
-		padding: 40px;
-		margin: 40px 5%;
+		padding: 2rem;
+		margin: 2rem 5%;
 	}
 
 	.logo {
