@@ -8,7 +8,7 @@ body {
 
 .sitename {
 	max-width: 90%;
-	line-height: 105%;
+	line-height: 125%;
 	text-align: center;
 }
 
@@ -19,12 +19,16 @@ body {
 	justify-content: center;
 }
 
+.exercism,
 .main-footer {
 	display:flex;
-	justify-content: space-between;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
+.exercism {
+	display: none;
+}
 
 .main-header {
 	padding: 30px 0;
@@ -52,6 +56,7 @@ small {
 
 a {
 	color: #000;
+	line-height: 175%;
 	text-decoration: none;
 }
 
@@ -114,25 +119,29 @@ hr {
 	max-width: 100%;
 }
 
-#projects {
+#projects,
+.exercism-links {
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
 }
 
-.project {
+.exercise,
+.project,
+.exercism-links > a {
 	flex: 1;
-	padding: .7rem;
+	padding: .5rem;
 	flex-wrap: wrap;
 	max-width: 100%;
 	margin-top: 30px;
 	min-width: 15rem;
 }
 
-.project:hover {
-	background: #d3d3d3;
-	border-radius: 1rem;
-	transition-duration: .7s;
+.project:hover,
+.project:active {
+	background: #bbbccc;
+	transition-duration: .35s;
 }
 
 .project:first-child {
@@ -150,17 +159,33 @@ hr {
 	text-align: center;
 }
 
-.other > ul > li {
+.other > ul > li,
+.exercism-links {
 	padding: .5rem;
 }
 
-.other > ul > li > a:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.other > ul > li > a,
+.exercism-links > a {
+	padding: .5rem;
+	text-align: center;
+}
+
+.other > ul > li > a:hover,
+.other > ul > li > a:active,
+.exercism-links > a:hover,
+.exercism-links > a:active {
+	background: #bbbccc;
+	transition-duration: .35s;
 }
 
 #devicons {
 	display: flex;
   flex-wrap: wrap;
+}
+
+.fa {
+	font-size: 1.75rem !important;
+	display: inline-flex !important;
 }
 
 .icons {
