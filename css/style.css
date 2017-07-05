@@ -25,12 +25,6 @@ body {
 	justify-content: space-between;
 }
 
-.main-footer > a,
-.footer-col > a,
-.footer-col > ul > li > a {
-	color: #fff;
-}
-
 .main-header {
 	padding: 30px 0;
 }
@@ -65,7 +59,7 @@ hr {
 }
 
 li {
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
 
 .main-header,
@@ -107,12 +101,14 @@ li {
 }
 
 .btn {
-	margin: .5rem;
 	padding: .5rem;
-	max-width: 40rem;
+	max-width: 25rem;
+	font-size: .85rem;
 	line-height: 125%;
 	text-align: center;
-	border-radius: 1em;
+	border-radius: 1rem;
+	background: #bbbccc;
+	margin: 3rem .5rem .5rem;
 	border: 1px slategrey solid;
 }
 
@@ -146,7 +142,6 @@ li {
 .treehouse-link {
 	flex-grow: 1;
 	flex-wrap: wrap;
-	margin-top: 1rem;
 	justify-content: space-around;
 }
 
@@ -162,7 +157,7 @@ li {
 
 .project:hover,
 .project:active {
-	background: #bbbccc;
+	background: #ccc;
 	border-radius: 1rem;
 	transition-duration: .35s;
 }
@@ -182,6 +177,10 @@ li {
 	text-align: center;
 }
 
+.social > a > i {
+	color: #fff;
+}
+
 .exercism-links {
 	padding: .5rem;
 }
@@ -190,7 +189,7 @@ li {
 .btn:active,
 .exercism-links > a:hover,
 .exercism-links > a:active {
-	background: #bbbccc;
+	background: #ccc;
 	transition-duration: .35s;
 }
 
@@ -280,6 +279,10 @@ li {
 		order: 0;
 	}
 
+	.footer-col {
+		margin: 1px 1px 1px 0;
+	}
+
 }
 
 @media (min-width: 67.438rem) {
@@ -296,6 +299,10 @@ li {
 	.logo {
 		max-width: 20vw;
 		max-height: 20vw;
+	}
+
+	.btn {
+		font-size: 1.15rem;
 	}
 
 }
