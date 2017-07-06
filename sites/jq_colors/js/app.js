@@ -2,7 +2,7 @@
  the JavaScript version
 */
 
-const boxes = 1000;
+const boxes = 400;
 var min = 0,
     max = 255;
 

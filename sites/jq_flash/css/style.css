@@ -15,6 +15,12 @@ body {
 	text-shadow: 1px 1px 1px #fff;
 }
 
+/*
+#current_card:hover {
+	transform: translateX(100%);
+}
+*/
+
 #previous_card {
 	border-right: 0;
 }
