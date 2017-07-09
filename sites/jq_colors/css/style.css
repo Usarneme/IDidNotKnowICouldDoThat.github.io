@@ -9,10 +9,10 @@
 		transform: scale(0);
 	}
 	30% {
-		transform: scale(1.1);
+		transform: scale(1.25);
 	}
 	60% {
-		transform: scale(0.9);
+		transform: scale(0.85);
 	}
 }
 
@@ -23,6 +23,7 @@
 }
 
 #page-top {
+	background-color: #f3f3f3;
 	max-width: 100vw;
 }
 
@@ -115,16 +116,31 @@ svg * {
 #svg_2 {
 	fill: #fff;
 	stroke: #5fdbce;
-	stroke-width: 2;
+	stroke-width: 12;
 	stroke-dasharray: 400;
-	stroke-dashoffset: 1600;
-	animation: offset 4s linear forwards;
+	stroke-dashoffset: 600;
+	animation: offset 8s linear forwards;
 }
 
 .photo-cube,
 .color_card {
 	animation: grow 1s ease-out backwards;
 }
+
+.face-div {
+	margin: 6rem 10%;
+	animation: grow 1s ease-out backwards;
+	transition: transform .5s cubic-bezier(.55,-.62,.27,1.2);
+}
+
+.teeth-div {
+	margin-top: -60px;
+}
+
+.face-div:hover {
+	transform: translateY(50px) scale(1.4) translateX(100px);
+}
+
 
 @media all and (min-width: 50rem) {
 	#wrapper {
