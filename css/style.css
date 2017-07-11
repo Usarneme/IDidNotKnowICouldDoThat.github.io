@@ -469,7 +469,7 @@ a {
       margin-right: auto; } }
 
 main {
-  background-color: #1f648f; }
+  background-color: #95989e; }
 
 .hero {
   margin: -90px auto;
@@ -482,7 +482,7 @@ main {
   padding: 20px;
   margin: 70px 0;
   padding: 50px;
-  background-color: #1677b8; }
+  background-color: white; }
 
 .exercism {
   display: flex;
@@ -496,8 +496,8 @@ main {
   margin: 10px;
   padding: 1.5em 1em;
   border-radius: 0.25em;
-  background-color: #d9b310;
-  border: 1px solid #0d293b; }
+  background-color: #52658f;
+  border: 1px solid #62656b; }
   .card h1,
   .exercise h1 {
     line-height: 1.25;
@@ -521,7 +521,7 @@ main {
 .main-header {
   position: relative;
   height: 260px;
-  background: linear-gradient(#009fe1, #3cc47c), url("../img/pdx.jpg") no-repeat;
+  background: linear-gradient(#e8e8e8, #52658f), url("../img/pdx.jpg") no-repeat;
   background-blend-mode: multiply;
   background-size: cover; }
   .main-header::after {
@@ -547,7 +547,7 @@ main {
   .main-header p {
     margin: 0;
     font-size: 1.25em;
-    color: #d9b310; }
+    color: #52658f; }
   @media (max-width: 575px) {
     .main-header {
       height: 340px; } }
@@ -559,7 +559,7 @@ footer {
   height: 100px;
   padding: 2em 0 0;
   margin-top: 3.5em;
-  background-color: #1f648f;
+  background-color: #95989e;
   position: relative; }
   footer::after {
     content: '';
@@ -568,7 +568,7 @@ footer {
     height: 50px;
     position: absolute;
     transform: skewY(-2deg);
-    background-color: #1f648f;
+    background-color: #95989e;
     top: -25px; }
     @media (min-width: 1079px) {
       footer::after {
@@ -584,7 +584,7 @@ footer {
   margin-top: 1em;
   min-width: 250px;
   min-height: 250px;
-  background-color: #1f648f; }
+  background-color: #95989e; }
   @media (min-width: 575px) {
     .footer-col {
       flex: 1 46%;
@@ -602,7 +602,7 @@ footer {
   max-width: 100vw;
   padding-top: 2rem; }
   .footer-bottom a:hover {
-    color: #1f648f; }
+    color: #95989e; }
   @media (min-width: 765px) {
     .footer-bottom {
       padding-top: 1.5rem; } }
@@ -617,7 +617,7 @@ footer {
   border-radius: 0.35em;
   transition: opacity 0.3s;
   text-transform: uppercase;
-  background-color: #d9b310; }
+  background-color: #52658f; }
   .btn-callout:hover, .btn-info:hover {
     opacity: 0.8; }
   .btn-callout:active, .btn-info:active {
@@ -632,6 +632,8 @@ footer {
 
 .icons {
   font-size: 2.35em; }
+  .icons:hover {
+    color: #52658f; }
 
 #devicons {
   display: flex;

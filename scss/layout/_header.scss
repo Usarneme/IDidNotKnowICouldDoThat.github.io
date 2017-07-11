@@ -8,7 +8,7 @@
     background-color: $color-text-secondary;
   }
   height: 260px;
-  background: linear-gradient($color-bg-light, $color-bg),
+  background: linear-gradient($color-bg, $color-accent),
               url('../img/pdx.jpg') no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
