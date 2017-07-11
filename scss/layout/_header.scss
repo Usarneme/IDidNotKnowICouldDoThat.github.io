@@ -5,7 +5,7 @@
 .main-header {
   @include skewed {
     bottom: -25px;
-    background-color: $white;
+    background-color: $color-text-secondary;
   }
   height: 260px;
   background: linear-gradient($color-bg-light, $color-bg),
@@ -13,11 +13,11 @@
   background-blend-mode: multiply;
   background-size: cover;
   h1 {
-    color: $white;
+    color: $color-text-secondary;
     margin-bottom: 0;
     font-size: 4.8em;
     letter-spacing: 1px;
-    @media (max-width: $break-xs) {
+    @media (max-width: $break-s) {
       font-size: 3.4em;
     }
   }
@@ -26,7 +26,7 @@
     font-size: 1.25em;
     color: $color-accent;
   }
-  @media (max-width: $break-xs) {
+  @media (max-width: $break-s) {
     height: 340px;
   }
   @media (min-width: $break-l) {

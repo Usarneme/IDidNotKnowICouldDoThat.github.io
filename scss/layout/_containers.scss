@@ -12,11 +12,11 @@
 }
 
 main {
-  background-color: $color-accent;
+  background-color: $color-shade;
 }
 
 .hero {
-  margin: -80px auto;
+  margin: -90px auto;
   padding: 1em 1em 3em;
   p {
     font-size: 1.2em;
@@ -24,50 +24,43 @@ main {
 }
 
 .banner {
-  color: $black;
+  color: $color-text;
   padding: 20px;
   margin: 70px 0;
   padding: 50px;
-  background-color: $color-primary;
+  background-color: $color-primary-light;
 }
 
-.exercism-links {
+.exercism {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  &-hidden {
+    display: none;
+  }
 }
-
-.exercism-hidden {
-  display: none;
-}
-
 
 .card,
 .exercise {
-  display: flex;
+  width: 100%;
+  margin: $gutter;
   padding: 1.5em 1em;
   border-radius: 0.25em;
-  flex-direction: column;
-  border: 1px solid $color-shade;
-  margin: $gutter;
+  background-color: $color-accent;
+  border: 1px solid darken($color-shade, 20%);
   h1 {
     line-height: 1.25;
     margin: 0.35em 0 0;
-    color: $color-primary;
+    color: $color-text;
   }
   @media (min-width: $break-s) {
     flex: 1 per-line(2);
+    justify-content: space-around;
+  }
+  @media (min-width: $break-m) {
+    flex-basis: per-line(3);
+    justify-content: space-around;
   }
   @media (min-width: $break-l) {
-    flex-basis: per-line(3);
+    flex-basis: per-line(4);
   }
-}
-
-.card {
-  background-color: $color-shade;
-}
-
-.exercise {
-  max-width: 350px;
-  margin: 20px auto;
-  color: $black;
 }

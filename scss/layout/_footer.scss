@@ -15,10 +15,7 @@ footer {
 
 .main-footer {
   display: flex;
-  flex-direction: column;
-  @media (min-width: $break-m) {
-    flex-direction: row;
-  }
+  flex-wrap: wrap;
 }
 
 .footer-col {
@@ -28,16 +25,27 @@ footer {
   min-width: 250px;
   min-height: 250px;
   background-color: $color-shade;
+  @media (min-width: $break-s) {
+    flex: 1 per-line(2);
+    justify-content: space-around;
+  }
   @media (min-width: $break-m) {
     min-height: 350px;
+    flex-basis: per-line(3);
+    justify-content: space-around;
+  }
+  @media (min-width: $break-l) {
+    flex-basis: per-line(4);
   }
 }
 
 .footer-bottom {
   max-width: 100vw;
   padding-top: 2rem;
+  a:hover {
+    color: $color-shade;
+  }
   @media (min-width: $break-m) {
     padding-top: 1.5rem;
   }
-
 }

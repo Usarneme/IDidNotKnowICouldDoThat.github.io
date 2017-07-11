@@ -12,10 +12,8 @@
   border-radius: 0.35em;
   transition: opacity 0.3s;
   text-transform: uppercase;
-  background-color: $color-primary-light;
+  background-color: $color-accent;
   &:hover {
-    color: $color-shade;
-    text-shadow: 1px 1px $black;
     opacity: 0.8;
   }
   &:active {

@@ -2,18 +2,19 @@
 //  Variables
 // ======================================
 
-// Colors
-$white: #fff;
-$black: #000;
-
-$color-primary: #278da4; // teal
+$color-primary: #0b3c5d; // #278da4 teal
 $color-primary-light: lighten($color-primary, 20%);
-$color-secondary: complement($color-primary);
-$color-accent: mix($color-primary, $color-secondary, 10%);
-$color-shade: #eeea72;
+$color-primary-dark: darken($color-primary, 20%);
 
-$color-text: #343434;
-$color-bg: #3acec2;
+$color-secondary: #328cc1;
+
+$color-accent: #d9b310;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #3cc47c;
 $color-bg-light: #009fe1;
 
 // Fonts
@@ -25,7 +26,6 @@ $max-width: 1000px;
 $gutter: 10px;
 
 // Breakpoints
-$break-xs: 575px;
-$break-s: 576px;
-$break-m: 768px;
-$break-l: 992px;
+$break-s: 575px;
+$break-m: 765px;
+$break-l: 1079px;
