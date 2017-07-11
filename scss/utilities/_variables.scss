@@ -7,10 +7,10 @@ $white: #fff;
 $black: #000;
 
 $color-primary: #278da4; // teal
-$color-primary-light: lighten($color-primary, 10%);
-$color-secondary: #b13c69; // dark violet red
-$color-accent: #eeea72;
-$color-shade: #eee;
+$color-primary-light: lighten($color-primary, 20%);
+$color-secondary: complement($color-primary);
+$color-accent: mix($color-primary, $color-secondary, 10%);
+$color-shade: #eeea72;
 
 $color-text: #343434;
 $color-bg: #3acec2;

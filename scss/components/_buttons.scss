@@ -5,7 +5,6 @@
 %btn {
   max-width: 50rem;
   font-weight: bold;
-  color: $color-accent;
   margin: $gutter auto;
   display: inline-block;
   text-decoration: none;
@@ -15,7 +14,8 @@
   text-transform: uppercase;
   background-color: $color-primary-light;
   &:hover {
-    color: $color-secondary;
+    color: $color-shade;
+    text-shadow: 1px 1px $black;
     opacity: 0.8;
   }
   &:active {

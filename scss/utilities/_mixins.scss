@@ -22,7 +22,6 @@
 // Center containers
 @mixin center {
   width: 90%;
-  max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
 }

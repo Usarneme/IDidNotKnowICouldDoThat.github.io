@@ -8,11 +8,15 @@
 	padding: 10px;
 	font-size: 1.75em;
 	justify-content: space-around;
+  &:hover {
+    color: $color-shade;
+    text-shadow: 1px 1px $black;
+  }
 }
 
 .icons {
   font-size: 2.35em;
-  color: $color-shade;
+  color: $color-secondary;
 }
 
 #devicons {
