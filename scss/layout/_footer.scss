@@ -22,16 +22,13 @@ footer {
 }
 
 .footer-col {
+  flex: 1;
   padding: 1em;
   margin-top: 1em;
   min-width: 250px;
-  min-height: 200px;
+  min-height: 250px;
   background-color: $color-shade;
   @media (min-width: $break-m) {
     min-height: 350px;
   }
-}
-
-.other {
-  min-height: 350px;
 }
