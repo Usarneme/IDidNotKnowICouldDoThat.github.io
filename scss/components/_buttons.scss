@@ -1,0 +1,33 @@
+// ======================================
+//  Button Styles
+// ======================================
+
+%btn {
+  max-width: 50rem;
+  font-weight: bold;
+  color: $color-accent;
+  margin: $gutter auto;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75em 1.5em;
+  border-radius: 0.35em;
+  transition: opacity 0.3s;
+  text-transform: uppercase;
+  background-color: $color-primary-light;
+  &:hover {
+    color: $color-secondary;
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: initial;
+  }
+}
+
+.btn {
+  &-callout {
+    @extend %btn;
+  }
+  &-info {
+    @extend %btn;
+  }
+}

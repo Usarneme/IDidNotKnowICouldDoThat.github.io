@@ -1,0 +1,73 @@
+// ======================================
+//  Layout Container Styles
+// ======================================
+
+// Main content
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: $break-m) {
+    @include center;
+  }
+}
+
+main {
+  background-color: $color-accent;
+}
+
+.hero {
+  margin: -80px auto;
+  padding: 1em 1em 3em;
+  p {
+    font-size: 1.2em;
+  }
+}
+
+.banner {
+  color: $black;
+  padding: 20px;
+  margin: 70px 0;
+  padding: 50px;
+  background-color: $color-primary;
+}
+
+.exercism-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercism-hidden {
+  display: none;
+}
+
+
+.card,
+.exercise {
+  display: flex;
+  padding: 1.5em 1em;
+  border-radius: 0.25em;
+  flex-direction: column;
+  border: 1px solid $color-shade;
+  margin: $gutter;
+  h1 {
+    line-height: 1.25;
+    margin: 0.35em 0 0;
+    color: $color-primary;
+  }
+  @media (min-width: $break-s) {
+    flex: 1 per-line(2);
+  }
+  @media (min-width: $break-l) {
+    flex-basis: per-line(3);
+  }
+}
+
+.card {
+  background-color: $color-shade;
+}
+
+.exercise {
+  max-width: 350px;
+  margin: 20px auto;
+  color: $black;
+}

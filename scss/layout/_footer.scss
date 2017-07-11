@@ -1,0 +1,37 @@
+// ======================================
+//  Footer Styles
+// ======================================
+
+footer {
+  height: 100px;
+  padding: 2em 0 0;
+  margin-top: 3.5em;
+  background-color: $color-shade;
+  @include skewed {
+    background-color: $color-shade;
+    top: -25px;
+  }
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $break-m) {
+    flex-direction: row;
+  }
+}
+
+.footer-col {
+  padding: 1em;
+  margin-top: 1em;
+  min-width: 250px;
+  min-height: 200px;
+  background-color: $color-shade;
+  @media (min-width: $break-m) {
+    min-height: 350px;
+  }
+}
+
+.other {
+  min-height: 350px;
+}

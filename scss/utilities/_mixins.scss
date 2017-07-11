@@ -7,11 +7,11 @@
   position: relative;
   &::after {
     content: '';
-    width: 100%;
-    height: 50px;
     display: block;
+    width: 100%;
+    height: 50px; 
     position: absolute;
-    transform: skewY(-1deg);
+    transform: skewY(-2deg);
     @content;
   }
 }
@@ -19,7 +19,7 @@
 // Center containers
 @mixin center {
   width: 90%;
+  max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  max-width: $max-width;
 }
