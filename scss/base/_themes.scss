@@ -25,11 +25,11 @@ $color-bg-light: #009fe1;
 //  Black, Yellow, Posy, Amber
 // ======================================
 
-$color-primary: #000000;
+$color-primary: #062F4F;
 $color-primary-light: lighten($color-primary, 20%);
 $color-primary-dark: darken($color-primary, 20%);
 
-$color-secondary: #062F4F;
+$color-secondary: #000000;
 
 $color-accent: #813772;
 $color-shade: mix($color-primary, $color-secondary, 50%);

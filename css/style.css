@@ -472,16 +472,20 @@ main {
   background-color: #95989e; }
 
 .hero {
-  margin: -90px auto;
-  padding: 1em 1em 3em; }
+  padding: 1em 1em 3em;
+  margin: 10px auto 0 auto;
+  background: linear-gradient(#f7f5e6, #333a56), url("../img/pdx.jpg") no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px black; }
   .hero p {
     font-size: 1.2em; }
 
 .banner {
-  color: black;
   padding: 20px;
-  margin: 70px 0;
-  padding: 50px;
+  margin: 50px 0;
+  color: black;
   background-color: white; }
 
 .exercism {
@@ -520,10 +524,8 @@ main {
 
 .main-header {
   position: relative;
-  height: 260px;
-  background: linear-gradient(#e8e8e8, #52658f), url("../img/pdx.jpg") no-repeat;
-  background-blend-mode: multiply;
-  background-size: cover; }
+  padding-top: 10px;
+  min-height: 40px; }
   .main-header::after {
     content: '';
     display: block;
@@ -531,15 +533,14 @@ main {
     height: 50px;
     position: absolute;
     transform: skewY(-2deg);
-    bottom: -25px;
-    background-color: white; }
+    bottom: -25px; }
     @media (min-width: 1079px) {
       .main-header::after {
         transform: skewY(-1deg); } }
   .main-header h1 {
-    color: white;
+    color: black;
     margin-bottom: 0;
-    font-size: 4.8em;
+    font-size: 3.8em;
     letter-spacing: 1px; }
     @media (max-width: 575px) {
       .main-header h1 {
@@ -548,12 +549,6 @@ main {
     margin: 0;
     font-size: 1.25em;
     color: #52658f; }
-  @media (max-width: 575px) {
-    .main-header {
-      height: 340px; } }
-  @media (min-width: 1079px) {
-    .main-header {
-      background-position: 0 0, 0 45%; } }
 
 footer {
   height: 100px;

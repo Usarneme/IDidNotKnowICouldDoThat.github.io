@@ -16,18 +16,23 @@ main {
 }
 
 .hero {
-  margin: -90px auto;
   padding: 1em 1em 3em;
+  margin: 10px auto 0 auto;
+  background: linear-gradient($color-primary, $color-secondary),
+              url('../img/pdx.jpg') no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+  color: $color-text-secondary;
+  text-shadow: 1px 1px black;
   p {
     font-size: 1.2em;
   }
 }
 
 .banner {
-  color: $color-text;
   padding: 20px;
-  margin: 70px 0;
-  padding: 50px;
+  margin: 50px 0;
+  color: $color-text;
   background-color: $color-primary-light;
 }
 

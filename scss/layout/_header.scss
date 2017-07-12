@@ -5,17 +5,13 @@
 .main-header {
   @include skewed {
     bottom: -25px;
-    background-color: $color-text-secondary;
   }
-  height: 260px;
-  background: linear-gradient($color-bg, $color-accent),
-              url('../img/pdx.jpg') no-repeat;
-  background-blend-mode: multiply;
-  background-size: cover;
-  h1 {
-    color: $color-text-secondary;
+  padding-top: 10px;
+  min-height: 40px;
+    h1 {
+    color: $color-text;
     margin-bottom: 0;
-    font-size: 4.8em;
+    font-size: 3.8em;
     letter-spacing: 1px;
     @media (max-width: $break-s) {
       font-size: 3.4em;
@@ -25,11 +21,5 @@
     margin: 0;
     font-size: 1.25em;
     color: $color-accent;
-  }
-  @media (max-width: $break-s) {
-    height: 340px;
-  }
-  @media (min-width: $break-l) {
-    background-position: 0 0, 0 45%;
   }
 }
