@@ -53,9 +53,9 @@ p {
 }
 
 a {
-  color: $color-text;
+  color: $color-text-secondary;
   text-decoration: none;
   &:hover {
-    color: $color-text-secondary;
+    color: $color-text;
   }
 }

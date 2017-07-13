@@ -4,9 +4,8 @@
 
 // Main content
 .main-content {
-  display: flex;
-  flex-wrap: wrap;
-  @media (min-width: $break-m) {
+  @include flexy($disp: flex, $wrap: wrap);
+  @include mq('m') {
     @include center;
   }
 }
@@ -18,7 +17,7 @@ main {
 .hero {
   padding: 1em 1em 3em;
   margin: 10px auto 0 auto;
-  background: linear-gradient($color-primary, $color-secondary),
+  background: linear-gradient($color-bg, $color-secondary),
               url('../img/pdx.jpg') no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
@@ -37,8 +36,7 @@ main {
 }
 
 .exercism {
-  display: flex;
-  flex-wrap: wrap;
+  @include flexy($disp: flex, $wrap: wrap);
   &-hidden {
     display: none;
   }
@@ -57,15 +55,15 @@ main {
     margin: 0.35em 0 0;
     color: $color-text;
   }
-  @media (min-width: $break-s) {
+  @include mq('s') {
     flex: 1 per-line(2);
     justify-content: space-around;
   }
-  @media (min-width: $break-m) {
+  @include mq('m') {
     flex-basis: per-line(3);
     justify-content: space-around;
   }
-  @media (min-width: $break-l) {
+  @include mq('l') {
     flex-basis: per-line(4);
   }
 }
