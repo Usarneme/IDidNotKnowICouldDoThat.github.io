@@ -462,7 +462,7 @@ a {
 .main-content {
   display: flex;
   flex-wrap: wrap; }
-  @media (min-width: 765px) {
+  @media (min-width: 62em) {
     .main-content {
       width: 90%;
       margin-left: auto;
@@ -507,17 +507,17 @@ main {
     line-height: 1.25;
     margin: 0.35em 0 0;
     color: black; }
-  @media (min-width: 575px) {
+  @media (min-width: 48em) {
     .card,
     .exercise {
       flex: 1 46%;
       justify-content: space-around; } }
-  @media (min-width: 765px) {
+  @media (min-width: 62em) {
     .card,
     .exercise {
       flex-basis: 27.33333%;
       justify-content: space-around; } }
-  @media (min-width: 1079px) {
+  @media (min-width: 75em) {
     .card,
     .exercise {
       flex-basis: 17%; } }
@@ -534,7 +534,7 @@ main {
     position: absolute;
     transform: skewY(-2deg);
     bottom: -25px; }
-    @media (min-width: 1079px) {
+    @media (min-width: 75em) {
       .main-header::after {
         transform: skewY(-1deg); } }
   .main-header h1 {
@@ -542,7 +542,7 @@ main {
     margin-bottom: 0;
     font-size: 3.8em;
     letter-spacing: 1px; }
-    @media (max-width: 575px) {
+    @media (max-width: 48em) {
       .main-header h1 {
         font-size: 3.4em; } }
   .main-header p {
@@ -565,7 +565,7 @@ footer {
     transform: skewY(-2deg);
     background-color: #95989e;
     top: -25px; }
-    @media (min-width: 1079px) {
+    @media (min-width: 75em) {
       footer::after {
         transform: skewY(-1deg); } }
 
@@ -580,16 +580,16 @@ footer {
   min-width: 250px;
   min-height: 250px;
   background-color: #95989e; }
-  @media (min-width: 575px) {
+  @media (min-width: 48em) {
     .footer-col {
       flex: 1 46%;
       justify-content: space-around; } }
-  @media (min-width: 765px) {
+  @media (min-width: 62em) {
     .footer-col {
       min-height: 350px;
       flex-basis: 27.33333%;
       justify-content: space-around; } }
-  @media (min-width: 1079px) {
+  @media (min-width: 75em) {
     .footer-col {
       flex-basis: 17%; } }
 
@@ -601,7 +601,7 @@ footer {
     color: black; }
   .footer-bottom a:hover {
     color: #95989e; }
-  @media (min-width: 765px) {
+  @media (min-width: 62em) {
     .footer-bottom {
       padding-top: 1.5rem; } }
 
