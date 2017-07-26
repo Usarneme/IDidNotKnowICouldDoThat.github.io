@@ -2,7 +2,7 @@
 * global vars *
 **************/
 
-let displayMessage = string; // what shows in the result field
+let displayMessage = ''; // what shows in the result field
 
 /********************************************************
 * functions to update the display and calculate answers *
