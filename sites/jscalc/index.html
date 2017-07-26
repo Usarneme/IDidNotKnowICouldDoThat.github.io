@@ -23,34 +23,43 @@
 
   <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
     <article>
-      <div id="calculator" class="">
-				<h3>Calculator</h3>
-				<small>In pure JavaScript (ES6/ECMAScript 6)</small>
-				<div id="answer" class=""></div>
+			<h2>Calculator</h2>
+			<small>In pure JavaScript (ES6/ECMAScript 6)</small>
 
-				<button id="7">7</button>
-				<button id="8">8</button>
-				<button id="9">9</button>
-				<button id="+">+</button>
+      <div id="calculator">
+				<div id="answer"></div>
 
-				<button id="4">4</button>
-				<button id="5">5</button>
-				<button id="6">6</button>
-				<button id="-">-</button>
+				<button id="7" class="num">7</button>
+				<button id="8" class="num">8</button>
+				<button id="9" class="num">9</button>
+				<button id="+" class="operator">+</button>
 
-				<button id="1">1</button>
-				<button id="2">2</button>
-				<button id="3">3</button>
-				<button id="*">*</button>
+				<button id="4" class="num">4</button>
+				<button id="5" class="num">5</button>
+				<button id="6" class="num">6</button>
+				<button id="-" class="operator">-</button>
 
-				<button id=".">.</button>
-				<button id="0">0</button>
-				<button id="equals" class="equals" data-result="">=</button>
-				<button id="/">/</button>
+				<button id="1" class="num">1</button>
+				<button id="2" class="num">2</button>
+				<button id="3" class="num">3</button>
+				<button id="*" class="operator">*</button>
+
+				<button id="." class="num">.</button>
+				<button id="0" class="num">0</button>
+				<button id="equals" class="equals">=</button>
+				<button id="/" class="operator">/</button>
 
 				<button id="backspace" class="backspace">Back</button>
 				<button id="clear" class="clear">Clear</button>
-      </div>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div class="decimalSelector">
+				<h4>How many decimal places would you like to display in the result?</h4>
+				0 <input id="sigFigInput" type="range" min="0" max="10" value="2" /> 10
+				<p id="sigFig">2 decimal places</p>
+			</div>
     </article>
   </main>
 
