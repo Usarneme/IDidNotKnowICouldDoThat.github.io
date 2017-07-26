@@ -8,71 +8,52 @@
     <meta name="description" content="It is amazing what you can do with a little patience and a library card">
     <meta name="author" content="Tom Geraghty">
 		<title>JS Calculator</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Site Specific CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-          <header>
-              <h1>Projects of Great Interest <small>by me.</small></h1>
-          </header>
-      </div>
+  <nav>
+		<header>
+				<h1>Projects of Great Interest</h1>
+		</header>
   </nav>
 
-  <main role="main container"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
+  <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
     <article>
-      <div id="wrapper" class="container-fluid">
+      <div id="calculator" class="">
+				<h3>Calculator</h3>
+				<small>In pure JavaScript (ES6/ECMAScript 6)</small>
+				<div id="answer" class=""></div>
 
-					<div id="numpad" class="container-fluid">
-							<div id="answer" class="container-fluid well"></div>
+				<button id="7">7</button>
+				<button id="8">8</button>
+				<button id="9">9</button>
+				<button id="+">+</button>
 
-							<div class="container-fluid">
-								<div class="row">
-									<div id="7" class="btn btn-default col-xs-3">7</div>
-									<div id="8" class="btn btn-default col-xs-3">8</div>
-									<div id="9" class="btn btn-default col-xs-3">9</div>
-									<div id="*" class="btn btn-primary col-xs-3">*</div>
+				<button id="4">4</button>
+				<button id="5">5</button>
+				<button id="6">6</button>
+				<button id="-">-</button>
 
-									<div id="4" class="btn btn-default col-xs-3">4</div>
-									<div id="5" class="btn btn-default col-xs-3">5</div>
-									<div id="6" class="btn btn-default col-xs-3">6</div>
-									<div id="/" class="btn btn-primary col-xs-3">/</div>
+				<button id="1">1</button>
+				<button id="2">2</button>
+				<button id="3">3</button>
+				<button id="*">*</button>
 
-									<div id="1" class="btn btn-default col-xs-3">1</div>
-									<div id="2" class="btn btn-default col-xs-3">2</div>
-									<div id="3" class="btn btn-default col-xs-3">3</div>
-									<div id="-" class="btn btn-primary col-xs-3">-</div>
+				<button id=".">.</button>
+				<button id="0">0</button>
+				<button id="equals" class="equals" data-result="">=</button>
+				<button id="/">/</button>
 
-									<div id="." class="btn btn-primary col-xs-3">.</div>
-									<div id="0" class="btn btn-default col-xs-3">0</div>
-									<div id="=" class="btn btn-primary col-xs-3">=</div>
-									<div id="+" class="btn btn-primary col-xs-3">+</div>
-
-									<div id="backspace" class="btn btn-info col-xs-6">Backspace</div>
-									<div id="clear" class="btn btn-info col-xs-6">Clear</div>
-								</div>
-							</div>
-
-							<div class="row" style="display: none"><h5>How many decimal places?</h5>
-								<div id="dec0" class="btn btn-primary col-xs-4">0</div>
-							</div>
-
-					</div><!--numpad-->
-
+				<button id="backspace" class="backspace">Back</button>
+				<button id="clear" class="clear">Clear</button>
       </div>
     </article>
   </main>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <!-- Bootstrap Core JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="calc.js"></script>
 </body>
 </html>
