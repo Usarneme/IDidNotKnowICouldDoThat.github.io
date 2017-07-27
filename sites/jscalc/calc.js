@@ -1,126 +1,142 @@
-/**************
-* global vars *
-**************/
+/*********************************************
+* DOM Element References reused in functions *
+*********************************************/
 
-let displayMessage = '', // what shows in the result field
+const calculator = document.getElementById('calculator'),
+	  resultElement = document.getElementById('result'),
+  	  sigFigInput = document.getElementById('sigFigInput'),
+	  sigFig = document.getElementById('sigFig');
+
+/*******************
+* Global variables *
+*******************/
+
+let currentDisplayValues = '', // what shows in the result field
 	decimalPlaces = 2; // to hold how many decimal places show in the result, default 2
 
 /********************************************************
-* functions to update the display and calculate answers *
+* Functions to update the display and calculate results *
 ********************************************************/
 
-displayElement = (elementId) => {
+// Handles what happens when different elements on the page are clicked
+handleClick = (elementId) => {
 	if (elementId == 'equals') {
-		// make the operator and number buttons un-clickable
-		disableNumbers();
-		disableOperators();
-		// update the display with the answer
-		displayEquals();
+		if(currentDisplayValues === '') {
+			// do nothing if no numbers have been input yet
+		} else {
+		// make all buttons but clear un-clickable
+		disableButtons(['.num', '.dot', '.equals', '.operator', '.backspace']);
+		// determine the operator in use and update the display with the result
+		displayResult( determineOperator() );
+		}
 	} else if (elementId == 'clear') {
-		// make operator and number buttons clickable
-		enableOperators();
-		enableNumbers();
+		// make all buttons clickable again
+		enableButtons(['.num', '.dot', '.equals', '.operator', '.backspace']);
 		// clear out the display
 		clearAll();
 	} else if (elementId == 'backspace') {
 		backSpace();
 	} else if (elementId == '+' || elementId == '-' || elementId == '*' || elementId == '/') {
-		// an operator was clicked...
-		disableOperators();
-		displayMessage += elementId;
-	    const elMsg = document.getElementById('answer');
-	    elMsg.textContent = displayMessage;
-	} else if (elementId == 'calculator' || elementId == 'answer') { 
+		// an operator was clicked: disable operator buttons and enable the dot button
+		disableButtons('.operator');
+		enableButtons('.dot');
+		currentDisplayValues += elementId;
+		resultElement.textContent = currentDisplayValues;
+	} else if (elementId == '.') {
+		disableButtons('.dot');
+	    currentDisplayValues += elementId;
+	    resultElement.textContent = currentDisplayValues;
+	} else if (elementId == 'calculator' || elementId == 'result') { 
 		// do nothing if the user clicks on part of the screen that is not on a button
-	} else { // a number was clicked...
-	    displayMessage += elementId;
-	    const elMsg = document.getElementById('answer');
-	    elMsg.textContent = displayMessage;
+	} else { 
+		// a number was clicked...
+	    currentDisplayValues += elementId;
+	    resultElement.textContent = currentDisplayValues;
 	}
 }
 
+// Clears out the display and stored values
 clearAll = () => {
-	displayMessage = '';
-	const elMsg = document.getElementById('answer');
-	elMsg.textContent = displayMessage;
+	currentDisplayValues = '';
+	resultElement.textContent = currentDisplayValues;
 }
 
+// Deletes the previously entered value
 backSpace = () => {
-	// If the previous character to be deleted is an operator...
-	if (displayMessage[displayMessage.length-1] == '+' 
-	|| displayMessage[displayMessage.length-1] == '-' 
-	|| displayMessage[displayMessage.length-1] == '*' 
-	|| displayMessage[displayMessage.length-1] == '/') {
-		// re-enable the operators
-		enableOperators();
+	const previousCharacter = currentDisplayValues[currentDisplayValues.length-1];
+	// If the previous character to be deleted is an operator or period
+	if (previousCharacter == '+' 
+	|| previousCharacter == '-' 
+	|| previousCharacter == '*' 
+	|| previousCharacter == '/') {
+		// re-enable the operator buttons
+		enableButtons('.operator');
 	}
-	displayMessage = displayMessage.substring(0, (displayMessage.length-1));
-	const elMsg = document.getElementById('answer');
-	elMsg.textContent = displayMessage;
+	// If it was a dot
+	if (previousCharacter === '.') {
+		// re-enable the dot
+		enableButtons('.dot');
+	}
+	currentDisplayValues = currentDisplayValues.substring(0, (currentDisplayValues.length-1));
+	resultElement.textContent = currentDisplayValues;
 }
 
-displayEquals = () => {
-	let resultArray, result; // to contain the left and right side of the operation and result
-	if (displayMessage.indexOf('+') != -1) {
-		resultArray = displayMessage.split('+');
-		result = (parseFloat(resultArray[0]) + parseFloat(resultArray[1])).toFixed(decimalPlaces);
-	} else if (displayMessage.indexOf('-') != -1) {
-		resultArray = displayMessage.split('-');
-		result = (parseFloat(resultArray[0]) - parseFloat(resultArray[1])).toFixed(decimalPlaces);
-	} else if (displayMessage.indexOf('*') != -1) {
-		resultArray = displayMessage.split('*');
-		result = (parseFloat(resultArray[0]) * parseFloat(resultArray[1])).toFixed(decimalPlaces);
-	} else if (displayMessage.indexOf('/') != -1) {
-		resultArray = displayMessage.split('/');
-		result = (parseFloat(resultArray[0]) / parseFloat(resultArray[1])).toFixed(decimalPlaces);
+// Display the resulting value using the provided operator on the generated operands
+displayResult = (operator) => {
+	const resultArray = currentDisplayValues.split(operator),	
+		  leftOperand = parseFloat(resultArray[0]) || 0,
+		  rightOperand = parseFloat(resultArray[1]) || 0;
+	let   result; 
+	switch (operator) {
+		case '+': result = (leftOperand + rightOperand); break;
+		case '-': result = (leftOperand - rightOperand); break;
+		case '*': result = (leftOperand * rightOperand); break;
+		case '/': result = (leftOperand / rightOperand); break;
+	}
+	// Limit the significant figures
+	result = result.toFixed(decimalPlaces);
+	// the result field can hold about 19 characters, limit the result to that
+	resultElement.textContent += ' = '+result.toString().substring(0,20);
+}
+
+// Determines and returns as a string the type of operator 
+// used in the current expression to be evaluated
+determineOperator = () => {
+		   if (currentDisplayValues.indexOf('+') != -1) { return '+';
+	} else if (currentDisplayValues.indexOf('-') != -1) { return '-';
+	} else if (currentDisplayValues.indexOf('*') != -1) { return '*';
+	} else if (currentDisplayValues.indexOf('/') != -1) { return '/';
 	} 
-	const elMsg = document.getElementById('answer');
-	// the answer field can hold about 19 characters, so limit the result to that
-	elMsg.textContent += ' = '+result.toString().substring(0,20);
-	document.getElementById('equals').disabled = true;
 }
 
-disableOperators = () => {
-	const operators = document.querySelectorAll('.operator');
-	for(let i=0; i<operators.length; i++) {
-		operators[i].disabled = true;
+// Disables all button types in the provided list (such as operators +-*/, numbers 0-9, .)
+disableButtons = (listOfTypes) => {
+	listOfTypes = [listOfTypes];
+	for(let i=0; i<listOfTypes.length; i++) {
+		const toBeDisabled = document.querySelectorAll(listOfTypes[i]);
+		for(let j=0; j<toBeDisabled.length; j++) {
+			toBeDisabled[j].disabled = true;
+		}
 	}
 }
 
-enableOperators = () => {
-	const operators = document.querySelectorAll('.operator');
-	for(let i=0; i<operators.length; i++) {
-		operators[i].disabled = false;
-	}
-	document.getElementById('equals').disabled = false;
-}
-
-disableNumbers = () => {
-	const numbers = document.querySelectorAll('.num');
-	for(let i=0; i<numbers.length; i++) {
-		numbers[i].disabled = true;
-	}
-}
-
-enableNumbers = () => {
-	const numbers = document.querySelectorAll('.num');
-	for(let i=0; i<numbers.length; i++) {
-		numbers[i].disabled = false;
+// Enables a provided type of buttons to be pressed again
+enableButtons = (ofType) => {
+	const toBeEnabled = document.querySelectorAll(ofType);
+	for(let i=0; i<toBeEnabled.length; i++) {
+		toBeEnabled[i].disabled = false;
 	}
 }
 
 /****************************************
-* event listeners                       *
+* Event Listeners                       *
 ****************************************/
 
-const answerEl = document.getElementById('calculator');
-answerEl.addEventListener('click', (event) => {
-    displayElement(event.target.id),
+calculator.addEventListener('click', (event) => {
+    handleClick(event.target.id),
     event.stopPropagation()
 }, false);
 
-const sigFigInput = document.getElementById('sigFigInput'),
-	sigFig = document.getElementById('sigFig');
 sigFigInput.addEventListener('input', () => {
 	sigFig.textContent = sigFigInput.value+' decimal places';
 	decimalPlaces = sigFigInput.value;
