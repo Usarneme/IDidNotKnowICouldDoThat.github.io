@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="It is amazing what you can do with a little patience and a library card">
-    <meta name="author" content="Tom Geraghty">
-    <title>Task List</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Site Specific CSS -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="It is amazing what you can do with a little patience and a library card">
+  <meta name="author" content="Tom Geraghty">
+  <title>Task List</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <!-- Site Specific CSS -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
           <header>
-              <h1>Projects of Great Interest <small>by me.</small></h1>
+            <h1>Projects of Great Interest</h1>
           </header>
       </div>
   </nav>
@@ -32,11 +32,9 @@
         <div>
           <h2>Task List</h2>
         </div>
-        <p>
-          <label for="new-task">Add an Item</label><input id="new-task" type="text"><button>Add</button>
-        </p>
+        <label for="new-task"><h4>Add an Item</h4></label><input id="new-task" type="text"><button class="add">Add</button>
 
-        <h4>Todo</h4>
+        <h4>Todo <small>(Check the box once completed)</small></h4>
         <ul id="incomplete-tasks">
           <li>
             <input type="checkbox"><label>Pay Bills</label>
@@ -60,10 +58,6 @@
     </article>
   </main>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <!-- Bootstrap Core JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/app.js" type="text/JavaScript"></script>
 </body>
 </html>
