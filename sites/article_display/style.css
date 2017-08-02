@@ -3,45 +3,68 @@
   font-family: "Raleway", sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 h1 {
-  font-family: "Bree Serif", serif;
-  font-size: 3.4em;
+  font-size: 3em;
   letter-spacing: 1px;
   font-weight: lighter;
-  margin: 10px auto;
-  padding-top: 10px;
+  margin: 20px auto;
   min-height: 40px;
 }
 
-#wrapper {
+h4 {
+  font-weight: lighter;
+  margin: 15px auto;
+  padding: 15px 10px 0 10px;
+}
+
+main {
+  margin: 0;
   border: 0;
-  min-height: 100vh;
   width: 100%;
   background-image: url('./mountain.jpeg');
   background-size: cover;
+  min-height: 80vh;
 }
 
-.article {
-  padding: 20px;
-  border-radius: 0.35em;
-  color: #000;
-  min-width: 20em;
-  max-width: 40em;
-  margin: 80px auto 10px auto;
-  line-height: 120%;
-  font-size: 1.55em;
-  background-color: #eee;
-}
-
-#header {
-  padding: 20px auto;
+#article-holding-div {
+  margin: 25px auto;
 }
 
 #get-new-article-button {
-  margin-top: 40px;
-  background: rgba(200, 200, 200, 0.5);
-  width: 100%;
-  min-height: 100vh;
+  background: rgba(20, 20, 20, 0.2);
+  cursor: pointer;
+  padding: 20px;
+  outline: none;
+  border: none;
+  margin: 20% 0;
+  color: #fff;
+  font-weight: 800;
+  font-size: 115%;
+  text-transform: uppercase;
+}
+
+.article {
+  position: relative;
+  padding: 20px;
+  border-radius: 0.35em;
+  color: #000;
+  min-width: 12em;
+  max-width: 40em;
+  line-height: 120%;
+  font-size: 1.55em;
+  background-color: #eee;
+  margin: 100px auto 0 auto;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 100%;
+}
+
+.after-click {
+  margin: 0!important;
 }
 
 .hidden {
@@ -49,11 +72,6 @@ h1 {
 }
 
 @media all and (min-width: 600px) {
-
-  #article-holder {
-    font-size: 1.35em;
-  }
-
 }
 
 /*

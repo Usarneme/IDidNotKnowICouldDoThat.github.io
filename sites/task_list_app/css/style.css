@@ -1,9 +1,14 @@
 /* Task List styles */
 
 * {
-  box-sizing: border-box;
-  max-width: 100%;
+  text-align: center;
   font-family: "Raleway", sans-serif;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+body {
+  margin: 0;
 }
 
 main {
@@ -20,19 +25,20 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
-  margin: 20px auto;
+  font-size: 3em;
+  letter-spacing: 1px;
   font-weight: lighter;
-  text-align: center;
-}
-
-h2 {
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: bold;
+  margin: 20px auto;
+  min-height: 40px;
 }
 
 h4 {
+  font-weight: lighter;
+  margin: 15px auto;
+  padding: 15px 10px 0 10px;
+}
+
+h5 {
   color: #333;
   font-weight: 700;
   font-size: 15px;

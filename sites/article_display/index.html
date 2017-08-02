@@ -8,8 +8,7 @@
     <meta name="description" content="It is amazing what you can do with a little patience and a library card">
     <meta name="author" content="Tom Geraghty">
     <title>Meditations by Marcus Aurelius</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- Site Specific CSS -->
     <link href="style.css" rel="stylesheet">
@@ -18,30 +17,23 @@
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-          <header>
-            <h1>Projects of Great Interest</h1>
-          </header>
-      </div>
+  <nav class="navbar">
+    <header>
+      <h1>Projects of Great Interest</h1>
+    </header>
   </nav>
 
   <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
     <article>
-      <div id="wrapper">
-        <button id="get-new-article-button">
-          <div id="article" class="hidden"></div>
-          <div id="header">
-            Click anywhere to load a new entry.
-          </div>
-        </button>
-      </div>
+      <h4>This project displays articles chosen at random from a JSON-formatted collection of entries from Marcus Aurelius' Meditations</h4>
+      <button id="get-new-article-button">
+        Click to load a new entry
+        <div id="article-holding-div" class="hidden"></div>
+      </button>
     </article>
   </main>
-
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <!-- Bootstrap Core JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  <script src="app.js" type="text/JavaScript"></script>
+  <script src="app.js" type="text/javascript"></script>
 </body>
 </html>

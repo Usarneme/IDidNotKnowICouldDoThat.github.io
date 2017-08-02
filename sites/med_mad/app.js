@@ -91,7 +91,7 @@ function renderMadlib() {
 	// Hide the user input form
 	document.getElementById('queries').className = 'hidden';
 	// Set the content of	madlib_holder to the finished madlib
-	document.getElementById('madlib_holder').textContent = workingMadlib;
+	document.getElementById('madlib_holder').innerHTML = '<h5>Your completed MadLib:</h5>'+workingMadlib;
 	// Remove the hidden class from the madlib_holder div
 	document.getElementById('madlib_holder').className = 'visible';
 };

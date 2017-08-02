@@ -1,9 +1,41 @@
-#wrapper {
-	padding: 110px 0 30px 0;
-	margin-top: 30px;
-	max-width: 600px;
-	margin: auto;
+* {
 	text-align: center;
+	font-family: "Raleway", sans-serif;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+body {
+	margin: 0;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: 1px;
+	font-weight: lighter;
+	margin: 20px auto;
+	min-height: 40px;
+}
+
+h4 {
+	font-weight: lighter;
+	margin: 0;
+	padding: 15px 10px 0 10px;
+}
+
+nav, .navbar {
+	margin-bottom: 0;
+}
+
+main {
+	background-color: #c2f5e6;
+	min-height: 90vh;
+}
+
+#wrapper {
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 div > p {
@@ -11,7 +43,6 @@ div > p {
 }
 
 .btn, #x, #o {
-	border-radius: 0;
 	min-height: 80px;
 	font-weight: bold;
 	font-size: large;
@@ -19,6 +50,7 @@ div > p {
 
 #x, #o {
 	min-height: 0;
+	padding: 10px 0;
 }
 
 .reset {
@@ -32,8 +64,13 @@ div > p {
 	text-align: center;
 }
 
+#victory {
+	background-color: #7cff00;
+}
+
 #gameBoard {
 	margin-top: 20px;
+	margin-left: 0;
 }
 
 .selected {
@@ -41,8 +78,12 @@ div > p {
 }
 
 .header {
-	padding: 5px;
-	text-align: center;
+	padding: 15px;
+	color: #666;
+}
+
+#turn {
+	padding: 5px 0 5px 40px;
 }
 
 .footer {
@@ -59,10 +100,6 @@ div > p {
 	.jumbotron {
 		margin: 20px 0;
 		padding: 20px 0;
-	}
-
-	#wrapper {
-		padding: 80px 0 40px 0;
 	}
 
 }

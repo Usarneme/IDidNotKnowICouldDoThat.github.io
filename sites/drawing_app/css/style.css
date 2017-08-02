@@ -1,5 +1,22 @@
 /* Styles */
 
+* {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  margin: 20px auto;
+  min-height: 40px;
+}
+
 canvas {
 	background: #fff;
 	display: block;

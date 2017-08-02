@@ -1,25 +1,36 @@
 * {
   text-align: center;
+  font-family: "Raleway", sans-serif;
+	box-sizing: border-box;
+	max-width: 100%;
 }
 
-#wrapper {
-  margin-top: 60px;
-  padding-top: 20px;
-  font-size: 1.25em;
-  text-shadow: 1px 1px 1px #fff;
-  border: 0;
-  min-height: 600px;
-  min-width: 100%;
-  background-image: url('./mountain.jpeg');
-  background-size: cover;
-}
-
-#header {
-  padding-top: 20px;
+body {
+  margin: 0;
 }
 
 h1 {
-  margin: 0;
+  font-size: 3em;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  margin: 20px auto;
+  min-height: 40px;
+}
+
+h4 {
+  font-weight: lighter;
+  margin: 15px auto;
+  padding: 15px 10px 0 10px;
+}
+
+#wrapper {
+  padding: 20px;
+  font-size: 1.25em;
+  border: 0;
+  min-height: 100vh;
+  min-width: 100%;
+  background-image: url('./mountain.jpeg');
+  background-size: cover;
 }
 
 #madlib_holder {
@@ -59,11 +70,6 @@ input {
 }
 
 @media screen and (min-width: 700px) {
-
-  #wrapper {
-    margin-top: 60px;
-  }
-
   .inner {
       max-width: 1400px;
       margin-left: auto;

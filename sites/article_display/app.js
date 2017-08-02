@@ -27,21 +27,25 @@ client4.send();
 
 // Event listener to request a random article when the button is clicked
 document.getElementById('get-new-article-button').addEventListener('click', function(e) {
-	var element = document.getElementById('article');
+	var articleDivElement = document.getElementById('article-holding-div');
 	e.preventDefault();
 	e.stopPropagation();
 	if (coin === 0) {
 		coin = 2;
 		var $rand = Math.floor((Math.random() * json2.length));
-		element.textContent = json2[$rand][$rand+1];
+		articleDivElement.textContent = json2[$rand][$rand+1];
 	} else if (coin > 1) {
 			coin = 1;
 			var $rand = Math.floor((Math.random() * json3.length));
-			element.textContent = json3[$rand][$rand+1];
+			articleDivElement.textContent = json3[$rand][$rand+1];
 			} else {
 				coin = 0;
 				var $rand = Math.floor((Math.random() * json4.length));
-				element.textContent = json4[$rand][$rand+1];
+				articleDivElement.textContent = json4[$rand][$rand+1];
 			}
-	element.className = 'article';
+	// adds the CSS styles to the newly created element
+	articleDivElement.className = 'article';
+	// Increases the button size to full screen so the user can click anywhere on screen (excluding header)
+	// and have a new article displayed on screen
+	document.getElementById('get-new-article-button').className = 'after-click';
 });

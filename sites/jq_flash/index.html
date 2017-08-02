@@ -10,6 +10,7 @@
     <title>Flashcards</title>
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- Site Specific CSS -->
 		<link href="css/style.css" rel="stylesheet" type="text/css" charset="utf-8">
 </head>
@@ -17,69 +18,67 @@
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-          <header>
-              <h1>Projects of Great Interest <small>by me.</small></h1>
-          </header>
-      </div>
+  <nav class="navbar">
+	<header>
+		<h1>Projects of Great Interest</h1>
+	</header>
   </nav>
 
   <main role="main"> <!-- ARIA role for devices that don't support HTML5 sectioning elements. -->
     <article>
       <div id="wrapper">
 
-				<div class="header">
-					<h2>Flashcards</h2>
-					<p>Click on the card to show the reverse side</p>
-				</div>
+		<div class="header">
+			<h4>This project utilizes jQuery, JavaScript, Bootstrap, HTML5 and CSS3 to create a Flashcards web application.
+		</div>
 
-				<div class="container wrapper">
-					<div id="flashcards" class="container container-fluid">
-						<div class="row">
-							<div id="previous_card" class="col-xs-1 col-sm-2 btn">
-								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-								<span class="sr-only">Previous Card</span>
-							</div>
-
-							<div id="current_card" class="col-xs-10 col-sm-8 btn">Flip card</div>
-
-							<div id="next_card" class="col-xs-1 col-sm-2 btn">
-								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span class="sr-only">Next Card</span>
-							</div>
-						</div>
-						<div id="buckets" class="row hidden">
-							<div id="bucketWrong" class="col-xs-6 btn">
-								<div id="wrongSize">0</div>
-								<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> No</span>
-							</div>
-							<div id="bucketRight" class="col-xs-6 btn">
-								<div id="rightSize">0</div>
-								<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Yes</span>
-							</div>
-							<p>Did you answer the question correctly?</p>
-						</div>
+		<div class="container wrapper">
+			<div id="flashcards" class="container container-fluid">
+				<p>Click on the card to show the reverse side</p>
+				<div class="row">
+					<div id="previous_card" class="col-xs-1 col-sm-2 btn">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous Card</span>
 					</div>
 
-					<div id="new_card" class="container container-fluid">
-					<h4>Add a new flashcard</h4>
-					<span id="singleShowing" class="btn">One at a time</span><span id="multipleShowing" class="btn">A bunch at a time</span>
-						<div id="singleAdd">
-					        <input type="text" class="form-control" id="inputNewCardFront" placeholder="New card front...">
-					        <input type="text" class="form-control" id="inputNewCardBack" placeholder="New card back...">
-						    <button id="addCardSubmitButton" class="btn">Add flashcard!</button>
-						</div><!--end of singleAdd div-->
+					<div id="current_card" class="col-xs-10 col-sm-8 btn">Flip card</div>
 
-						<div id="multipleAdd" class="hidden">
-					        <input type="text" class="form-control" id="inputManyNewCards" placeholder="Add multiple cards here...">
-					        Add as many cards as you like separated by a comma such as: question1, answer1, house, casa, question3, answer3.
-						    <button id="addManyCardsSubmitButton" class="btn">Add flashcards!</button>
-						</div><!--end of multipleAdd div-->
+					<div id="next_card" class="col-xs-1 col-sm-2 btn">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next Card</span>
+					</div>
+				</div>
+				<div id="buckets" class="row hidden">
+					<div id="bucketWrong" class="col-xs-6 btn">
+						<div id="wrongSize">0</div>
+						<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> No</span>
+					</div>
+					<div id="bucketRight" class="col-xs-6 btn">
+						<div id="rightSize">0</div>
+						<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> Yes</span>
+					</div>
+					<p>Did you answer the question correctly?</p>
+				</div>
+			</div>
 
-					</div><!--end of new_card div-->
+			<div id="new_card" class="container container-fluid">
+			<h4>Add a new flashcard</h4>
+			<span id="singleShowing" class="btn">One at a time</span><span id="multipleShowing" class="btn">A bunch at a time</span>
+				<div id="singleAdd">
+					<input type="text" class="form-control" id="inputNewCardFront" placeholder="New card front...">
+					<input type="text" class="form-control" id="inputNewCardBack" placeholder="New card back...">
+					<button id="addCardSubmitButton" class="btn">Add flashcard!</button>
+				</div><!--end of singleAdd div-->
 
-				</div><!--end of container_wrapper div-->
+				<div id="multipleAdd" class="hidden">
+					<input type="text" class="form-control" id="inputManyNewCards" placeholder="Add multiple cards here...">
+					Add as many cards as you like separated by a comma such as: question1, answer1, house, casa, question3, answer3.
+					<button id="addManyCardsSubmitButton" class="btn">Add flashcards!</button>
+				</div><!--end of multipleAdd div-->
+
+			</div><!--end of new_card div-->
+
+		</div><!--end of container_wrapper div-->
 
       </div>
     </article>
@@ -89,6 +88,6 @@
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <!-- Bootstrap Core JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
