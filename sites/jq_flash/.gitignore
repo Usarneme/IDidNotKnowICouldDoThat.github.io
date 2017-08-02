@@ -7,7 +7,7 @@
 /coverage
 
 # production
-/build
+# /build
 
 #sass-cache
 .sass-cache
