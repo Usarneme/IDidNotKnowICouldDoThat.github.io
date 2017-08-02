@@ -1,0 +1,390 @@
+// ======================================
+//  MAIN
+//  Blue, Yellow, Dark Blue
+// ======================================
+
+$color-primary: #0b3c5d;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #328cc1;
+
+$color-accent: #d9b310;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #3cc47c;
+$color-bg-light: #009fe1;
+
+// -----------------------------------------------
+
+// ======================================
+//  THEME
+//  Black, Yellow, Posy, Amber
+// ======================================
+
+$color-primary: #062F4F;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #000000;
+
+$color-accent: #813772;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #882601;
+$color-bg-light: lighten($color-bg, 20%);
+
+// -----------------------------------------------
+
+
+// ======================================
+//  THEME
+//  Sky, Carbon, Watermelon, Neutral
+// ======================================
+
+$color-primary: #caebf2;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #a9a9a9;
+
+$color-accent: #ff3b3f;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #efefef;
+
+// -----------------------------------------------
+
+// ======================================
+//  THEME
+//  Grain, Blackboard, Oxblood, Tan
+// ======================================
+
+$color-primary: #d7cec7;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #565656;
+
+$color-accent: #76323f;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #c09f80;
+
+// -----------------------------------------------
+
+// ======================================
+//  THEME
+//  Screen, Steel, Denim, Marigold
+// ======================================
+
+$color-primary: #c5c1c0;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #0a1612;
+
+$color-accent: #1a2930;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #f7ce3e;
+
+// -----------------------------------------------
+
+
+
+// ======================================
+//  THEME
+//  Navy Blue, Leather, Coral, Eggshell
+// ======================================
+
+$color-primary: #0f1626;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #ab987a;
+
+$color-accent: #ff533d;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #f5f5f5;
+
+// -----------------------------------------------
+
+
+
+// ======================================
+//  THEME
+//  Crimson Sky, Indigo, Ultramarine, Light Blue
+// ======================================
+
+$color-primary: #cf6766;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #30415d;
+
+$color-accent: #031424;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #8eaebd;
+
+// -----------------------------------------------
+
+
+
+// ======================================
+//  THEME
+//  Aqua, Sunshine, Lavender, Dusty Rose
+// ======================================
+
+$color-primary: #6bbaa7;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #fba100;
+
+$color-accent: #6c648b;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #86a19e;
+
+// -----------------------------------------------
+
+
+// ======================================
+//  THEME
+//  Gold, Daisy, Stem, Greenery
+// ======================================
+
+$color-primary: #cda34f;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #e9e7da;
+
+$color-accent: #636b46;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #373f27;
+
+// -----------------------------------------------
+
+
+
+
+
+// ======================================
+//  THEME
+//  Matte, Fresh, Tomato, Teal
+// ======================================
+
+$color-primary: #414141;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #ccdfcb;
+
+$color-accent: tomato;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #056571;
+
+// -----------------------------------------------
+
+
+
+
+
+// ======================================
+//  THEME
+//  Coral, Navy, Mountain, Scrub
+// ======================================
+
+$color-primary: #e14658;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #22252c;
+
+$color-accent: #3f3250;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #c0b3a0;
+
+// -----------------------------------------------
+
+
+
+
+// ======================================
+//  THEME
+//  Ochre, Pastel Peach, Black, Cool Grey
+// ======================================
+
+$color-primary: #c06014;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #eddbcd;
+
+$color-accent: #000000;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #cdcdcd;
+
+// -----------------------------------------------
+
+
+
+// ======================================
+//  THEME - Best Theme
+//  Fresh, Vermillion, Sunshine, Clean
+// ======================================
+
+$color-primary: #f7f5e6;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #333a56;
+
+$color-accent: #52658f;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #e8e8e8;
+
+// -----------------------------------------------
+
+
+
+// ======================================
+//  THEME
+//  Morning Sky, Honey, Cerulean, Mist
+// ======================================
+
+$color-primary: #cae4db;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #dcae1d;
+
+$color-accent: #00303f;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #7a9d96;
+
+// -----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+// ======================================
+//  THEME
+//
+// ======================================
+
+$color-primary: #0b3c5d;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #328cc1;
+
+$color-accent: #d9b310;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #009fe1;
+
+// -----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+// ======================================
+//  Variables
+// ======================================
+
+$color-primary: #0b3c5d; // #278da4 teal
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #328cc1;
+
+$color-accent: #d9b310;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-text: black;
+$color-text-secondary: white;
+
+$color-bg: #3cc47c;
+$color-bg-light: #009fe1;
+
+// Fonts
+$font-stack-primary: 'Raleway', sans-serif;
+$font-stack-secondary: 'Bree Serif', serif;
+
+// Layout
+$max-width: 1000px;
+$gutter: 10px;
+
+// Breakpoints
+$break-s: 575px;
+$break-m: 765px;
+$break-l: 1079px;

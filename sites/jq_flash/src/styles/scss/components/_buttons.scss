@@ -1,0 +1,29 @@
+// ======================================
+//  Button Styles
+// ======================================
+
+.btn {
+  max-width: 50rem;
+  margin: $gutter;
+  padding: $gutter;
+  text-decoration: none;
+  border-radius: 0.35em;
+  transition: opacity 0.3s;
+  text-transform: uppercase;
+  background-color: $color-accent;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: initial;
+  }
+}
+
+#next_card {
+  cursor: e-resize;
+}
+
+#previous_card {
+  cursor: w-resize;
+}

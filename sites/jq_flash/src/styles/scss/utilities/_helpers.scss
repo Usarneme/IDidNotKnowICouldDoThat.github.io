@@ -1,0 +1,16 @@
+// ======================================
+//  Helper Placeholders
+// ======================================
+
+%clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+%hidden,
+.hidden {
+  display: none!important;
+}

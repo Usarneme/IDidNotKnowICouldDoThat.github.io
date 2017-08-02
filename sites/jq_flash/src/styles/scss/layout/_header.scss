@@ -1,0 +1,25 @@
+// ======================================
+//  Header Styles
+// ======================================
+
+.main-header {
+  @include skewed {
+    bottom: -25px;
+  }
+  padding-top: 10px;
+  min-height: 40px;
+    h1 {
+    color: $color-text;
+    margin-bottom: 0;
+    font-size: 3.8em;
+    letter-spacing: 1px;
+    @media (max-width: $break-s) {
+      font-size: 3.4em;
+    }
+  }
+  p {
+    margin: 0;
+    font-size: 1.25em;
+    color: $color-accent;
+  }
+}

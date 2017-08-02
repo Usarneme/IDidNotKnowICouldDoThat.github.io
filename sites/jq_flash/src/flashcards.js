@@ -89,7 +89,7 @@ function addToRightBucket() {
 }
 
 function addNewFlashcard() {
-  $flashcards.push({
+  $flashcardsWrong.push({
     front:document.getElementById('inputNewCardFront').value, 
     back:document.getElementById('inputNewCardBack').value
     }); //end of push
@@ -128,7 +128,8 @@ function addNewFlashcards() {
   console.log('End of addNewFlashcards method');
 }
 
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function(event) { 
+
   // Press the next card button, run the next card function 
   document.getElementById('next_card').addEventListener('click', function(e) {
     showNextQuestion();
@@ -180,13 +181,11 @@ $(document).ready(function() {
   // Initially show the front of the first card
   showASideOfTheCard();
 
-}); // End of document.ready
+});
 
-$flashcardsRight = [];
-
-$flashcardsWrong = [];
-
-$flashcards = [ // Array of flashcard objects each with a front and back
+var $flashcardsRight = [];
+var $flashcardsWrong = [];
+var $flashcards = [ // Array of flashcard objects each with a front and back
   { 
     "front" : "ribera",
     "back" : "riverbank or shore"
@@ -209,7 +208,7 @@ $flashcards = [ // Array of flashcard objects each with a front and back
   },
   { 
     "front" : "ahondar",
-    "back" : "deepend, delve into"
+    "back" : "deepen, delve into"
   },
   { 
     "front" : "deleite",
