@@ -22,6 +22,8 @@ main {
 
 #wrapper {
     max-width: 30em;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h1 {
@@ -30,4 +32,22 @@ h1 {
     font-weight: lighter;
     margin: 20px auto;
     min-height: 40px;
+}
+
+#current_card {
+    min-width: 280px;
+    min-height: 300px;
+    background-color: rgba(0,255,255,0.5);
+}
+
+h5 {
+    margin: 0 auto;
+    padding: 20% 20px;
+    font-size: 3rem;
+}
+
+.btn {
+    min-width: 40px;
+    min-height: 20px;
+    background-color: rgba(0,200,200,0.5);
 }

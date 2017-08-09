@@ -9,6 +9,16 @@ body {
   margin: 0;
 }
 
+main {
+  min-height: 110vh;
+  background-color: #c2f5e6;
+  padding: 20px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
 h1 {
   font-size: 3em;
   letter-spacing: 1px;
@@ -18,17 +28,15 @@ h1 {
 }
 
 canvas {
-	background: #fff;
-	display: block;
-	margin: 100px auto 10px;
-	border: 1px solid #000;
-	cursor: url(../img/cursor.png), crosshair;
+  margin: 20px -20px;
+  background: #eee;
+  border: 1px solid #000;
+  cursor: url(../img/cursor.png), crosshair;
 }
 
 .controls {
 	min-height: 60px;
 	margin: 0 auto;
-	width: 600px;
 	overflow: hidden;
 }
 
@@ -151,3 +159,4 @@ button {
 	padding: 5px 10px;
 	width: 305px;
 }
+
