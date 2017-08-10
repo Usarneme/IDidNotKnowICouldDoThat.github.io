@@ -66,4 +66,13 @@ main {
   @include mq('l') {
     flex-basis: per-line(4);
   }
+  @include mq('xl') {
+    flex-basis: per-line(6);
+  }
+}
+
+.exercise {
+  @include mq('xl') {
+    flex-basis: per-line(4);
+  }
 }

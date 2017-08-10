@@ -520,6 +520,14 @@ main {
     .card,
     .exercise {
       flex-basis: 17%; } }
+  @media (min-width: 120em) {
+    .card,
+    .exercise {
+      flex-basis: 4.66667%; } }
+
+@media (min-width: 120em) {
+  .exercise {
+    flex-basis: 17%; } }
 
 .main-header {
   position: relative;
@@ -644,5 +652,8 @@ footer {
   border-radius: 50%;
   position: relative;
   border: 4px solid white; }
+  @media (min-width: 120em) {
+    .img-featured {
+      max-width: 600px; } }
 
 /*# sourceMappingURL=style.css.map */
