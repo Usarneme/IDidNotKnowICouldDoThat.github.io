@@ -38,14 +38,11 @@ main {
 	margin: 0 auto;
 }
 
-div > p {
-	padding-top: 20px;
-}
-
 .btn, #x, #o {
 	min-height: 80px;
+	text-transform: uppercase;
 	font-weight: bold;
-	font-size: large;
+	font-size: larger;
 }
 
 #x, #o {
@@ -62,6 +59,10 @@ div > p {
 #victory, #loss, #resetWin, #resetLoss {
 	display: flex-box;
 	text-align: center;
+}
+
+#resetWin, #resetLoss {
+	min-height: 35px;
 }
 
 #victory {
@@ -98,8 +99,8 @@ div > p {
 	}
 
 	.jumbotron {
-		margin: 20px 0;
-		padding: 20px 0;
+		margin: 10px 0;
+		padding: 10px 0;
 	}
 
 }
