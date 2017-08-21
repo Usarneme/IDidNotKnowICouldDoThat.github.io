@@ -10,11 +10,9 @@
   <title>Did you know you could do that? I didn't...</title>
   <!-- CSS Reset -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <!-- Dev Icons -->
+  <!-- Font Awesome and Dev Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-  <!-- Font(s) -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
 
@@ -607,7 +605,23 @@
         TOGGLE.innerHTML = "Click to see a brief description of each of the 71 coding challenges";
       }
     }
-  </script>
+</script>
+<script>
+  //  <!--- font lazy loader --->
+  (function(){ 
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://fonts.googleapis.com/css?family=Raleway', true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var style = document.createElement('style');
+        console.dir(style);
+        style.innerHTML = xhr.responseText;
+        document.head.appendChild(style);
+      }
+    };
+    xhr.send();
+  }());
+</script>
 
 </body>
 </html>
