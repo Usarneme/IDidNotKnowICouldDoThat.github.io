@@ -61,7 +61,7 @@ main {
 
 button {
   font-family: "Raleway", sans-serif;
-	background-color: #bcf;
+	background-color: #bc9;
 	border: 1px solid black;
 	cursor: pointer;
 	float: left;
@@ -193,4 +193,20 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
+}
+
+/* Rules for PWA launching in standalone mode */
+@media all and (display-mode: standalone) {
+  /* Hide title text and tech stack explanation */
+  h1,
+  h4 {
+    visibility: hidden; 
+  }
+  /* Display the app short name instead at the top as main heading */
+  h1:after {
+    content: 'Calculator';
+    visibility: visible;
+    display: block;
+    margin-top: -50px;
+  }
 }

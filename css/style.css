@@ -458,19 +458,6 @@ a {
   a:hover {
     color: black; }
 
-/* Rules for PWA launching in standalone mode */
-@media all and (display-mode: standalone) {
-  /* Hide title text and tech stack explanation */
-  h1,
-  h4 {
-    visibility: hidden; }
-
-  /* Display the app short name instead at the top as main heading */
-  h1:after {
-    content: 'Calculator';
-    visibility: visible;
-    display: block;
-    margin-top: -50px; } }
 .main-content {
   display: flex;
   flex-wrap: wrap; }
