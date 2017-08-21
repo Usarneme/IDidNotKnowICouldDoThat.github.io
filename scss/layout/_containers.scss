@@ -56,18 +56,18 @@ main {
     color: $color-text;
   }
   @include mq('s') {
-    flex: 1 per-line(2);
+    flex: 1 per-line(1);
     justify-content: space-around;
   }
   @include mq('m') {
-    flex-basis: per-line(3);
+    flex-basis: per-line(2);
     justify-content: space-around;
   }
   @include mq('l') {
-    flex-basis: per-line(4);
+    flex-basis: per-line(3);
   }
   @include mq('xl') {
-    flex-basis: per-line(6);
+    flex-basis: per-line(4);
   }
 }
 

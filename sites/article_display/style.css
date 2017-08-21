@@ -25,7 +25,7 @@ main {
   margin: 0;
   border: 0;
   width: 100%;
-  background-image: url('./mountain.jpeg');
+  background-color: #c2f5e6;
   background-size: cover;
   min-height: 80vh;
 }

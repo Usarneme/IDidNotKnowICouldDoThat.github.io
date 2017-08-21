@@ -509,21 +509,21 @@ main {
   @media (min-width: 48em) {
     .card,
     .exercise {
-      flex: 1 46%;
+      flex: 1 98%;
       justify-content: space-around; } }
   @media (min-width: 62em) {
     .card,
     .exercise {
-      flex-basis: 27.33333%;
+      flex-basis: 46%;
       justify-content: space-around; } }
   @media (min-width: 75em) {
     .card,
     .exercise {
-      flex-basis: 17%; } }
+      flex-basis: 27.33333%; } }
   @media (min-width: 120em) {
     .card,
     .exercise {
-      flex-basis: 4.66667%; } }
+      flex-basis: 17%; } }
 
 @media (min-width: 120em) {
   .exercise {
@@ -655,5 +655,8 @@ footer {
   @media (min-width: 120em) {
     .img-featured {
       max-width: 600px; } }
+
+.portfolio-image {
+  border-radius: 20%; }
 
 /*# sourceMappingURL=style.css.map */
