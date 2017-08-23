@@ -209,13 +209,12 @@ input[type=range]:focus::-ms-fill-upper {
     content: 'Calculator';
     visibility: visible;
     display: block;
-    margin: -50px auto;
   }
   main,
   article,
   #calculator {
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
+    max-width: 100vw;
   }
   #calculator {
     height: 95vh;
