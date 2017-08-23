@@ -10,8 +10,7 @@
 	<title>JS Calculator</title>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <!-- Progressive Web App manifest -->
+	<!-- Progressive Web App manifest -->
 	<link rel="manifest" href="manifest.json">
 	<meta name="theme-color" content="#c2f5e6">
 
@@ -61,7 +60,7 @@
 
 		<div class="decimalSelector">
 			<h5>How many decimal places would you like to display in the result?</h5>
-			0 <input id="sigFigInput" type="range" min="0" max="10" value="2" accesskey="s" /> 10
+			0 <input id="sigFigInput" type="range" min="0" max="10" value="2" accesskey="s" label="decimalChooser" /> 10
 			<p id="sigFig">2 decimal places</p>
 		</div>
     </article>
@@ -80,9 +79,27 @@
 			});
 		}
 	</script>
+
+	<!-- Font lazy loader -->
+	<script> 
+		(function(){ 
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'https://fonts.googleapis.com/css?family=Raleway', true);
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+			var style = document.createElement('style');
+			console.dir(style);
+			style.innerHTML = xhr.responseText;
+			document.head.appendChild(style);
+			}
+		};
+		xhr.send();
+		}());
+	</script>
+
+	<!--  Calculator functionality and event listeners for user interaction -->
 	<script src="calc.js"></script>
 
-</body>
 	<!-- ACCESS KEY REFERENCE: 
 	// ELEMENTS
 			m				: (m)ain element, calculator
@@ -99,4 +116,5 @@
 			b				: (b)ackspace 
 			c				: (c)lear 
 	-->
+</body>
 </html>
