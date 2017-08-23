@@ -2,10 +2,10 @@
 * DOM Element References reused in functions *
 *********************************************/
 
-const calculator = document.getElementById('calculator'),
-	  resultElement = document.getElementById('result'),
-  	  sigFigInput = document.getElementById('sigFigInput'),
-	  sigFig = document.getElementById('sigFig');
+const CALC = document.getElementById('calculator'),
+	  RESULTELEMENT = document.getElementById('result'),
+  	  SIGFIGELEMENT = document.getElementById('sigFigInput'),
+	  SIGFIG = document.getElementById('sigFig');
 
 /*******************
 * Global variables *
@@ -41,24 +41,24 @@ handleClick = (elementId) => {
 		disableButtons('.operator');
 		enableButtons('.dot');
 		currentDisplayValues += elementId;
-		resultElement.textContent = currentDisplayValues;
+		RESULTELEMENT.textContent = currentDisplayValues;
 	} else if (elementId == '.') {
 		disableButtons('.dot');
 	    currentDisplayValues += elementId;
-	    resultElement.textContent = currentDisplayValues;
+	    RESULTELEMENT.textContent = currentDisplayValues;
 	} else if (elementId == 'calculator' || elementId == 'result') { 
 		// do nothing if the user clicks on part of the screen that is not on a button
 	} else { 
 		// a number was clicked...
 	    currentDisplayValues += elementId;
-	    resultElement.textContent = currentDisplayValues;
+	    RESULTELEMENT.textContent = currentDisplayValues;
 	}
 }
 
 // Clears out the display and stored values
 clearAll = () => {
 	currentDisplayValues = '';
-	resultElement.textContent = currentDisplayValues;
+	RESULTELEMENT.textContent = currentDisplayValues;
 }
 
 // Deletes the previously entered value
@@ -78,7 +78,7 @@ backSpace = () => {
 		enableButtons('.dot');
 	}
 	currentDisplayValues = currentDisplayValues.substring(0, (currentDisplayValues.length-1));
-	resultElement.textContent = currentDisplayValues;
+	RESULTELEMENT.textContent = currentDisplayValues;
 }
 
 // Display the resulting value using the provided operator on the generated operands
@@ -96,7 +96,7 @@ displayResult = (operator) => {
 	// Limit the significant figures
 	result = result.toFixed(decimalPlaces);
 	// the result field can hold about 19 characters, limit the result to that
-	resultElement.textContent += ' = '+result.toString().substring(0,20);
+	RESULTELEMENT.textContent += ' = '+result.toString().substring(0,20);
 }
 
 // Determines and returns as a string the type of operator 
@@ -132,12 +132,12 @@ enableButtons = (ofType) => {
 * Event Listeners                       *
 ****************************************/
 
-calculator.addEventListener('click', (event) => {
+CALC.addEventListener('click', (event) => {
     handleClick(event.target.id),
     event.stopPropagation()
 }, false);
 
-sigFigInput.addEventListener('input', () => {
-	sigFig.textContent = sigFigInput.value+' decimal places';
-	decimalPlaces = sigFigInput.value;
+SIGFIGELEMENT.addEventListener('input', () => {
+	SIGFIG.textContent = SIGFIGELEMENT.value+' decimal places';
+	decimalPlaces = SIGFIGELEMENT.value;
 }, false);
