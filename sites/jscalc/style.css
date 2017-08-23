@@ -199,14 +199,25 @@ input[type=range]:focus::-ms-fill-upper {
 @media all and (display-mode: standalone) {
   /* Hide title text and tech stack explanation */
   h1,
-  h4 {
-    visibility: hidden; 
+  h4,
+  nav, {
+    visibility: hidden;
+    display: none; 
   }
   /* Display the app short name instead at the top as main heading */
-  h1:after {
+  nav:after {
     content: 'Calculator';
     visibility: visible;
     display: block;
-    margin-top: -50px;
+    margin: -50px auto;
+  }
+  main,
+  article,
+  #calculator {
+    width: 100%;
+    max-width: 100%;
+  }
+  #calculator {
+    height: 95vh;
   }
 }

@@ -18,9 +18,30 @@ let currentDisplayValues = '', // what shows in the result field
 * Functions to update the display and calculate results *
 ********************************************************/
 
-// Handles what happens when different elements on the page are clicked
-handleClick = (elementId) => {
-	if (elementId == 'equals') {
+/* ACCESS KEY REFERENCE: 
+// ELEMENTS
+m				: (m)ain element, calculator
+r				: (r)esult element, where the answer displays
+s				: significant figure slider (decimal places to display selector)
+// BUTTONS
+0-9 			: 0-9 
+d				: ad(d)
+t				: subtrac(t)
+y				: multipl(y)
+e				: divid(e)
+l				: resu(l)t
+p				: (p)eriod
+b				: (b)ackspace 
+c				: (c)lear 
+*/
+
+// Handles what happens when different elements on the page are clicked 
+handleClick = (element) => {
+	// Elements' access keys are used as a numeric element ID (0-9 buttons) requires special
+	// escaping (even when string wrapped) to utilize CSS's querySelectorAll function which I 
+	// am unable to provide for automated testing tools such as Chrome's PWA Lighthouse Extension
+	const elementAccessKey = element.accessKey;
+	if (elementAccessKey == 'l') {
 		if(currentDisplayValues === '') {
 			// do nothing if no numbers have been input yet
 		} else {
@@ -29,28 +50,29 @@ handleClick = (elementId) => {
 		// determine the operator in use and update the display with the result
 		displayResult( determineOperator() );
 		}
-	} else if (elementId == 'clear') {
+	} else if (elementAccessKey == 'c') {
 		// make all buttons clickable again
 		enableButtons(['.num', '.dot', '.equals', '.operator', '.backspace']);
 		// clear out the display
 		clearAll();
-	} else if (elementId == 'backspace') {
+	} else if (elementAccessKey == 'b') {
 		backSpace();
-	} else if (elementId == '+' || elementId == '-' || elementId == '*' || elementId == '/') {
+	} else if (elementAccessKey == 'd' || elementAccessKey == 't' || elementAccessKey == 'y' || elementAccessKey == 'e') {
 		// an operator was clicked: disable operator buttons and enable the dot button
 		disableButtons('.operator');
 		enableButtons('.dot');
-		currentDisplayValues += elementId;
+		currentDisplayValues += element.id;
 		RESULTELEMENT.textContent = currentDisplayValues;
-	} else if (elementId == '.') {
+	} else if (elementAccessKey == 'p') {
 		disableButtons('.dot');
-	    currentDisplayValues += elementId;
+	    currentDisplayValues += element.id;
 	    RESULTELEMENT.textContent = currentDisplayValues;
-	} else if (elementId == 'calculator' || elementId == 'result') { 
+	} else if (elementAccessKey == 'calculator' || elementAccessKey == 'result') { 
 		// do nothing if the user clicks on part of the screen that is not on a button
 	} else { 
 		// a number was clicked...
-	    currentDisplayValues += elementId;
+		console.log('Appending '+elementAccessKey+' to currentDisplayValues: '+currentDisplayValues);
+	    currentDisplayValues += elementAccessKey;
 	    RESULTELEMENT.textContent = currentDisplayValues;
 	}
 }
@@ -133,7 +155,7 @@ enableButtons = (ofType) => {
 ****************************************/
 
 CALC.addEventListener('click', (event) => {
-    handleClick(event.target.id),
+	handleClick(event.target),
     event.stopPropagation()
 }, false);
 

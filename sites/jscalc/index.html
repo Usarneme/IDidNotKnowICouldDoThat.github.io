@@ -12,7 +12,8 @@
 	<link href="style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <!-- Progressive Web App manifest -->
-  <link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#c2f5e6">
 
 </head>
 
@@ -29,38 +30,38 @@
     <article>
 		<h4>This project utilizes HTML5, CSS3, and ES6/JavaScript to create a Calculator web application.</h4>
 		
-	    <div id="calculator">
-			<div id="result"></div>
+		<div id="calculator" accesskey="m">
+			<div id="result" accesskey="r"></div>
 
-			<button id="7" class="calcButton num">7</button>
-			<button id="8" class="calcButton num">8</button>
-			<button id="9" class="calcButton num">9</button>
-			<button id="+" class="calcButton operator">+</button>
+			<button id="7" class="calcButton num" accesskey="7">7</button>
+			<button id="8" class="calcButton num" accesskey="8">8</button>
+			<button id="9" class="calcButton num" accesskey="9">9</button>
+			<button id="+" class="calcButton operator" accesskey="d">+</button>
 
-			<button id="4" class="calcButton num">4</button>
-			<button id="5" class="calcButton num">5</button>
-			<button id="6" class="calcButton num">6</button>
-			<button id="-" class="calcButton operator">-</button>
+			<button id="4" class="calcButton num" accesskey="4">4</button>
+			<button id="5" class="calcButton num" accesskey="5">5</button>
+			<button id="6" class="calcButton num" accesskey="6">6</button>
+			<button id="-" class="calcButton operator" accesskey="t">-</button>
 
-			<button id="1" class="calcButton num">1</button>
-			<button id="2" class="calcButton num">2</button>
-			<button id="3" class="calcButton num">3</button>
-			<button id="*" class="calcButton operator">*</button>
+			<button id="1" class="calcButton num" accesskey="1">1</button>
+			<button id="2" class="calcButton num" accesskey="2">2</button>
+			<button id="3" class="calcButton num" accesskey="3">3</button>
+			<button id="*" class="calcButton operator" accesskey="y">*</button>
 
-			<button id="." class="calcButton dot">.</button>
-			<button id="0" class="calcButton num">0</button>
-			<button id="equals" class="calcButton equals">=</button>
-			<button id="/" class="calcButton operator">/</button>
+			<button id="." class="calcButton dot" accesskey="p">.</button>
+			<button id="0" class="calcButton num" accesskey="0">0</button>
+			<button id="equals" class="calcButton equals" accesskey="l">=</button>
+			<button id="/" class="calcButton operator" accesskey="e">/</button>
 
-			<button id="backspace" class="calcButton backspace">Back</button>
-			<button id="clear" class="calcButton clear">Clear</button>
+			<button id="backspace" class="calcButton backspace" accesskey="b">Back</button>
+			<button id="clear" class="calcButton clear" accesskey="c">Clear</button>
 		</div>
 
 		<div class="clearfix"></div>
 
 		<div class="decimalSelector">
 			<h5>How many decimal places would you like to display in the result?</h5>
-			0 <input id="sigFigInput" type="range" min="0" max="10" value="2" /> 10
+			0 <input id="sigFigInput" type="range" min="0" max="10" value="2" accesskey="s" /> 10
 			<p id="sigFig">2 decimal places</p>
 		</div>
     </article>
@@ -82,4 +83,20 @@
 	<script src="calc.js"></script>
 
 </body>
+	<!-- ACCESS KEY REFERENCE: 
+	// ELEMENTS
+			m				: (m)ain element, calculator
+			r				: (r)esult element, where the answer displays
+			s				: significant figure slider (decimal places to display selector)
+	// BUTTONS
+			0-9 			: 0-9 
+			d				: ad(d)
+			t				: subtrac(t)
+			y				: multipl(y)
+			e				: divid(e)
+			l				: resu(l)t
+			p				: (p)eriod
+			b				: (b)ackspace 
+			c				: (c)lear 
+	-->
 </html>
