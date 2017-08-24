@@ -10,7 +10,6 @@
     <title>Tic Tac Toe</title>
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<!-- Site Specific CSS -->
 	<link href="style.css" rel="stylesheet" type="text/css" charset="utf-8">
 </head>
@@ -63,13 +62,37 @@
 		</div><!--end of container wrapper div-->
 
       </div>
-    </article>
+		</article>
+
+		<aside>
+			<div>
+				<p>View a Component composition build of this application created using React <a href="react/index.html">clicking here.</a></p>
+			</div>
+		</aside>
+
   </main>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <!-- Bootstrap Core JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="ttt.js" type="text/javascript" charset="utf-8"></script>
+  <!-- Game logic and event handlers -->
+  <script src="ttt.js" type="text/javascript" charset="utf-8"></script>
+  <!-- font lazy loader -->  
+  <script>
+	(function(){ 
+	  var xhr = new XMLHttpRequest();
+	  xhr.open('GET', 'https://fonts.googleapis.com/css?family=Raleway', true);
+	  xhr.onreadystatechange = function () {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+		  var style = document.createElement('style');
+		  console.dir(style);
+		  style.innerHTML = xhr.responseText;
+		  document.head.appendChild(style);
+		}
+	  };
+	  xhr.send();
+	}());
+  </script>
 </body>
 </html>

@@ -24,9 +24,13 @@ function updateSquare(e) {
 			document.getElementById('o').className = "col-xs-1";
 		}
 	}
-	checkForWin(currentPlayer);
-	checkIfBoardIsFull();
-	changeTurn();
+	if ( checkForWin(currentPlayer) ) {
+		//someone has won
+		return;
+	} else {
+		checkIfBoardIsFull();
+		changeTurn();	
+	}
 } // end of updateSquare function
 
 function changeTurn() {
@@ -50,6 +54,7 @@ function checkIfBoardIsFull() {
 	}
 } // end of check if board is full function
 
+// You can wind diagonally two ways, vertically three ways, and horizontally three ways (8 total)
 function checkForWin(currPlayer) { 
 	// look for diagonal win
 	if ( 
@@ -62,9 +67,8 @@ function checkForWin(currPlayer) {
 		document.getElementById('5').style.background = '#7cff00';
 		document.getElementById('9').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
-
+		return true;
+	} 
 	if ( 
 	(document.getElementById('3').innerHTML == currPlayer) &&
 	(document.getElementById('5').innerHTML == currPlayer) &&
@@ -75,9 +79,8 @@ function checkForWin(currPlayer) {
 		document.getElementById('5').style.background = '#7cff00';
 		document.getElementById('7').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
-
+		return true;
+	} 
 	// look for horizontal win
 	if ( 
 	(document.getElementById('1').innerHTML == currPlayer) &&
@@ -89,9 +92,8 @@ function checkForWin(currPlayer) {
 		document.getElementById('2').style.background = '#7cff00';
 		document.getElementById('3').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
-
+		return true;
+	} 
 	if ( 
 	(document.getElementById('4').innerHTML == currPlayer) &&
 	(document.getElementById('5').innerHTML == currPlayer) &&
@@ -102,9 +104,8 @@ function checkForWin(currPlayer) {
 		document.getElementById('5').style.background = '#7cff00';
 		document.getElementById('6').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
-
+		return true;
+	} 
 	if ( 
 	(document.getElementById('7').innerHTML == currPlayer) &&
 	(document.getElementById('8').innerHTML == currPlayer) &&
@@ -115,9 +116,8 @@ function checkForWin(currPlayer) {
 		document.getElementById('8').style.background = '#7cff00';
 		document.getElementById('9').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
-
+		return true;
+	} 
 	// look for vertical win 
 	if ( 
 	(document.getElementById('1').innerHTML == currPlayer) &&
@@ -129,9 +129,8 @@ function checkForWin(currPlayer) {
 		document.getElementById('4').style.background = '#7cff00';
 		document.getElementById('7').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
-
+		return true;
+	}
 	if ( 
 	(document.getElementById('2').innerHTML == currPlayer) &&
 	(document.getElementById('5').innerHTML == currPlayer) &&
@@ -142,9 +141,8 @@ function checkForWin(currPlayer) {
 		document.getElementById('5').style.background = '#7cff00';
 		document.getElementById('8').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
-
+		return true;
+	} 
 	if ( 
 	(document.getElementById('3').innerHTML == currPlayer) &&
 	(document.getElementById('6').innerHTML == currPlayer) &&
@@ -155,8 +153,10 @@ function checkForWin(currPlayer) {
 		document.getElementById('6').style.background = '#7cff00';
 		document.getElementById('3').style.background = '#7cff00';
 		displaySuccess();
-		return;
-	} else {}
+		return true;
+	} 
+	// no winner was found
+	return false;
 } // end of checkForWin function
 
 function displaySuccess() { 
@@ -174,7 +174,6 @@ function displaySuccess() {
 
 		// Disabled all of the remaining squares in the gameboard
 		var buttons = document.getElementById('gameBoard').children;
-		console.log('displaySuccess func. Selected element: '+buttons);
 		for (var i=0; i<buttons.length; i++) {
 			buttons[i].disabled = true;
 		}

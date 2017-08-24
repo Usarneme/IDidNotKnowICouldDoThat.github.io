@@ -87,10 +87,8 @@ main {
 	padding: 5px 0 5px 40px;
 }
 
-.footer {
-	bottom: 0;
-	width: 100%;
-	position: absolute;
+aside {
+	margin-top: 25px;
 }
 
 @media screen and (min-width: 600px) {
