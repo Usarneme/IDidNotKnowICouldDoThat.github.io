@@ -75,8 +75,8 @@ handleClick = (element) => {
 			currentDisplayValues += '.';
 			RESULTELEMENT.textContent = currentDisplayValues;
 			break;	
-		case 'calculator': // do nothing if non-button areas are clicked
-		case 'result':
+		case 'm': // do nothing if non-button areas are clicked
+		case 'r':
 			break;	
 		default: // a number was clicked...
 			currentDisplayValues += elementAccessKey;
