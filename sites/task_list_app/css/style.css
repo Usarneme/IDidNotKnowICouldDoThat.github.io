@@ -1,10 +1,9 @@
 /* Task List styles */
 
 * {
-  text-align: center;
-  font-family: "Raleway", sans-serif;
-	box-sizing: border-box;
 	max-width: 100%;
+	box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -12,43 +11,56 @@ body {
 }
 
 main {
-  background-color: #c2f5e6;
   min-height: 100vh;
+  padding-bottom: 20px;
+  background-color: #c2f5e6;
 }
 
 #wrapper {
+  width: 30em;
   color: #333;
-  font-family: Lato, sans-serif;
-  width: 20em;
   margin: 0 auto;
-  padding-top: 20px;
+  max-width: 100%;
+  font-family: Lato, sans-serif;
 }
 
 h1 {
   font-size: 3em;
+  min-height: 40px;
+  margin: 20px auto;
   letter-spacing: 1px;
   font-weight: lighter;
-  margin: 20px auto;
-  min-height: 40px;
 }
 
 h4 {
-  font-weight: lighter;
   margin: 15px auto;
+  font-weight: lighter;
   padding: 15px 10px 0 10px;
+}
+
+h1,
+h4 {
+  text-align: center;  
 }
 
 h5 {
   color: #333;
-  font-weight: 700;
   font-size: 15px;
-  border-bottom: 2px solid #333;
+  font-weight: 700;
+  padding-left: 10px;
+  text-align: center;
   text-transform: uppercase;
+  border-bottom: 2px solid #333;
 }
 
+span {
+  margin: 7px 5px 7px 0;
+  float: right;
+}
 
 ul {
-  padding: 10px 0;
+  margin-top: -5px;
+  padding: 0;
 }
 
 li {
@@ -59,26 +71,30 @@ li {
 }
 
 button {
-  background: none;
-  border: 1px solid #aaa;
+  width: 33%;
+  margin-top: 15px;
   color: #222;
   font-size: 15px;
-  width: 40%;
   cursor: pointer;
-  margin: 5px;
   padding: 10px 2px;
-  border-radius: .35em;
+  border-radius: .45em;
+  background-color: rgb(253, 253, 253);
+  border: 2px solid #BBB;
 }
 
-.add:hover {
+button:hover {
+  border: 2px solid #888;
+}
+
+.add {
   color: #0FC57C;
 }
 
-.delete:hover {
+.delete {
   color: #F24C43;
 }
 
-.edit:hover {
+.edit {
   color: #004FFF;
 }
 
@@ -100,7 +116,28 @@ label {
   padding-left: 6px;
 }
 
-/* New Task */
 label[for='new-task'] {
   padding-left: 0;
+}
+
+input[type=checkbox] {
+  float: right;
+  margin: 10px 5px 7px 0;
+}
+
+@media all and (min-width: 500px) {
+  h5 {
+    text-align: initial;
+  }
+}
+
+/* Rules for PWA launching in standalone mode */
+@media all and (display-mode: standalone) {
+  /* Hide title text and tech stack explanation */
+  h1,
+  h4 {
+    margin: 0;
+    padding: 0;
+    display: none; 
+  }
 }

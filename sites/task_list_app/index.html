@@ -9,9 +9,11 @@
   <meta name="author" content="Tom Geraghty">
   <title>Task List</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <!-- Site Specific CSS -->
   <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+	<!-- Progressive Web App manifest -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#c2f5e6">
 </head>
 
 <body id="page-top">
@@ -29,17 +31,31 @@
     <article>
     <h4>This project utilizes HTML5, CSS3, and JavaScript to create an online task tracking web application.</h4>
       <div id="wrapper">
-        <label for="new-task"><h5>Add an Item</h5></label><input id="new-task" type="text"><button class="add">Add</button>
+        <h5>Add an Item</h5>
+        <ul>
+          <li>
+            <label for="new-task">
+            </label><input id="new-task" type="text">
+            <button class="add">Add</button>
+            <button class="saveAll" id="save" style="display: none;">Save Task List</button>
+          </li>
+        </ul>
 
         <h5>Todo <small>(Check the box once completed)</small></h5>
         <ul id="incomplete-tasks">
           <li>
-            <input type="checkbox"><label>Pay Bills</label>
-            <input type="text"><button class="edit">Edit</button><button class="delete">Delete</button>
+            <label>Pay Bills</label>
+            <span>Complete</span>
+            <input type="checkbox">
+            <input type="text" disabled><button class="edit">Edit</button>
+            <button class="delete">Delete</button>
           </li>
-          <li class="editMode">
-            <input type="checkbox"><label>Go Shopping</label>
-            <input type="text" value="Go Shopping"><button class="edit">Edit</button><button class="delete">Delete</button>
+          <li>
+            <label>Go Shopping</label>
+            <span>Complete</span>
+            <input type="checkbox">
+            <input type="text" disabled><button class="edit">Edit</button>
+            <button class="delete">Delete</button>
           </li>
 
         </ul>
@@ -47,13 +63,33 @@
         <h5>Completed</h5>
         <ul id="completed-tasks">
           <li>
-            <input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button>
+            <label>See the Doctor</label>
+            <span>Complete</span>  
+            <input type="checkbox" checked>
+            <input type="text" disabled><button class="edit">Edit</button>
+            <button class="delete">Delete</button>
           </li>
         </ul>
 
       </div>
     </article>
   </main>
+
+  <!-- Font lazy loader -->
+	<script> 
+		(function(){ 
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'https://fonts.googleapis.com/css?family=Raleway', true);
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+			var style = document.createElement('style');
+			style.innerHTML = xhr.responseText;
+			document.head.appendChild(style);
+			}
+		};
+		xhr.send();
+		}());
+	</script>
 
   <script src="js/app.js" type="text/JavaScript"></script>
 </body>
