@@ -125,8 +125,10 @@ displayResult = (operator) => {
 	}
 	// Limit the significant figures
 	result = result.toFixed(decimalPlaces);
-	// the result field can hold about 19 characters, limit the result to that
-	RESULTELEMENT.textContent += ' = '+result.toString().substring(0,20);
+	// Remove trailing zeroes from results (eg 2.5000 -> 2.5)
+	result = parseFloat(result).toString();
+	// The result field can hold about 25 characters, limit the result to that
+	RESULTELEMENT.textContent += ' = '+result.toString().substring(0,25);
 }
 
 // Determines and returns as a string the type of operator 
