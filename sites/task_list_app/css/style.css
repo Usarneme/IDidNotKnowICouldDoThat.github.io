@@ -32,6 +32,10 @@ h1 {
   font-weight: lighter;
 }
 
+h1.pwa {
+  display: none;
+}
+
 h4 {
   margin: 15px auto;
   font-weight: lighter;
@@ -48,6 +52,7 @@ h5 {
   font-size: 15px;
   font-weight: 700;
   padding-left: 10px;
+  padding-top: 20px;
   text-align: center;
   text-transform: uppercase;
   border-bottom: 2px solid #333;
@@ -67,7 +72,7 @@ li {
   list-style-type: none;
   background-color: aliceblue;
   padding: 10px;
-  margin: 10px auto;
+  margin: 10px;
 }
 
 button {
@@ -86,16 +91,24 @@ button:hover {
   border: 2px solid #888;
 }
 
-.add {
+button#add,
+button#save {
   color: #0FC57C;
 }
 
-.delete {
+button.delete {
   color: #F24C43;
 }
 
-.edit {
+button.edit,
+button#retrieve {
   color: #004FFF;
+}
+
+button#save,
+button#retrieve {
+  width: 100%;
+  margin: 2px auto;
 }
 
 input[type="text"] {
@@ -110,10 +123,6 @@ input[type="text"] {
 
 input[type="text"]:focus {
   color: #333;
-}
-
-label {
-  padding-left: 6px;
 }
 
 label[for='new-task'] {
@@ -139,5 +148,9 @@ input[type=checkbox] {
     margin: 0;
     padding: 0;
     display: none; 
+  }
+  h1.pwa {
+    display: block;
+    padding-top: 20px;
   }
 }
