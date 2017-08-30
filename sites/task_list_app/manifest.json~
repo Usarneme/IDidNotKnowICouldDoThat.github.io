@@ -1,6 +1,6 @@
 {
   "short_name": "Task List",
-  "name": "Tom's Task List PWA",
+  "name": "Tom's Task List",
   "icons": [
     {
       "src": "launcher-icon-4x.png",
