@@ -124,36 +124,75 @@ saveTasks = () => {
         incompleteListItems = incompleteTasksHolder.getElementsByTagName('li');
 
   dataModel = {
-    completedTasks: {
-      li: {
+    completedTasks: [
+      {  // Each LI consists of: LABEL-SPAN-INPUT-INPUT-BUTTON-BUTTON
         label: {
+          tagName: 'label',
           innerText: 'See the Doctor'
         },
         span: {
+          tagName: 'span',
           innerText: 'Complete'
         },  
-        input: {
+        inputCheckbox: {
+          tagName: 'input',
           type: 'checkbox',
           checked: true
         },
-        input: {
+        inputText: {
+          tagName: 'input',
           type: 'text',
           disabled: true
         },
-        button: {
+        buttonEdit: {
+          tagName: 'button',
           class: 'edit',
           innerText: 'Edit'
         },
-        button: {
+        buttonDelete: {
+          tagName: 'button',
           class: 'delete',
           innerText: 'Delete'
         } 
-      }
-    },
-    incompleteTasks: {
-      // similar
-    }
+      },
+    ],
+    incompleteTasks: [ 
+      {}, // LI 
+      {}, // LI
+    ] 
   }
+
+  /*
+  dataModel.completedTasks[0] :
+  {
+    label: { tagName: 'label', innerText: 'See the Doctor' },
+    span: { tagName: 'span', innerText: 'Complete' },
+    inputCheckbox: { tagName: 'input', type: 'checkbox', checked: true },
+    inputText: { tagName: 'input', type: 'text', disabled: true },
+    buttonEdit: { tagName: 'button', class: 'edit', innerText: 'Edit' },
+    buttonDelete: { tagName: 'button', class: 'delete', innerText: 'Delete' }
+  }
+
+  Object.keys(dataModel.completedTasks[0]) :
+  [
+    'label',
+    'span',
+    'inputCheckbox',
+    'inputText',
+    'buttonEdit',
+    'buttonDelete' 
+  ]
+
+  for (key in dataModel.completedTasks[0]) { 
+    console.log(key+" : "+Object.keys(dataModel.completedTasks[0][key])); 
+  } :
+    label : tagName,innerText
+    span : tagName,innerText
+    inputCheckbox : tagName,type,checked
+    inputText : tagName,type,disabled
+    buttonEdit : tagName,class,innerText
+    buttonDelete : tagName,class,innerText
+  */
 
   if (storageAvailable('localStorage')) {
     //Store completed tasks (if there is at least 1+ completed list item...)
