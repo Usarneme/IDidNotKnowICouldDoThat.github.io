@@ -2,19 +2,19 @@
 //  Variables
 // ======================================
 
-$color-primary: #f7f5e6;
+$color-primary: #38B2CE;
 $color-primary-light: lighten($color-primary, 20%);
 $color-primary-dark: darken($color-primary, 20%);
 
-$color-secondary: #333a56;
+$color-secondary: #60B9CE;
 
-$color-accent: #52658f;
-$color-shade: mix($color-primary, $color-secondary, 50%);
+$color-accent: #FF7F00;
 
-$color-text: black;
-$color-text-secondary: white;
+$color-mix: mix($color-primary, $color-secondary, 50%);
 
-$color-bg: #e8e8e8;
+$color-text: #111;
+$color-text-light: lighten($color-text, 20%);
+$color-text-dark: darken($color-text, 20%);
 
 // Fonts
 $font-stack-primary: 'Raleway', sans-serif;

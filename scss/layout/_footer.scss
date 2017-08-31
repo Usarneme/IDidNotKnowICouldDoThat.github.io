@@ -6,9 +6,9 @@ footer {
   height: 100px;
   padding: 2em 0 0;
   margin-top: 3.5em;
-  background-color: $color-shade;
+  background-color: $color-secondary;
   @include skewed {
-    background-color: $color-shade;
+    background-color: $color-secondary;
     top: -25px;
   }
 }
@@ -24,7 +24,7 @@ footer {
   margin-top: 1em;
   min-width: 250px;
   min-height: 250px;
-  background-color: $color-shade;
+  background-color: $color-secondary;
   @media (min-width: $break-s) {
     flex: 1 per-line(2);
     justify-content: space-around;
@@ -47,7 +47,7 @@ footer {
     color: $color-text;
   }
   a:hover {
-    color: $color-shade;
+    color: $color-secondary;
   }
   @media (min-width: $break-m) {
     padding-top: 1.5rem;

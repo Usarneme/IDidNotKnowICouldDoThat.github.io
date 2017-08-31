@@ -2,22 +2,31 @@
 //  Icon Styles
 // ======================================
 
-.icons,
-.social > a {
+#devicons div .icons,
+.social a {
   flex-grow: 1;
 	padding: 10px;
 	font-size: 1.75em;
 	justify-content: space-around;
 }
 
-.icons {
-  font-size: 2.35em;
-  &:hover {
-    color: $color-accent;    
-  }
+#devicons,
+#devicons div {
+  @include flexy($disp: flex, $dir: null, $wrap: wrap, $justify: space-between);
+  padding: 10px;  
 }
 
-#devicons {
-  display: flex;
-  flex-wrap: wrap;
+#devicons div {
+  flex-direction: column;
+}
+
+.icons,
+a > i {
+  font-size: 2.35em;
+  color: $color-text;
+  transition: transform .3s cubic-bezier(0,-0.65,1,1.91);
+  &:hover {
+    color: $color-accent;
+    transform: rotate(10deg) scale(1.3);
+  }
 }

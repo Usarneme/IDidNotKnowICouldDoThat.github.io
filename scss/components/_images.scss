@@ -9,7 +9,7 @@
   margin-top: 75px;
   border-radius: 50%;
   position: relative;
-  border: 4px solid $color-text-secondary;
+  border: 4px solid #e8e8e8;
     @include mq('xl') {
     max-width: 600px;
   }
@@ -17,4 +17,6 @@
 
 .portfolio-image {
   border-radius: 20%;
+  float: left;
+  padding-right: 20px;
 }

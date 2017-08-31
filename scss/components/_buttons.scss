@@ -3,18 +3,21 @@
 // ======================================
 
 %btn {
+  border-radius: 4px;
+  cursor: pointer;
   max-width: 50rem;
   font-weight: bold;
   margin: $gutter auto;
-  display: inline-block;
+  display: block;
   text-decoration: none;
   padding: 0.75em 1.5em;
-  border-radius: 0.35em;
-  transition: opacity 0.3s;
   text-transform: uppercase;
-  background-color: $color-accent;
+  background-color: transparent;
+  border: solid 2px #eee;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
   &:hover {
     opacity: 0.8;
+    color: $color-text-dark;
   }
   &:active {
     opacity: initial;
@@ -22,8 +25,10 @@
 }
 
 .btn {
-  &-callout {
+  &-social {
     @extend %btn;
+    border: none;
+    display: inline-block;    
   }
   &-info {
     @extend %btn;
