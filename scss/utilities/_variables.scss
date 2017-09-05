@@ -3,8 +3,8 @@
 // ======================================
 
 $color-primary: #38B2CE;
-$color-primary-light: lighten($color-primary, 20%);
-$color-primary-dark: darken($color-primary, 20%);
+$color-primary-light: lighten($color-primary, 30%);
+$color-primary-dark: darken($color-primary, 30%);
 
 $color-secondary: #60B9CE;
 
@@ -13,8 +13,8 @@ $color-accent: #FF7F00;
 $color-mix: mix($color-primary, $color-secondary, 50%);
 
 $color-text: #111;
-$color-text-light: lighten($color-text, 20%);
-$color-text-dark: darken($color-text, 20%);
+$color-text-light: lighten($color-text, 30%);
+$color-text-dark: darken($color-text, 30%);
 
 // Fonts
 $font-stack-primary: 'Raleway', sans-serif;

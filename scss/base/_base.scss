@@ -11,6 +11,10 @@ body {
   text-align: center;
   color: $color-text;
   font-family: $font-stack-primary;
+  background: url('../img/bg_pixel.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 11px;
 }
 
 h2,
@@ -43,9 +47,6 @@ p {
 }
 
 a {
-  color: $color-text-light;
+  color: $color-text;
   text-decoration: none;
-  &:hover {
-    color: $color-text;
-  }
 }

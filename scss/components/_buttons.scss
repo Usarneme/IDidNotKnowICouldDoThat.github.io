@@ -3,23 +3,24 @@
 // ======================================
 
 %btn {
-  border-radius: 4px;
+  display: block;
   cursor: pointer;
   max-width: 50rem;
   font-weight: bold;
-  margin: $gutter auto;
-  display: block;
+  border: solid 2px;
+  color: $color-text;
+  border-radius: 4px;
   text-decoration: none;
   padding: 0.75em 1.5em;
+  margin: $gutter*2 auto;
   text-transform: uppercase;
-  background-color: $color-primary;
-  border: solid 2px lighten($color-primary, 10%);
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  border-color: $color-primary;
+  background-color: lighten($color-primary, 10%);
+  transition: background-color 0.3s cubic-bezier(0,-0.65,1,1.91), border-color 0.3s cubic-bezier(0,-0.65,1,1.91);
   &:hover {
     opacity: 0.8;
-    border-color: $color-primary-dark;
-    color: $color-text-light;
-    background-color: $color-primary-light;
+    background-color: lighten($color-primary, 40%);
+    border-color: lighten($color-primary-light, 20%);
   }
   &:active {
     opacity: initial;
@@ -27,12 +28,15 @@
 }
 
 .btn {
-  &-social {
-    @extend %btn;
-    border: none;
-    display: inline-block;    
-  }
   &-info {
     @extend %btn;
+  }
+  &-footer {
+    @extend %btn;
+    background-color: lighten($color-primary, 20%);
+  }
+  &-social {
+    @extend %btn;
+    display: inline-block;
   }
 }

@@ -42,13 +42,8 @@ footer {
 .footer-bottom {
   max-width: 100vw;
   padding-top: 2rem;
-  color: $color-text;
-  border: 3px solid $color-primary;
-  a {
-    color: $color-text;
-  }
   a:hover {
-    color: $color-primary-dark;
+    color: $color-text-light;
   }
   @media (min-width: $break-m) {
     padding-top: 1.5rem;
