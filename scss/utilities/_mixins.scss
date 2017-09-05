@@ -37,6 +37,11 @@
 
 // Media Queries
 @mixin mq($break) {
+  @if $break == 'xs' {
+    @media (max-width: $break-s) {
+      @content;
+    }
+  }
   @if $break == 's' {
     @media (min-width: $break-s) {
       @content;

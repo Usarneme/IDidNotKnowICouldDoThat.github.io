@@ -492,12 +492,15 @@ main {
   background-color: #FFFEEE; }
 
 .hero {
-  padding: 1em 1em 3em;
+  padding: 0 1em 3em;
   margin: 10px auto 0 auto;
   background: linear-gradient(#fff, #60B9CE), url("../img/pdx.jpg") no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
-  color: #111; }
+  color: #111;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center; }
   .hero p {
     font-size: 1.2em; }
 
@@ -516,7 +519,7 @@ main {
 .card,
 .exercise {
   width: 100%;
-  margin: 10px;
+  margin: 2px;
   padding: 1.5em 1em;
   border-radius: 0.25em;
   background-color: #60B9CE;
@@ -526,24 +529,30 @@ main {
     line-height: 1.25;
     margin: 0.35em 0 0;
     color: #111; }
+  @media (max-width: 48em) {
+    .card,
+    .exercise {
+      flex: 1 99.7%;
+      justify-content: space-around; } }
   @media (min-width: 48em) {
     .card,
     .exercise {
-      flex: 1 98%;
+      flex: 1 49.4%;
       justify-content: space-around; } }
   @media (min-width: 62em) {
     .card,
     .exercise {
-      flex-basis: 46%;
-      justify-content: space-around; } }
+      flex-basis: 49.4%; } }
   @media (min-width: 75em) {
     .card,
     .exercise {
-      flex-basis: 27.33333%; } }
+      margin: 4px;
+      flex-basis: 32.43333%; } }
   @media (min-width: 120em) {
     .card,
     .exercise {
-      flex-basis: 17%; } }
+      margin: 6px;
+      flex-basis: 23.8%; } }
 
 .main-header {
   position: relative;
@@ -563,11 +572,14 @@ main {
   .main-header h1 {
     color: #111;
     margin-bottom: 0;
-    font-size: 3.8em;
+    font-size: 3.4em;
     letter-spacing: 1px; }
-    @media (max-width: 48em) {
+    @media (max-width: 62em) {
       .main-header h1 {
-        font-size: 3.4em; } }
+        font-size: 3em; } }
+    @media (max-width: 120em) {
+      .main-header h1 {
+        font-size: 2.7em; } }
   .main-header p {
     margin: 0;
     font-size: 1.25em;
@@ -605,25 +617,26 @@ footer {
   background-color: #60B9CE; }
   @media (min-width: 48em) {
     .footer-col {
-      flex: 1 46%;
+      flex: 1 49.4%;
       justify-content: space-around; } }
   @media (min-width: 62em) {
     .footer-col {
       min-height: 350px;
-      flex-basis: 27.33333%;
+      flex-basis: 32.43333%;
       justify-content: space-around; } }
   @media (min-width: 75em) {
     .footer-col {
-      flex-basis: 17%; } }
+      flex-basis: 23.8%; } }
 
 .footer-bottom {
   max-width: 100vw;
   padding-top: 2rem;
-  color: #111; }
+  color: #111;
+  border: 3px solid #38B2CE; }
   .footer-bottom a {
     color: #111; }
   .footer-bottom a:hover {
-    color: #60B9CE; }
+    color: #206e80; }
   @media (min-width: 62em) {
     .footer-bottom {
       padding-top: 1.5rem; } }
@@ -633,17 +646,19 @@ footer {
   cursor: pointer;
   max-width: 50rem;
   font-weight: bold;
-  margin: 10px auto;
+  margin: 3px auto;
   display: block;
   text-decoration: none;
   padding: 0.75em 1.5em;
   text-transform: uppercase;
-  background-color: transparent;
-  border: solid 2px #eee;
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease; }
+  background-color: #38B2CE;
+  border: solid 2px #61c2d8;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; }
   .btn-social:hover, .btn-info:hover {
     opacity: 0.8;
-    color: black; }
+    border-color: #206e80;
+    color: #444444;
+    background-color: #8ad2e2; }
   .btn-social:active, .btn-info:active {
     opacity: initial; }
 
@@ -691,8 +706,8 @@ a > i {
       max-width: 600px; } }
 
 .portfolio-image {
-  border-radius: 20%;
   float: left;
-  padding-right: 20px; }
+  padding: 0 20px 20px 0;
+  max-width: 290px; }
 
 /*# sourceMappingURL=style.css.map */

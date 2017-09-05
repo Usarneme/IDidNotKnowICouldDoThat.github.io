@@ -15,7 +15,7 @@ main {
 }
 
 .hero {
-  padding: 1em 1em 3em;
+  padding: 0 1em 3em;
   margin: 10px auto 0 auto;
   background: linear-gradient(#fff, $color-secondary),
               url('../img/pdx.jpg') no-repeat;
@@ -25,6 +25,9 @@ main {
   p {
     font-size: 1.2em;
   }
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .banner {
@@ -44,7 +47,7 @@ main {
 .card,
 .exercise {
   width: 100%;
-  margin: $gutter;
+  margin: 2px;
   padding: 1.5em 1em;
   border-radius: 0.25em;
   background-color: $color-secondary;
@@ -54,18 +57,23 @@ main {
     margin: 0.35em 0 0;
     color: $color-text;
   }
-  @include mq('s') {
+  @include mq('xs') {
     flex: 1 per-line(1);
+    justify-content: space-around;
+  }
+  @include mq('s') {
+    flex: 1 per-line(2);
     justify-content: space-around;
   }
   @include mq('m') {
     flex-basis: per-line(2);
-    justify-content: space-around;
   }
   @include mq('l') {
+    margin: 4px;
     flex-basis: per-line(3);
   }
   @include mq('xl') {
+    margin: 6px;
     flex-basis: per-line(4);
   }
 }
