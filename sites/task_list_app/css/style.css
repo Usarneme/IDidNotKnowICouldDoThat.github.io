@@ -83,6 +83,7 @@ button {
   cursor: pointer;
   padding: 10px 2px;
   border-radius: .45em;
+  text-transform: uppercase;
   background-color: rgb(253, 253, 253);
   border: 2px solid #BBB;
 }

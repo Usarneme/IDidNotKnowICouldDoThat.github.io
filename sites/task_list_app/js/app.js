@@ -8,7 +8,7 @@ var taskInput = document.getElementById("new-task"),
     incompleteTasksHolder = document.getElementById("incomplete-tasks"), 
     completedTasksHolder= document.getElementById("completed-tasks");
 
-// New Task List Item li created and returned
+/* New Task List List Item {li} created and returned */
 createNewTaskElement = function(taskString) {
   var listItem = document.createElement("li"),
       label = document.createElement("label"),
@@ -20,7 +20,7 @@ createNewTaskElement = function(taskString) {
         
   // Modify each element before appending  
   label.innerText = taskString;
-  span.innerText = "Complete";
+  span.innerText = "DONE";
   checkBox.type = "checkbox";
   editInput.type = "text"; 
   editInput.disabled = true;
@@ -40,7 +40,7 @@ createNewTaskElement = function(taskString) {
   return listItem;
 }
 
-//Add a new task
+/* Add a new task to the incomplete tasks list */
 addTask = function() {
   //Create a new list item with the text from #new-task:
   var listItem = createNewTaskElement(taskInput.value);
@@ -52,10 +52,10 @@ addTask = function() {
   taskInput.value = "";
 }
 
-//Edit an existing task
+/* Edit an existing task */
 editTask = function() {
   var listItem = this.parentNode,
-      editInput = listItem.querySelector("input[type=text"),
+      editInput = listItem.querySelector("input[type=text]"),
       label = listItem.querySelector("label"),
       inEditMode = listItem.classList.contains("editMode"),
       editButton = listItem.querySelector("button");
@@ -79,23 +79,23 @@ editTask = function() {
   listItem.classList.toggle("editMode");
 }
 
-//Delete an existing task
+/* Delete an existing task */
 deleteTask = function() {
   var listItem = this.parentNode,
         ul = listItem.parentNode;
-  //Remove the parent list item from the ul
+  // Remove the parent list item from the ul
   ul.removeChild(listItem);
 }
 
-//Mark a task as complete
+/* Mark a task as complete */
 taskCompleted = function() {
-  //Append the task list item to the #completed-tasks
+  // Append the task list item to the #completed-tasks
   var listItem = this.parentNode;
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 }
 
-//Mark a task as incomplete
+/* Mark a task as incomplete */
 taskIncomplete = function() {
   //Append the task list item to the #incomplete-tasks
   var listItem = this.parentNode;
@@ -103,155 +103,62 @@ taskIncomplete = function() {
   bindTaskEvents(listItem, taskCompleted);
 }
 
-bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
-  //select taskListItem's children
-  var checkBox = taskListItem.querySelector("input[type=checkbox]"),
-        editButton = taskListItem.querySelector("button.edit"),
-        deleteButton = taskListItem.querySelector("button.delete");
-  //bind editTask to edit button
-  editButton.onclick = editTask;  
-  //bind deleteTask to delete button
-  deleteButton.onclick = deleteTask;  
-  //bind checkBoxEventHandler to checkbox
-  checkBox.onchange = checkBoxEventHandler;
-}
-
-// Get/Save func
+/* Saves all current tasks (completed and incomplete) to localStorage if available
+   alert pops up if localStorage is not available to warn the user. */
 saveTasks = function() {
-  var completedTasksArray = [],
-        completedListItems = completedTasksHolder.getElementsByTagName('li'),
-        incompleteTasksArray = [],
-        incompleteListItems = incompleteTasksHolder.getElementsByTagName('li');
-
-  dataModel = {
-    completedTasks: [
-      {  // Each LI consists of: LABEL-SPAN-INPUT-INPUT-BUTTON-BUTTON
-        label: {
-          tagName: 'label',
-          innerText: 'See the Doctor'
-        },
-        span: {
-          tagName: 'span',
-          innerText: 'Complete'
-        },  
-        inputCheckbox: {
-          tagName: 'input',
-          type: 'checkbox',
-          checked: true
-        },
-        inputText: {
-          tagName: 'input',
-          type: 'text',
-          disabled: true
-        },
-        buttonEdit: {
-          tagName: 'button',
-          class: 'edit',
-          innerText: 'Edit'
-        },
-        buttonDelete: {
-          tagName: 'button',
-          class: 'delete',
-          innerText: 'Delete'
-        } 
-      },
-    ],
-    incompleteTasks: [ 
-      {}, // LI 
-      {}, // LI
-    ] 
-  }
-
-  /*
-  dataModel.completedTasks[0] :
-  {
-    label: { tagName: 'label', innerText: 'See the Doctor' },
-    span: { tagName: 'span', innerText: 'Complete' },
-    inputCheckbox: { tagName: 'input', type: 'checkbox', checked: true },
-    inputText: { tagName: 'input', type: 'text', disabled: true },
-    buttonEdit: { tagName: 'button', class: 'edit', innerText: 'Edit' },
-    buttonDelete: { tagName: 'button', class: 'delete', innerText: 'Delete' }
-  }
-
-  Object.keys(dataModel.completedTasks[0]) :
-  [
-    'label',
-    'span',
-    'inputCheckbox',
-    'inputText',
-    'buttonEdit',
-    'buttonDelete' 
-  ]
-
-  for (key in dataModel.completedTasks[0]) { 
-    console.log(key+" : "+Object.keys(dataModel.completedTasks[0][key])); 
-  } :
-    label : tagName,innerText
-    span : tagName,innerText
-    inputCheckbox : tagName,type,checked
-    inputText : tagName,type,disabled
-    buttonEdit : tagName,class,innerText
-    buttonDelete : tagName,class,innerText
-  */
-
-  if (storageAvailable('localStorage')) {
-    //Store completed tasks (if there is at least 1+ completed list item...)
-    if(completedListItems) {
-      for(var i=0; i<completedListItems.length; i++) {
-        var listItemChildren = {},
-            currentListItem = completedListItems[i];
-        for(element in currentListItem.children) {
-          listItemChildren[currentListItem.localName] = 'TODO SOMETHING';
-          console.log('listItem[element] '+listItem[element]);
-        }
-        completedTasksArray.push(listItem);
-      }
-    }
-    console.dir(completedTasksArray);
-    localStorage.setItem('completedTasks', completedTasksArray);
-    //Store incomplete tasks
-    if(incompleteListItems) {
-      for(var i=0; i<incompleteListItems.length; i++) {
-        var listItem = {};
-        for(element in incompleteListItems[i].children) {
-          console.log('element: '+element+' incompleteListItems[i].children[element]: '+incompleteListItems[i].children[element]);
-          listItem[element] = incompleteListItems[i].children[element];
-        }
-        incompleteTasksArray.push(listItem);
-      }
-    }
-    console.dir(incompleteTasksArray);
-    localStorage.setItem('incompleteTasks', incompleteTasksArray);
-  
-    console.dir(localStorage);
-    console.log("Tasks saved to localStorage");
+  // If they are still working on a task (editMode enabled on any task list item)
+  if(document.getElementsByClassName('editMode').length > 0) {
+    // Deny the save and alert the user
+    alert('Please hit the save button on all tasks in progress. Then I will be able to save your task list for future use on this device.');
   } else {
-    //Warn user localstorage is not available
-    alert('Sorry, storage is not available on your device. Try another browser?');
+    // All is well. Save to local storage. 
+    var completedTasksArray = completedTasksHolder.innerHTML || [],
+    incompleteTasksArray = incompleteTasksHolder.innerHTML || [];
+
+    if (storageAvailable('localStorage')) {
+      //Store completed tasks (if there is at least 1+ completed list item...)
+      if(completedTasksArray.length > 0) {
+        localStorage.setItem('completedTasks', completedTasksArray);
+      }
+      //Store incomplete tasks
+      if(incompleteTasksArray.length > 0) {
+        localStorage.setItem('incompleteTasks', incompleteTasksArray);
+      }
+      console.log("Tasks saved to localStorage");
+      console.dir(localStorage);
+    } else {
+      //Warn user localstorage is not available
+      alert('Sorry, storage is not available on your device. Try another browser?');
+    }
   }
 }
 
+/* Retrieve all tasks from localStorage (completed and incomplete) */
 retrieveTasks = function() {
-  var completedTasksArray = [],
-        incompleteTasksArray = [];
-
   if(storageAvailable('localStorage')) {
     console.log('Retrieveing local storage.');
     if(localStorage.completedTasks) {
-      completedTasksArray.push(JSON.parse(localStorage.completedTasks));
-      console.dir(completedTasksArray);      
+      completedTasksHolder.innerHTML = localStorage.getItem('completedTasks');
+      // For each completed task list item retrieved and rendered...
+      for(var i=0; i<completedTasksHolder.children.length; i++) {
+        // Check the boxes for those that were already completed
+        completedTasksHolder.children[i].getElementsByTagName("input")[0].checked = true;        
+      }
     }
     if(localStorage.incompleteTasks) {
-      incompleteTasksArray.push(JSON.parse(localStorage.incompleteTasks));
-      console.dir(incompleteTasksArray);      
+      incompleteTasksHolder.innerHTML = localStorage.getItem('incompleteTasks');
     }
+    // Apply event handlers for Edit/Delete buttons and Completed checkbox elements
+    clickHandler();
   } else {
     //Warn user localstorage is not available
     alert('Sorry, storage is not available on your device. Try another browser?');
   }    
 }
 
-// Returns true if localStorage is implemented and available in a given browser
+/* Returns true if localStorage is implemented and available in a given browser 
+*  From the Web Storage API/MDN entry: 
+*  https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API */
 storageAvailable = function(type) {
   try {
     var storage = window[type],
@@ -276,23 +183,42 @@ storageAvailable = function(type) {
   }
 }
 
-//Set the click handler to the addTask function
+/* EVENT HANDLERS */
+
+/* Call-able click handler function applies the appropriate 
+   behavior/functionality to each element in each task list 
+   (completed & incomplete) */
+clickHandler = function() {
+  //Cycle over incompleteTasksHolder ul list items
+  for(var i=0; i<incompleteTasksHolder.children.length; i++) {
+    //Bind events to list item's children (taskCompleted)
+    bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
+  }
+
+  //Cycle over completedTasksHolder ul list items
+  for(var i=0; i<completedTasksHolder.children.length; i++) {
+    //Bind events to list item's children (taskIncomplete)
+    bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+  }
+}
+
+/* Event bindings for an individual task and it's children elements */
+bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
+  //select taskListItem's children
+  var checkBox = taskListItem.querySelector("input[type=checkbox]"),
+      editButton = taskListItem.querySelector("button.edit"),
+      deleteButton = taskListItem.querySelector("button.delete");
+  //bind editTask to edit button
+  editButton.onclick = editTask;  
+  //bind deleteTask to delete button
+  deleteButton.onclick = deleteTask;  
+  //bind checkBoxEventHandler to checkbox
+  checkBox.onchange = checkBoxEventHandler;
+}
+
+/* One time click handlers at startup for Add, Save, and Retrieve buttons */
 addButton.addEventListener("click", addTask);
-
-//Save items to localStorage listener
 saveButton.addEventListener("click", saveTasks);
-
-//Retrieve items from localStorage listener
 retrieveButton.addEventListener("click", retrieveTasks);
-
-//Cycle over incompleteTasksHolder ul list items
-for(var i = 0; i < incompleteTasksHolder.children.length; i++) {
-  //Bind events to list item's children (taskCompleted)
-  bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
-}
-
-//Cycle over completedTasksHolder ul list items
-for(var i = 0; i < completedTasksHolder.children.length; i++) {
-  //Bind events to list item's children (taskIncomplete)
-  bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
-}
+// Add event handlers for the "default" events at startup
+clickHandler();
