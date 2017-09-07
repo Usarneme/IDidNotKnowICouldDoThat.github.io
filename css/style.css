@@ -476,7 +476,8 @@ ul {
   list-style-type: none; }
 
 p {
-  margin-bottom: 1.25em; }
+  margin: 0 auto 1.25em;
+  max-width: 1025px; }
 
 a {
   color: #111;
