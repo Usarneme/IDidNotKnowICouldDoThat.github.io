@@ -13,17 +13,19 @@
 .hero {
   padding: 1em;
   margin: 10px auto 0 auto;
-  background: linear-gradient($color-secondary, #888),
-              url('../img/pdx.jpg') no-repeat;
-  background-blend-mode: multiply;
+  background: url('../img/pdx.jpg') no-repeat center center;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  /* Code to force IE to cover background images */
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale')";
+
   color: $color-text;
   p {
     font-size: 1.2em;
   }
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .banner {
@@ -36,7 +38,7 @@
 .headline {
   margin: 35px auto 0;
   max-width: 300px;
-  background: url('/img/grayCrossEmptyOpposite.svg');
+  background-color: #eee;
   background-size: 5px;
   text-shadow: 1px 1px white;
 }

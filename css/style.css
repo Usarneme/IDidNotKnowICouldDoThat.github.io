@@ -448,10 +448,10 @@ body {
   text-align: center;
   color: #111;
   font-family: "Raleway", sans-serif;
-  background: url("../img/grayCrossEmpty.svg");
+  background: url("../img/grayCrossSquareHoleOpenTop.svg");
   background-attachment: fixed;
   background-position: center;
-  background-size: 5px;
+  background-size: 15px;
   max-width: 2000px;
   margin: 0 auto; }
 
@@ -486,13 +486,13 @@ a {
 .btn-info, .btn-footer, .btn-social {
   display: block;
   cursor: pointer;
-  max-width: 50rem;
+  max-width: 35rem;
   font-weight: bold;
   border: solid 2px;
   color: #111;
   border-radius: 4px;
   text-decoration: none;
-  padding: 0.75em 1.5em;
+  padding: 0.75em 0.5em;
   margin: 6px auto;
   text-transform: uppercase;
   border-color: #38B2CE;
@@ -577,13 +577,15 @@ a > i {
 .hero {
   padding: 1em;
   margin: 10px auto 0 auto;
-  background: linear-gradient(#60B9CE, #888), url("../img/pdx.jpg") no-repeat;
-  background-blend-mode: multiply;
+  background: url("../img/pdx.jpg") no-repeat center center;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  color: #111;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center; }
+  /* Code to force IE to cover background images */
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale')";
+  color: #111; }
   .hero p {
     font-size: 1.2em; }
 
@@ -596,7 +598,7 @@ a > i {
 .headline {
   margin: 35px auto 0;
   max-width: 300px;
-  background: url("/img/grayCrossEmptyOpposite.svg");
+  background-color: #eee;
   background-size: 5px;
   text-shadow: 1px 1px white; }
 

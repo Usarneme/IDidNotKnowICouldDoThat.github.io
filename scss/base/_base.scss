@@ -10,10 +10,10 @@ body {
   text-align: center;
   color: $color-text;
   font-family: $font-stack-primary;
-  background: url('../img/grayCrossEmpty.svg');
+  background: url('../img/grayCrossSquareHoleOpenTop.svg');
   background-attachment: fixed;
   background-position: center;
-  background-size: 5px;
+  background-size: 15px;
   max-width: $max-width;
   margin: 0 auto;
 }
