@@ -443,16 +443,17 @@ table {
   box-sizing: border-box; }
 
 body {
-  margin: 0;
   font-size: 1rem;
   line-height: 1.5;
   text-align: center;
   color: #111;
   font-family: "Raleway", sans-serif;
-  background: url("../img/bg_pixel.png");
+  background: url("../img/grayCrossEmpty.svg");
   background-attachment: fixed;
   background-position: center;
-  background-size: 11px; }
+  background-size: 5px;
+  max-width: 2000px;
+  margin: 0 auto; }
 
 h2,
 h3 {
@@ -560,7 +561,7 @@ a > i {
 
 .portfolio-image {
   float: left;
-  padding: 0 20px 10px 0;
+  padding: 0 10px 10px;
   max-width: 290px; }
 
 .main-content {
@@ -592,10 +593,14 @@ a > i {
   background-color: #b3e2ec; }
 
 .headline {
-  background-color: #eee;
   margin: 35px auto 0;
   max-width: 300px;
-  opacity: 0.75; }
+  background: url("/img/grayCrossEmptyOpposite.svg");
+  background-size: 5px;
+  text-shadow: 1px 1px white; }
+
+.notes {
+  padding-bottom: 12px; }
 
 .exercism {
   display: flex;

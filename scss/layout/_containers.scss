@@ -34,10 +34,15 @@
 }
 
 .headline {
-  background-color: #eee;
   margin: 35px auto 0;
   max-width: 300px;
-  opacity: 0.75;
+  background: url('/img/grayCrossEmptyOpposite.svg');
+  background-size: 5px;
+  text-shadow: 1px 1px white;
+}
+
+.notes {
+  padding-bottom: 12px;
 }
 
 .exercism {
