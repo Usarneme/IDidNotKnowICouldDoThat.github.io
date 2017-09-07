@@ -481,6 +481,88 @@ a {
   color: #111;
   text-decoration: none; }
 
+.btn-info, .btn-footer, .btn-social {
+  display: block;
+  cursor: pointer;
+  max-width: 50rem;
+  font-weight: bold;
+  border: solid 2px;
+  color: #111;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 0.75em 1.5em;
+  margin: 6px auto;
+  text-transform: uppercase;
+  border-color: #38B2CE;
+  background-color: #61c2d8;
+  transition: background-color 0.3s cubic-bezier(0, -0.65, 1, 1.91), border-color 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
+  .btn-info:hover, .btn-footer:hover, .btn-social:hover {
+    opacity: 0.8;
+    background-color: #dcf1f6;
+    border-color: white; }
+  .btn-info:active, .btn-footer:active, .btn-social:active {
+    opacity: initial; }
+
+.btn-footer {
+  background-color: #8ad2e2; }
+.btn-social {
+  display: inline-block; }
+
+#devicons div .icons,
+.social a {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1.75em;
+  justify-content: space-around; }
+
+#devicons,
+#devicons div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px; }
+
+#devicons div {
+  flex-direction: column; }
+
+.icons,
+a > i {
+  font-size: 2.35em;
+  color: #111;
+  transition: transform 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
+  .icons:hover,
+  a > i:hover {
+    color: #FF7F00;
+    transform: rotate(10deg) scale(1.3); }
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: 0 10px; }
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg); }
+
+.img-featured {
+  z-index: 100;
+  max-width: 50vw;
+  max-height: 50vh;
+  margin-top: 50px;
+  border-radius: 50%;
+  position: relative;
+  border: 4px solid #e8e8e8; }
+  @media (min-width: 120em) {
+    .img-featured {
+      max-width: 600px; } }
+
+.portfolio-image {
+  float: left;
+  padding: 0 20px 10px 0;
+  max-width: 290px; }
+
 .main-content {
   display: flex;
   flex-wrap: wrap; }
@@ -491,7 +573,7 @@ a {
       margin-right: auto; } }
 
 .hero {
-  padding: 0 1em 3em;
+  padding: 1em;
   margin: 10px auto 0 auto;
   background: linear-gradient(#60B9CE, #888), url("../img/pdx.jpg") no-repeat;
   background-blend-mode: multiply;
@@ -509,52 +591,147 @@ a {
   color: #111;
   background-color: #b3e2ec; }
 
+.headline {
+  background-color: #eee;
+  margin: 35px auto 0;
+  max-width: 300px;
+  opacity: 0.75; }
+
 .exercism {
   display: flex;
   flex-wrap: wrap; }
   .exercism-hidden {
     display: none; }
 
-.card,
-.exercise {
+.card {
   width: 100%;
   margin: 2px;
-  padding: 1.5em 1em;
   border-radius: 0.25em;
   background-color: #60B9CE;
   border: 4px solid #61c2d8; }
-  .card h1,
-  .exercise h1 {
+  .card h1 {
     line-height: 1.25;
     margin: 0.35em 0 0;
     color: #111; }
-  .card:hover,
-  .exercise:hover {
-    transform: scale(1.01, 1.01); }
   @media (max-width: 48em) {
-    .card,
-    .exercise {
+    .card {
       flex: 1 99.7%;
       justify-content: space-around; } }
   @media (min-width: 48em) {
-    .card,
-    .exercise {
+    .card {
       flex: 1 49.4%;
       justify-content: space-around; } }
   @media (min-width: 62em) {
-    .card,
-    .exercise {
+    .card {
       flex-basis: 49.4%; } }
   @media (min-width: 75em) {
-    .card,
-    .exercise {
+    .card {
       margin: 4px;
       flex-basis: 32.43333%; } }
   @media (min-width: 120em) {
-    .card,
-    .exercise {
+    .card {
       margin: 6px;
       flex-basis: 23.8%; } }
+
+/* Accordion Styles for Exercism coding exercises */
+#exercism .exercise {
+  border: solid 2px;
+  color: #111;
+  border-radius: 4px;
+  margin: 2px;
+  border-color: #38B2CE;
+  background-color: #dcf1f6;
+  transition: background-color 0.3s cubic-bezier(0, -0.65, 1, 1.91), border-color 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
+  @media (max-width: 48em) {
+    #exercism .exercise {
+      flex: 1 99.7%;
+      justify-content: space-around; } }
+  @media (min-width: 48em) {
+    #exercism .exercise {
+      flex: 1 49.4%;
+      justify-content: space-around; } }
+  @media (min-width: 62em) {
+    #exercism .exercise {
+      flex-basis: 32.43333%; } }
+  @media (min-width: 75em) {
+    #exercism .exercise {
+      margin: 4px;
+      flex-basis: 23.8%; } }
+  @media (min-width: 120em) {
+    #exercism .exercise {
+      margin: 6px;
+      flex-basis: 18.5%; } }
+
+#exercism label {
+  z-index: 20;
+  padding: 6px;
+  display: block;
+  cursor: pointer;
+  font-size: 19px;
+  min-height: 30px;
+  line-height: 33px;
+  position: relative; }
+
+#exercism label:hover:after,
+#exercism input:checked + label:hover:after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 13px;
+  top: 7px; }
+
+/* Down arrow */
+#exercism input + label:hover:after,
+#exercism input:checked + label:hover:after {
+  content: "\25BC"; }
+
+/* Flipped it's an up arrow when the content is already expanded. */
+#exercism input:checked + label::after {
+  transform: rotateX(180deg); }
+
+#exercism input {
+  display: none; }
+
+#exercism article {
+  height: 0px;
+  /* initially hide the contents in each article */
+  z-index: 10;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: height 0.3s ease-in-out;
+  -moz-transition: height 0.3s ease-in-out;
+  -o-transition: height 0.3s ease-in-out;
+  -ms-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out; }
+
+#exercism article p {
+  line-height: 23px;
+  font-size: 14px;
+  padding: 20px 10px 0; }
+
+#exercism input:checked ~ article {
+  -webkit-transition: height 0.5s ease-in-out;
+  -moz-transition: height 0.5s ease-in-out;
+  -o-transition: height 0.5s ease-in-out;
+  -ms-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out; }
+
+#exercism input:checked ~ article {
+  position: static;
+  min-height: 220px;
+  max-height: 100vh;
+  background-color: #38B2CE; }
+  @media (min-width: 48em) {
+    #exercism input:checked ~ article {
+      left: 0;
+      right: 0;
+      /* 
+      position: absolute;
+      z-index: 30;
+      width: 300px;
+      margin: 0 auto;
+      */ } }
 
 .main-header {
   position: relative;
@@ -638,87 +815,5 @@ footer {
   @media (min-width: 62em) {
     .footer-bottom {
       padding-top: 1.5rem; } }
-
-.btn-info, .btn-footer, .btn-social {
-  display: block;
-  cursor: pointer;
-  max-width: 50rem;
-  font-weight: bold;
-  border: solid 2px;
-  color: #111;
-  border-radius: 4px;
-  text-decoration: none;
-  padding: 0.75em 1.5em;
-  margin: 6px auto;
-  text-transform: uppercase;
-  border-color: #38B2CE;
-  background-color: #61c2d8;
-  transition: background-color 0.3s cubic-bezier(0, -0.65, 1, 1.91), border-color 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
-  .btn-info:hover, .btn-footer:hover, .btn-social:hover {
-    opacity: 0.8;
-    background-color: #dcf1f6;
-    border-color: white; }
-  .btn-info:active, .btn-footer:active, .btn-social:active {
-    opacity: initial; }
-
-.btn-footer {
-  background-color: #8ad2e2; }
-.btn-social {
-  display: inline-block; }
-
-#devicons div .icons,
-.social a {
-  flex-grow: 1;
-  padding: 10px;
-  font-size: 1.75em;
-  justify-content: space-around; }
-
-#devicons,
-#devicons div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px; }
-
-#devicons div {
-  flex-direction: column; }
-
-.icons,
-a > i {
-  font-size: 2.35em;
-  color: #111;
-  transition: transform 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
-  .icons:hover,
-  a > i:hover {
-    color: #FF7F00;
-    transform: rotate(10deg) scale(1.3); }
-
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  margin: 0 10px; }
-
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg); }
-
-.img-featured {
-  z-index: 100;
-  max-width: 50vw;
-  max-height: 50vh;
-  margin-top: 75px;
-  border-radius: 50%;
-  position: relative;
-  border: 4px solid #e8e8e8; }
-  @media (min-width: 120em) {
-    .img-featured {
-      max-width: 600px; } }
-
-.portfolio-image {
-  float: left;
-  padding: 0 20px 20px 0;
-  max-width: 290px; }
 
 /*# sourceMappingURL=style.css.map */

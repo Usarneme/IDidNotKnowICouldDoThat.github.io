@@ -11,7 +11,7 @@
 }
 
 .hero {
-  padding: 0 1em 3em;
+  padding: 1em;
   margin: 10px auto 0 auto;
   background: linear-gradient($color-secondary, #888),
               url('../img/pdx.jpg') no-repeat;
@@ -33,6 +33,13 @@
   background-color: $color-primary-light;
 }
 
+.headline {
+  background-color: #eee;
+  margin: 35px auto 0;
+  max-width: 300px;
+  opacity: 0.75;
+}
+
 .exercism {
   @include flexy($disp: flex, $wrap: wrap);
   &-hidden {
@@ -40,11 +47,9 @@
   }
 }
 
-.card,
-.exercise {
+.card {
   width: 100%;
   margin: 2px;
-  padding: 1.5em 1em;
   border-radius: 0.25em;
   background-color: $color-secondary;
   border: 4px solid lighten($color-primary, 10%);
@@ -54,7 +59,6 @@
     color: $color-text;
   }
   &:hover {
-    transform: scale(1.01,1.01);
     }
   @include mq('xs') {
     flex: 1 per-line(1);
@@ -75,4 +79,107 @@
     margin: 6px;
     flex-basis: per-line(4);
   }
+}
+
+/* Accordion Styles for Exercism coding exercises */
+#exercism .exercise {
+  border: solid 2px;
+  color: $color-text;
+  border-radius: 4px;
+  margin: 2px;
+  border-color: $color-primary;
+  background-color: lighten($color-primary, 40%);
+  transition: background-color 0.3s cubic-bezier(0,-0.65,1,1.91), border-color 0.3s cubic-bezier(0,-0.65,1,1.91);
+
+  @include mq('xs') {
+    flex: 1 per-line(1);
+    justify-content: space-around;
+  }
+  @include mq('s') {
+    flex: 1 per-line(2);
+    justify-content: space-around;
+  }
+  @include mq('m') {
+    flex-basis: per-line(3);
+  }
+  @include mq('l') {
+    margin: 4px;
+    flex-basis: per-line(4);
+  }
+  @include mq('xl') {
+    margin: 6px;
+    flex-basis: per-line(5);
+  }
+}
+
+#exercism label {
+	z-index: 20;
+  padding: 6px;
+	display: block;
+	cursor: pointer;
+  font-size: 19px;
+	min-height: 30px;
+  line-height: 33px;
+	position: relative;
+}
+#exercism label:hover:after,
+#exercism input:checked + label:hover:after {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	right: 13px;
+	top: 7px;
+}
+/* Down arrow */
+#exercism input + label:hover:after,
+#exercism input:checked + label:hover:after {
+  content: "\25BC";
+}
+/* Flipped it's an up arrow when the content is already expanded. */
+#exercism input:checked + label::after {
+  transform: rotateX(180deg);
+}
+#exercism input{
+	display: none;
+}
+#exercism article {
+	height: 0px; /* initially hide the contents in each article */
+	z-index: 10;
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: height 0.3s ease-in-out;
+	-moz-transition: height 0.3s ease-in-out;
+	-o-transition: height 0.3s ease-in-out;
+	-ms-transition: height 0.3s ease-in-out;
+	transition: height 0.3s ease-in-out;
+}
+#exercism article p {
+	line-height: 23px;
+	font-size: 14px;
+	padding: 20px 10px 0;
+}
+#exercism input:checked ~ article {
+	-webkit-transition: height 0.5s ease-in-out;
+	-moz-transition: height 0.5s ease-in-out;
+	-o-transition: height 0.5s ease-in-out;
+	-ms-transition: height 0.5s ease-in-out;
+	transition: height 0.5s ease-in-out;
+}
+#exercism input:checked ~ article {
+  position: static;
+	min-height: 220px;
+  max-height: 100vh;
+  background-color: $color-primary;
+
+  @include mq('s') {
+    left: 0;
+    right: 0;
+    /* 
+    position: absolute;
+    z-index: 30;
+    width: 300px;
+    margin: 0 auto;
+    */
+    }
 }

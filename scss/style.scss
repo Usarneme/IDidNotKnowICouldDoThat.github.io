@@ -12,12 +12,12 @@
 @import 'base/reset',
         'base/base';
 
-// Layout Styles
-@import 'layout/containers',
-        'layout/header',
-        'layout/footer';
-
 // Component Styles
 @import 'components/buttons',
         'components/icons',
         'components/images';
+
+// Layout Styles
+@import 'layout/containers',
+        'layout/header',
+        'layout/footer';
