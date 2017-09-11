@@ -12,6 +12,7 @@
 
 .hero {
   padding: 1em;
+  color: $color-text;
   margin: 10px auto 0 auto;
   background: url('../img/pdx.jpg') no-repeat center center;
   -moz-background-size: cover;
@@ -21,8 +22,6 @@
   /* Code to force IE to cover background images */
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale')";
-
-  color: $color-text;
   p {
     font-size: 1.2em;
   }
