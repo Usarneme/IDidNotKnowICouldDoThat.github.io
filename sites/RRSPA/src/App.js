@@ -2,7 +2,8 @@ import React from 'react'
 import {  BrowserRouter as 
           Router, 
           Route, 
-          NavLink } from 'react-router-dom'
+          NavLink,
+          Switch } from 'react-router-dom'
 import './App.css'
 
 const Home = () => (
@@ -94,9 +95,12 @@ const App = () => (
         <NavLink to="/topics" activeClassName="active">Topics</NavLink>
       </div>
 
+    <Switch>
       <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
+      <Route exact path="/about" component={About}/>
       <Route path="/topics" component={Topics}/>
+      <Route component={() => ( <h4 className="home" style={{textAlign:"center"}}>404 Nothing Here, Friendo.</h4> )}/>
+    </Switch>
 
       <div className="footer">
         <h4>&copy; 2017</h4>
