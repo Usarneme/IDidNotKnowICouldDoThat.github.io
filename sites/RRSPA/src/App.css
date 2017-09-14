@@ -1,0 +1,76 @@
+/* Main Application styles */
+
+.wrapper {
+  background-color: #eee;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+ol {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.main-nav {
+  text-align: center;
+}
+
+@media all and (min-width: 567px) {
+  .main-nav {
+    text-align: right;
+  }  
+}
+
+.topics-nav a,
+.main-nav a {
+  margin: 3px 10px;
+  list-style: none;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.topics-nav {
+  display: flex;
+  justify-content: space-around;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.topics-nav a {
+  flex-flow: column wrap;
+}
+
+.main-nav a {
+  background-color: lightblue;
+}
+
+.active {
+  background-color: cyan!important;
+}
+
+.about,
+.home,
+.topics,
+.footer {
+  padding: 30px 10px;
+  border-top: 50px solid teal;
+}
+
+.home,
+.about,
+.topics {
+  background-color: #fff;
+}
+
+p {
+  width: 100%;
+  max-width: 650px;
+  margin: 30px auto;
+}
+
+.top {
+  text-align: center;
+}
