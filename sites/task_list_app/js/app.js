@@ -12,30 +12,30 @@ var taskInput = document.getElementById("new-task"),
 createNewTaskElement = function(taskString) {
   var listItem = document.createElement("li"),
       label = document.createElement("label"),
-      span = document.createElement("span"),
-      checkBox = document.createElement("input"),
       editInput = document.createElement("input"), 
       editButton = document.createElement("button"),
-      deleteButton = document.createElement("button");
-        
+      deleteButton = document.createElement("button"),
+      checkBox = document.createElement("input"),
+      span = document.createElement("span");
+      
   // Modify each element before appending  
   label.innerText = taskString;
-  span.innerText = "DONE";
-  checkBox.type = "checkbox";
   editInput.type = "text"; 
   editInput.disabled = true;
   editButton.innerText = "Edit";
   editButton.className = "edit";
   deleteButton.innerText = "Delete";
   deleteButton.className = "delete";  
+  checkBox.type = "checkbox";
+  span.innerText = "DONE";
   
   // Append each element to the generated list item
   listItem.appendChild(label);
-  listItem.appendChild(span);
-  listItem.appendChild(checkBox);
   listItem.appendChild(editInput);
   listItem.appendChild(editButton);
   listItem.appendChild(deleteButton);
+  listItem.appendChild(checkBox);
+  listItem.appendChild(span);
   
   return listItem;
 }
@@ -216,6 +216,11 @@ bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
   checkBox.onchange = checkBoxEventHandler;
 }
 
+/* Load existing tasks at startup if available */
+if(storageAvailable && localStorage.completedTasks) {
+  // Immediately invoked function expression to retrieve tasks
+  (function() { retrieveTasks() })();
+}
 /* One time click handlers at startup for Add, Save, and Retrieve buttons */
 addButton.addEventListener("click", addTask);
 saveButton.addEventListener("click", saveTasks);

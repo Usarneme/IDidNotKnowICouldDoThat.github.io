@@ -8,20 +8,13 @@
 
 body {
   margin: 0;
+  max-width: 100%;
 }
 
 main {
   min-height: 100vh;
   padding-bottom: 20px;
   background-color: #c2f5e6;
-}
-
-#wrapper {
-  width: 30em;
-  color: #333;
-  margin: 0 auto;
-  max-width: 100%;
-  font-family: Lato, sans-serif;
 }
 
 h1 {
@@ -33,6 +26,7 @@ h1 {
 }
 
 h1.pwa {
+  visibility: invisible;
   display: none;
 }
 
@@ -60,28 +54,53 @@ h5 {
 
 span {
   margin: 7px 5px 7px 0;
-  float: right;
 }
 
-ul {
-  margin-top: -5px;
-  padding: 0;
+#wrapper {
+  color: #333;
+  margin: 0 auto;
+  font-family: Lato, sans-serif;
+}
+
+#incomplete-tasks,
+#completed-tasks {
+  margin-left: -20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-around;
+  align-items: center;
+  align-content: space-around;  */
+}
+
+#incomplete-tasks li,
+#completed-tasks li {
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 290px;
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid teal;
+}
+
+/* iPhone 5 screensize margin correction @320px exactly it is off center */
+@media all and (width: 320px) {
+  #incomplete-tasks, #completed-tasks {
+    margin-left: -30px;
+  }
 }
 
 li {
   list-style-type: none;
   background-color: aliceblue;
-  padding: 10px;
-  margin: 10px;
 }
 
 button {
-  width: 33%;
-  margin-top: 15px;
+  margin: 3px;
   color: #222;
   font-size: 15px;
   cursor: pointer;
-  padding: 10px 2px;
+  padding: 10px 20px;
   border-radius: .45em;
   text-transform: uppercase;
   background-color: rgb(253, 253, 253);
@@ -106,19 +125,24 @@ button#retrieve {
   color: #004FFF;
 }
 
+#save,
+#retrieve {
+  width: 93%;
+}
+
 button#save,
-button#retrieve {
-  width: 100%;
-  margin: 2px auto;
+button#retrieve,
+button#add {
+  margin: 5px 5px 5px 10px;
 }
 
 input[type="text"] {
-  width: 100%;
-  margin: 6px auto;
-  border: 1px solid #ddd;
+  height: 40px;
+  width: 93%;
+  max-width: 600px;
+  margin: 10px;
   background: #fff;
   color: #888;
-  height: 2em;
   padding-left: 5px;
 }
 
@@ -126,18 +150,10 @@ input[type="text"]:focus {
   color: #333;
 }
 
-label[for='new-task'] {
-  padding-left: 0;
-}
-
-input[type=checkbox] {
-  float: right;
-  margin: 10px 5px 7px 0;
-}
-
 @media all and (min-width: 500px) {
-  h5 {
-    text-align: initial;
+  #save,
+  #retrieve {
+    width: initial;
   }
 }
 
