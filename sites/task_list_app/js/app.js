@@ -142,8 +142,9 @@ retrieveTasks = function() {
       // For each completed task list item retrieved and rendered...
       for(var i=0; i<completedTasksHolder.children.length; i++) {
         // Check the boxes for those that were already completed
-        completedTasksHolder.children[i].getElementsByTagName("input")[0].checked = true;        
+        completedTasksHolder.children[i].getElementsByTagName("input")[1].checked = true;
       }
+      console.dir(completedTasksHolder);      
     }
     if(localStorage.incompleteTasks) {
       incompleteTasksHolder.innerHTML = localStorage.getItem('incompleteTasks');

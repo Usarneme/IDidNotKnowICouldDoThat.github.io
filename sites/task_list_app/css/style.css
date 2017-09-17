@@ -68,19 +68,16 @@ span {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: space-around;
-  align-items: center;
-  align-content: space-around;  */
 }
 
 #incomplete-tasks li,
 #completed-tasks li {
   flex-basis: 0;
   flex-grow: 1;
-  min-width: 290px;
+  min-width: 320px;
   margin: 5px;
   padding: 10px;
-  border: 2px solid teal;
+  border: 1px solid teal;
 }
 
 /* iPhone 5 screensize margin correction @320px exactly it is off center */
@@ -123,6 +120,12 @@ button.delete {
 button.edit,
 button#retrieve {
   color: #004FFF;
+}
+
+#buttons,
+#new {
+  display: flex;
+  justify-content: center;  
 }
 
 #save,

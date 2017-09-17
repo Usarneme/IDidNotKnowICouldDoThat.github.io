@@ -5,7 +5,7 @@
 
 body {
 	margin: 0;
-	background-color: #eee;
+	font-size: 16px;
 }
 
 h1 {
@@ -16,9 +16,17 @@ h1 {
 	min-height: 40px;
 }
 
+#wrapper {
+	margin: 0;
+	border: 0;
+	width: 100%;
+	background-color: #c2f5e6;
+	min-height: 80vh;
+}
+
 #current_card, #previous_card, #next_card {
 	min-height: 175px;
-	padding-top: 50px;
+	padding-top: 40px;
 }
 
 #current_card {
@@ -53,7 +61,7 @@ h1 {
 #flashcards, #new_card {
 	background-color: #3399FF;
 	max-width: 450px;
-	margin-top: 40px;
+	margin: 15px auto;
 }
 
 #buckets {
@@ -80,7 +88,6 @@ h1 {
 }
 
 .header {
-	height: 80px;
 	padding: 5px;
 	text-align: center;
 }
