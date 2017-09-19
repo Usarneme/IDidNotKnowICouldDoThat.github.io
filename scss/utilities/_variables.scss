@@ -2,26 +2,26 @@
 //  Variables
 // ======================================
 
-$color-primary: #38B2CE;
+$color-primary: #8F1D21;
 $color-primary-light: lighten($color-primary, 30%);
 $color-primary-dark: darken($color-primary, 30%);
 
-$color-secondary: #60B9CE;
+$color-secondary: #303436;
 
-$color-accent: #FF7F00;
+$color-accent: #1d258f;
 
 $color-mix: mix($color-primary, $color-secondary, 50%);
 
-$color-text: #111;
+$color-text: #eee;
 $color-text-light: lighten($color-text, 30%);
-$color-text-dark: darken($color-text, 30%);
+$color-text-dark: darken($color-secondary, 30%);
 
 // Fonts
 $font-stack-primary: 'Raleway', sans-serif;
 $font-stack-secondary: 'Bree Serif', serif;
 
 // Layout
-$max-width: 2000px;
+$max-width: 2500px;
 $gutter: 3px;
 
 // Breakpoints

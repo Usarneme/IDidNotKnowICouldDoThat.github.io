@@ -11,35 +11,67 @@
 }
 
 .hero {
+  min-height: 95vh;
   padding: 1em;
-  color: $color-text;
-  margin: 10px auto 0 auto;
-  background: url('../img/pdx.jpg') no-repeat center center;
+  background: url('../img/overlay.png'), url('../img/UnionStation.jpg') no-repeat center center;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* Code to force IE to cover background images */
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx.jpg', sizingMethod='scale')";
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/UnionStation.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/UnionStation.jpg', sizingMethod='scale')";
+  background-attachment: fixed, fixed;
+  background-position: top left, bottom center;
+  background-repeat: repeat, no-repeat;
   p {
     font-size: 1.2em;
   }
 }
 
-.banner {
-  padding: 20px;
-  margin: 50px 0;
-  color: $color-text;
-  background-color: $color-primary-light;
+.code-container {
+  background: url('../img/pdx_gray.png');
 }
 
+.studied-container {
+  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Aerial.jpg');
+}
+
+.icons-container {
+  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/CascadesMountains.jpg');
+}
+
+.practiced-container {
+  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/DucksJapaneseGardens.JPG');  
+}
+
+.share-container {
+  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/SteelBridge.jpg');
+}
+
+.banner {
+  font-weight: 600;
+  min-height: 99vh;
+  padding: 150px 0;
+  margin: 1px 0;
+  color: $color-text;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx_gray.png', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx_gray.png', sizingMethod='scale')";
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  h3 {
+    text-shadow: 1px 1px black;  
+  }  
+}
+  
 .headline {
-  margin: 35px auto 0;
-  max-width: 300px;
-  background-color: #eee;
-  background-size: 5px;
-  text-shadow: 1px 1px white;
+  color: #eee;
+  text-shadow: 1px 1px $color-secondary;
 }
 
 .notes {
@@ -54,18 +86,17 @@
 }
 
 .card {
-  width: 100%;
-  margin: 2px;
-  border-radius: 0.25em;
-  background-color: $color-secondary;
-  border: 4px solid lighten($color-primary, 10%);
+  margin: 20px 0;
+  color: $color-secondary;
+  padding: 25px 15px 25px;
+  background: url('../img/overlay.png');
   h1 {
     line-height: 1.25;
     margin: 0.35em 0 0;
-    color: $color-text;
   }
   &:hover {
-    }
+    color: $color-primary;
+  }
   @include mq('xs') {
     flex: 1 per-line(1);
     justify-content: space-around;

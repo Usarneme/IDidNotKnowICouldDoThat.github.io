@@ -3,22 +3,10 @@
 // ======================================
 
 .main-header {
-  @include skewed {
-    bottom: -25px;
-  }
-  padding-top: 10px;
+  background: #eee;
+  h1 {
+  padding: 10px;
   min-height: 40px;
-    h1 {
-    color: $color-text;
-    margin-bottom: 0;
-    font-size: 3.4em;
-    letter-spacing: 1px;
-    @media (max-width: $break-m) {
-      font-size: 3em;
-    }
-    @media (max-width: $break-xl) {
-      font-size: 2.7em;
-    }
   }
   p {
     margin: 0;
