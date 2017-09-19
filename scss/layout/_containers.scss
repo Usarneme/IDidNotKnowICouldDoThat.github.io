@@ -11,15 +11,16 @@
 }
 
 .hero {
+  min-height: 90vh;
   padding: 1em;
-  background: url('../img/overlay.png'), url('../img/Union1366.jpg') no-repeat center center;
+  background: url('../img/overlay.png'), url('../img/pdx1366.jpg') no-repeat center center;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* Code to force IE to cover background images */
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale')";
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366Aerial.jpg', sizingMethod='scale')";
   background-attachment: fixed, fixed;
   background-position: top left, bottom center;
   background-repeat: repeat, no-repeat;
@@ -29,29 +30,28 @@
 }
 
 .code-container {
-  background: url('../img/pdx_gray.png');
+  background: url('../img/Aerial.jpg');
 }
 
 .studied-container {
-  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Aerial.jpg');
+  background: url('../img/overlay.png'), url('../img/Cascades1366.jpg');
 }
 
 .icons-container {
-  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Cascades1366.jpg');
+  background: url('../img/overlay.png'), url('../img/Mallard1366.jpg');
 }
 
 .practiced-container {
-  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Mallard1366.JPG');  
+  background: url('../img/overlay.png'), url('../img/Union1366.jpg');
 }
 
 .share-container {
-  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Steel1366.jpg');
+  background: url('../img/overlay.png'), url('../img/Steel1366.jpg');
 }
 
 .banner {
-  font-weight: 500;
+  min-height: 100vh;
   padding: 80px 0;
-  margin: 80px 0;
   // color: $color-text;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -71,7 +71,7 @@
   padding: 20px;
   max-width: 100%;
   margin: 50px auto;
-  background-color: rgba(238,238,238, 0.65);
+  background-color: rgba(238,238,238, 0.8);
   -webkit-box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
@@ -83,11 +83,6 @@
   }
   @include mq('xl') {
   }
-}
-
-.headline {
-  color: #eee;
-  text-shadow: 1px 1px $color-secondary;
 }
 
 .notes {
@@ -102,7 +97,7 @@
 }
 
 .card {
-  margin: 20px 0;
+  margin: 2px;
   color: $color-secondary;
   padding: 25px 15px 25px;
   background: url('../img/overlay.png');
@@ -122,18 +117,17 @@
   }
   @include mq('s') {
     flex: 1 per-line(2);
-    justify-content: space-around;
   }
   @include mq('m') {
-    flex-basis: per-line(2);
+    flex-basis: per-line(3);
+    margin: 10px;
   }
   @include mq('l') {
-    margin: 4px;
-    flex-basis: per-line(3);
+    flex-basis: per-line(4);
+    margin: 20px;
   }
   @include mq('xl') {
-    margin: 6px;
-    flex-basis: per-line(4);
+    flex-basis: per-line(5);
   }
 }
 

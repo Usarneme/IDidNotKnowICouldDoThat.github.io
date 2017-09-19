@@ -463,7 +463,7 @@ h1 {
 h2,
 h3 {
   font-family: "Bree Serif", serif;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 2.75em;
   line-height: 1.25em;
   letter-spacing: -0.05em; }
@@ -477,13 +477,13 @@ h3 {
       font-size: 2em; } }
 
 h4 {
-  font-size: 1.5em; }
+  font-size: 1.35em; }
   @media (max-width: 62em) {
     h4 {
       font-size: 1em; } }
   @media (max-width: 120em) {
     h4 {
-      font-size: 1.5em; } }
+      font-size: 1.35em; } }
 
 hr {
   max-width: 90%; }
@@ -599,15 +599,16 @@ a > i {
       margin-right: auto; } }
 
 .hero {
+  min-height: 90vh;
   padding: 1em;
-  background: url("../img/overlay.png"), url("../img/Union1366.jpg") no-repeat center center;
+  background: url("../img/overlay.png"), url("../img/pdx1366.jpg") no-repeat center center;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* Code to force IE to cover background images */
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale')";
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366Aerial.jpg', sizingMethod='scale')";
   background-attachment: fixed, fixed;
   background-position: top left, bottom center;
   background-repeat: repeat, no-repeat; }
@@ -615,24 +616,23 @@ a > i {
     font-size: 1.2em; }
 
 .code-container {
-  background: url("../img/pdx_gray.png"); }
+  background: url("../img/Aerial.jpg"); }
 
 .studied-container {
-  background: url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/Aerial.jpg"); }
+  background: url("../img/overlay.png"), url("../img/Cascades1366.jpg"); }
 
 .icons-container {
-  background: url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/Cascades1366.jpg"); }
+  background: url("../img/overlay.png"), url("../img/Mallard1366.jpg"); }
 
 .practiced-container {
-  background: url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/Mallard1366.JPG"); }
+  background: url("../img/overlay.png"), url("../img/Union1366.jpg"); }
 
 .share-container {
-  background: url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/overlay.png"), url("../img/Steel1366.jpg"); }
+  background: url("../img/overlay.png"), url("../img/Steel1366.jpg"); }
 
 .banner {
-  font-weight: 500;
+  min-height: 100vh;
   padding: 80px 0;
-  margin: 80px 0;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -647,7 +647,7 @@ a > i {
   padding: 20px;
   max-width: 100%;
   margin: 50px auto;
-  background-color: rgba(238, 238, 238, 0.65);
+  background-color: rgba(238, 238, 238, 0.8);
   -webkit-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5); }
@@ -657,10 +657,6 @@ a > i {
   @media (min-width: 75em) {
     .textbox {
       max-width: 1850px; } }
-
-.headline {
-  color: #eee;
-  text-shadow: 1px 1px #303436; }
 
 .notes {
   padding-bottom: 12px; }
@@ -672,7 +668,7 @@ a > i {
     display: none; }
 
 .card {
-  margin: 20px 0;
+  margin: 2px;
   color: #303436;
   padding: 25px 15px 25px;
   background: url("../img/overlay.png");
@@ -690,19 +686,18 @@ a > i {
       justify-content: space-around; } }
   @media (min-width: 48em) {
     .card {
-      flex: 1 49.52%;
-      justify-content: space-around; } }
+      flex: 1 49.52%; } }
   @media (min-width: 62em) {
     .card {
-      flex-basis: 49.52%; } }
+      flex-basis: 32.61333%;
+      margin: 10px; } }
   @media (min-width: 75em) {
     .card {
-      margin: 4px;
-      flex-basis: 32.61333%; } }
+      flex-basis: 24.04%;
+      margin: 20px; } }
   @media (min-width: 120em) {
     .card {
-      margin: 6px;
-      flex-basis: 24.04%; } }
+      flex-basis: 18.8%; } }
 
 /* Accordion Styles for Exercism coding exercises */
 #exercism .exercise {

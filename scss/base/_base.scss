@@ -27,7 +27,7 @@ h1 {
 h2,
 h3 {
   font-family: $font-stack-secondary;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 2.75em;
   line-height: 1.25em;
   letter-spacing: -0.05em;
@@ -40,12 +40,12 @@ h3 {
 }
 
 h4 {
-  font-size: 1.5em;
+  font-size: 1.35em;
   @media (max-width: $break-m) {
     font-size: 1em;
   }
   @media (max-width: $break-xl) {
-    font-size: 1.5em;
+    font-size: 1.35em;
   }
 }
 
