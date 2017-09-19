@@ -4,16 +4,15 @@
 
 #devicons div .icons,
 .social a {
-  flex-grow: 1;
-	padding: 10px;
-	font-size: 1.75em;
-	justify-content: space-around;
+  padding: 10px;
+  // If available: FF only right now. Falls back to :center default
+  justify-content: space-evenly;
 }
 
 #devicons,
 #devicons div {
-  @include flexy($disp: flex, $dir: null, $wrap: wrap, $justify: space-between);
-  padding: 10px;  
+  @include flexy($disp: flex, $dir: null, $wrap: wrap, $justify: center);
+  padding: 10px 11px;  
 }
 
 #devicons div {

@@ -67,6 +67,12 @@ ul {
 p {
   margin: 0 auto 1.25em;
   max-width: 1025px;
+  @include mq('l') { //1200
+    max-width: 1225px;
+  }
+  @include mq('xl') { //1920
+    max-width: 1425px;
+  }
 }
 
 a {

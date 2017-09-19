@@ -11,54 +11,66 @@
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 80vh;
   padding: 1em;
-  background: url('../img/overlay.png'), url('../img/pdx1366.jpg') no-repeat center center;
+  background: url('../img/pdx1366.jpg');
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* Code to force IE to cover background images */
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366Aerial.jpg', sizingMethod='scale')";
-  background-attachment: fixed, fixed;
-  background-position: top left, bottom center;
-  background-repeat: repeat, no-repeat;
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366.jpg', sizingMethod='scale')";
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-repeat: no-repeat;
   p {
     font-size: 1.2em;
   }
 }
 
+.headline {
+  padding: 25px 0 0 0;
+}
+
 .code-container {
   background: url('../img/Aerial.jpg');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Aerial.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Aerial.jpg', sizingMethod='scale')";
 }
 
 .studied-container {
-  background: url('../img/overlay.png'), url('../img/Cascades1366.jpg');
+  background: url('../img/Cascades1366.jpg');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Cascades1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Cascades1366.jpg', sizingMethod='scale')";
 }
 
 .icons-container {
-  background: url('../img/overlay.png'), url('../img/Mallard1366.jpg');
+  background: url('../img/Mallard1366.jpg');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Mallard1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Mallard1366.jpg', sizingMethod='scale')";
 }
 
 .practiced-container {
-  background: url('../img/overlay.png'), url('../img/Union1366.jpg');
+  background: url('../img/Union1366.jpg');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale')";
 }
 
 .share-container {
-  background: url('../img/overlay.png'), url('../img/Steel1366.jpg');
+  background: url('../img/Steel1366.jpg');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Steel1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Steel1366.jpg', sizingMethod='scale')";
 }
 
 .banner {
-  min-height: 100vh;
-  padding: 80px 0;
+  margin: 40px auto;
+  padding: 40px 20px;
   // color: $color-text;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx_gray.png', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx_gray.png', sizingMethod='scale')";
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -68,20 +80,26 @@
 }
 
 .textbox {
-  padding: 20px;
-  max-width: 100%;
-  margin: 50px auto;
-  background-color: rgba(238,238,238, 0.8);
+  padding: 15px;
+  margin: 25px 10px;
+  background-color: rgba(238,238,238, 0.85);
   -webkit-box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
   @include mq('m') {
-    max-width: 1550px;
-  }
+    padding: 25px;
+    margin: 25px 0;
+    }
   @include mq('l') {
-    max-width: 1850px;
-  }
+    padding: 35px;
+    margin: 50px;
+    }
   @include mq('xl') {
+    padding: 35px 100px;
+    margin: 50px 100px;
+  }
+  &:hover {
+    background-color: rgba(238,238,238, 0.9);    
   }
 }
 

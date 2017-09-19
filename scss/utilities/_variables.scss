@@ -17,8 +17,8 @@ $color-text-light: lighten($color-text, 30%);
 $color-text-dark: darken($color-secondary, 30%);
 
 // Fonts
-$font-stack-primary: 'Raleway', sans-serif;
-$font-stack-secondary: 'Bree Serif', serif;
+$font-stack-primary: monospace;
+$font-stack-secondary: 'Raleway', sans-serif;
 
 // Layout
 $max-width: 2500px;

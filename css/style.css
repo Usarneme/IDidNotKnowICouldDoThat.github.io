@@ -447,7 +447,7 @@ body {
   font-size: 16px;
   line-height: 1.35;
   text-align: center;
-  font-family: "Raleway", sans-serif;
+  font-family: monospace;
   max-width: 2500px;
   letter-spacing: 0.025em; }
 
@@ -462,7 +462,7 @@ h1 {
 
 h2,
 h3 {
-  font-family: "Bree Serif", serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 2.75em;
   line-height: 1.25em;
@@ -499,6 +499,12 @@ ul {
 p {
   margin: 0 auto 1.25em;
   max-width: 1025px; }
+  @media (min-width: 75em) {
+    p {
+      max-width: 1225px; } }
+  @media (min-width: 120em) {
+    p {
+      max-width: 1425px; } }
 
 a {
   text-decoration: none;
@@ -507,7 +513,7 @@ a {
     opacity: 0.8;
     color: black; }
 
-.btn-info, .btn-footer, .btn-social {
+.btn-header, .btn-social, .btn-info, .btn-footer {
   display: block;
   cursor: pointer;
   max-width: 36rem;
@@ -515,37 +521,43 @@ a {
   border: solid 2px;
   border-radius: 4px;
   text-decoration: none;
-  padding: 0.75em 0.5em;
+  padding: 0.75em;
   margin: 6px auto;
   text-transform: uppercase;
   border-color: #8F1D21;
   background-color: #b9262b;
   transition: background-color 0.3s cubic-bezier(0, -0.65, 1, 1.91), border-color 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
-  .btn-info:hover, .btn-footer:hover, .btn-social:hover {
+  .btn-header:hover, .btn-social:hover, .btn-info:hover, .btn-footer:hover {
     opacity: 0.8;
     background-color: #e89093;
     border-color: #f1babc; }
-  .btn-info:active, .btn-footer:active, .btn-social:active {
+  .btn-header:active, .btn-social:active, .btn-info:active, .btn-footer:active {
     opacity: initial; }
 
-.btn-footer {
-  background-color: #d73b40; }
+.btn-header {
+  background-color: initial;
+  border-color: #303436; }
+  .btn-header:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #eee; }
+  .btn-header i {
+    color: #303436; }
 .btn-social {
   display: inline-block; }
+.btn-footer {
+  background-color: #d73b40; }
 
 #devicons div .icons,
 .social a {
-  flex-grow: 1;
   padding: 10px;
-  font-size: 1.75em;
-  justify-content: space-around; }
+  justify-content: space-evenly; }
 
 #devicons,
 #devicons div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px; }
+  justify-content: center;
+  padding: 10px 11px; }
 
 #devicons div {
   flex-direction: column; }
@@ -599,64 +611,82 @@ a > i {
       margin-right: auto; } }
 
 .hero {
-  min-height: 90vh;
+  min-height: 80vh;
   padding: 1em;
-  background: url("../img/overlay.png"), url("../img/pdx1366.jpg") no-repeat center center;
+  background: url("../img/pdx1366.jpg");
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* Code to force IE to cover background images */
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366Aerial.jpg', sizingMethod='scale')";
-  background-attachment: fixed, fixed;
-  background-position: top left, bottom center;
-  background-repeat: repeat, no-repeat; }
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx1366.jpg', sizingMethod='scale')";
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-repeat: no-repeat; }
   .hero p {
     font-size: 1.2em; }
 
+.headline {
+  padding: 25px 0 0 0; }
+
 .code-container {
-  background: url("../img/Aerial.jpg"); }
+  background: url("../img/Aerial.jpg");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Aerial.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Aerial.jpg', sizingMethod='scale')"; }
 
 .studied-container {
-  background: url("../img/overlay.png"), url("../img/Cascades1366.jpg"); }
+  background: url("../img/Cascades1366.jpg");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Cascades1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Cascades1366.jpg', sizingMethod='scale')"; }
 
 .icons-container {
-  background: url("../img/overlay.png"), url("../img/Mallard1366.jpg"); }
+  background: url("../img/Mallard1366.jpg");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Mallard1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Mallard1366.jpg', sizingMethod='scale')"; }
 
 .practiced-container {
-  background: url("../img/overlay.png"), url("../img/Union1366.jpg"); }
+  background: url("../img/Union1366.jpg");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale')"; }
 
 .share-container {
-  background: url("../img/overlay.png"), url("../img/Steel1366.jpg"); }
+  background: url("../img/Steel1366.jpg");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Steel1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Steel1366.jpg', sizingMethod='scale')"; }
 
 .banner {
-  min-height: 100vh;
-  padding: 80px 0;
+  margin: 40px auto;
+  padding: 40px 20px;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx_gray.png', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/pdx_gray.png', sizingMethod='scale')";
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat; }
 
 .textbox {
-  padding: 20px;
-  max-width: 100%;
-  margin: 50px auto;
-  background-color: rgba(238, 238, 238, 0.8);
+  padding: 15px;
+  margin: 25px 10px;
+  background-color: rgba(238, 238, 238, 0.85);
   -webkit-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5); }
   @media (min-width: 62em) {
     .textbox {
-      max-width: 1550px; } }
+      padding: 25px;
+      margin: 25px 0; } }
   @media (min-width: 75em) {
     .textbox {
-      max-width: 1850px; } }
+      padding: 35px;
+      margin: 50px; } }
+  @media (min-width: 120em) {
+    .textbox {
+      padding: 35px 100px;
+      margin: 50px 100px; } }
+  .textbox:hover {
+    background-color: rgba(238, 238, 238, 0.9); }
 
 .notes {
   padding-bottom: 12px; }
