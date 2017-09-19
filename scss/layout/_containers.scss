@@ -11,16 +11,15 @@
 }
 
 .hero {
-  min-height: 95vh;
   padding: 1em;
-  background: url('../img/overlay.png'), url('../img/UnionStation.jpg') no-repeat center center;
+  background: url('../img/overlay.png'), url('../img/Union1366.jpg') no-repeat center center;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* Code to force IE to cover background images */
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/UnionStation.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/UnionStation.jpg', sizingMethod='scale')";
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Union1366.jpg', sizingMethod='scale')";
   background-attachment: fixed, fixed;
   background-position: top left, bottom center;
   background-repeat: repeat, no-repeat;
@@ -38,23 +37,22 @@
 }
 
 .icons-container {
-  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/CascadesMountains.jpg');
+  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Cascades1366.jpg');
 }
 
 .practiced-container {
-  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/DucksJapaneseGardens.JPG');  
+  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Mallard1366.JPG');  
 }
 
 .share-container {
-  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/SteelBridge.jpg');
+  background: url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/overlay.png'), url('../img/Steel1366.jpg');
 }
 
 .banner {
-  font-weight: 600;
-  min-height: 99vh;
-  padding: 150px 0;
-  margin: 1px 0;
-  color: $color-text;
+  font-weight: 500;
+  padding: 80px 0;
+  margin: 80px 0;
+  // color: $color-text;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -65,10 +63,28 @@
   background-position: center;
   background-repeat: no-repeat;
   h3 {
-    text-shadow: 1px 1px black;  
+    // text-shadow: 1px 1px black;  
   }  
 }
-  
+
+.textbox {
+  padding: 20px;
+  max-width: 100%;
+  margin: 50px auto;
+  background-color: rgba(238,238,238, 0.65);
+  -webkit-box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.5);
+  @include mq('m') {
+    max-width: 1550px;
+  }
+  @include mq('l') {
+    max-width: 1850px;
+  }
+  @include mq('xl') {
+  }
+}
+
 .headline {
   color: #eee;
   text-shadow: 1px 1px $color-secondary;
@@ -90,6 +106,9 @@
   color: $color-secondary;
   padding: 25px 15px 25px;
   background: url('../img/overlay.png');
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
   h1 {
     line-height: 1.25;
     margin: 0.35em 0 0;
@@ -121,11 +140,11 @@
 /* Accordion Styles for Exercism coding exercises */
 #exercism .exercise {
   border: solid 2px;
-  color: $color-text;
+  // color: $color-text;
   border-radius: 4px;
   margin: 2px;
-  border-color: $color-primary;
-  background-color: lighten($color-primary, 40%);
+  border-color: $color-secondary;
+  background-color: #fffeef;
   transition: background-color 0.3s cubic-bezier(0,-0.65,1,1.91), border-color 0.3s cubic-bezier(0,-0.65,1,1.91);
 
   @include mq('xs') {
@@ -205,9 +224,9 @@
 }
 #exercism input:checked ~ article {
   position: static;
-	min-height: 220px;
+	min-height: 200px;
   max-height: 100vh;
-  background-color: $color-primary;
+  // background-color: $color-primary;
 
   @include mq('s') {
     left: 0;
@@ -219,4 +238,12 @@
     margin: 0 auto;
     */
     }
+}
+
+#exercism input:checked ~ .medium-article {
+  min-height: 210px;
+}
+
+#exercism input:checked ~ .large-article {
+  min-height: 250px;
 }

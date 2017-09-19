@@ -26,30 +26,30 @@ footer {
   min-width: 250px;
   min-height: 250px;
   background-color: $color-secondary;
-  @media (min-width: $break-s) {
+  @include mq('s') {
     flex: 1 per-line(2);
     justify-content: space-around;
   }
-  @media (min-width: $break-m) {
+  @include mq('m') {
     min-height: 350px;
     flex-basis: per-line(3);
     justify-content: space-around;
   }
-  @media (min-width: $break-l) {
+  @include mq('l') {
     flex-basis: per-line(4);
   }
 }
 
 .footer-bottom {
   max-width: 100vw;
-  padding-top: 2rem;
+  padding-top: 1rem;
   a {
     color: $color-text-dark;
   }
   a:hover {
     color: $color-secondary;
   }
-  @media (min-width: $break-m) {
+  @include mq('l') {
     padding-top: 1.5rem;
   }
 }
