@@ -444,19 +444,22 @@ table {
 
 body {
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.35;
   text-align: center;
   font-family: monospace;
   max-width: 2500px;
   letter-spacing: 0.025em; }
+  @media (min-width: 120em) {
+    body {
+      font-size: 16px; } }
 
 h1 {
-  font-size: 3.4em; }
-  @media (max-width: 62em) {
+  font-size: 2.2em; }
+  @media (min-width: 75em) {
     h1 {
       font-size: 3em; } }
-  @media (max-width: 120em) {
+  @media (min-width: 120em) {
     h1 {
       font-size: 2.7em; } }
 
@@ -464,24 +467,24 @@ h2,
 h3 {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-  font-size: 2.75em;
+  font-size: 2.15em;
   line-height: 1.25em;
   letter-spacing: -0.05em; }
-  @media (max-width: 62em) {
-    h2,
-    h3 {
-      font-size: 2.35em; } }
-  @media (max-width: 120em) {
+  @media (min-width: 75em) {
     h2,
     h3 {
       font-size: 2em; } }
+  @media (min-width: 120em) {
+    h2,
+    h3 {
+      font-size: 1.75em; } }
 
 h4 {
-  font-size: 1.35em; }
-  @media (max-width: 62em) {
+  font-size: 1.15em; }
+  @media (min-width: 75em) {
     h4 {
-      font-size: 1em; } }
-  @media (max-width: 120em) {
+      font-size: 1.5em; } }
+  @media (min-width: 120em) {
     h4 {
       font-size: 1.35em; } }
 
@@ -512,6 +515,15 @@ a {
   a:hover {
     opacity: 0.8;
     color: black; }
+
+details {
+  padding: 3px; }
+
+summary {
+  padding: 5px 3px 10px; }
+
+summary ~ p {
+  margin: 0; }
 
 .btn-header, .btn-social, .btn-info, .btn-footer {
   display: block;
@@ -549,7 +561,6 @@ a {
 
 #devicons div .icons,
 .social a {
-  padding: 10px;
   justify-content: space-evenly; }
 
 #devicons,
@@ -557,10 +568,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px 11px; }
+  padding: 8px; }
 
 #devicons div {
   flex-direction: column; }
+
+.icons {
+  padding-bottom: 3px; }
 
 .icons,
 a > i {
@@ -636,6 +650,7 @@ a > i {
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Aerial.jpg', sizingMethod='scale')"; }
 
 .studied-container {
+  border-top: none !important;
   background: url("../img/Cascades1366.jpg");
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Cascades1366.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Cascades1366.jpg', sizingMethod='scale')"; }
@@ -656,8 +671,8 @@ a > i {
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/Steel1366.jpg', sizingMethod='scale')"; }
 
 .banner {
-  margin: 40px auto;
-  padding: 40px 20px;
+  border-top: 25px solid #eee;
+  padding: 40px 0;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -667,8 +682,8 @@ a > i {
   background-repeat: no-repeat; }
 
 .textbox {
-  padding: 15px;
-  margin: 25px 10px;
+  padding: 10px;
+  margin: 25px 0;
   background-color: rgba(238, 238, 238, 0.85);
   -webkit-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.5);
@@ -691,14 +706,10 @@ a > i {
 .notes {
   padding-bottom: 12px; }
 
-.exercism {
-  display: flex;
-  flex-wrap: wrap; }
-  .exercism-hidden {
-    display: none; }
-
 .card {
-  margin: 2px;
+  flex: 1 99.76%;
+  justify-content: space-around;
+  margin: 3px 0;
   color: #303436;
   padding: 25px 15px 25px;
   background: url("../img/overlay.png");
@@ -710,128 +721,55 @@ a > i {
     margin: 0.35em 0 0; }
   .card:hover {
     color: #8F1D21; }
-  @media (max-width: 48em) {
-    .card {
-      flex: 1 99.76%;
-      justify-content: space-around; } }
   @media (min-width: 48em) {
     .card {
-      flex: 1 49.52%; } }
+      flex: 1 49.52%;
+      margin: 10px 5px; } }
   @media (min-width: 62em) {
     .card {
-      flex-basis: 32.61333%;
-      margin: 10px; } }
+      flex-basis: 32.61333%; } }
   @media (min-width: 75em) {
     .card {
       flex-basis: 24.04%;
-      margin: 20px; } }
+      margin: 20px 10px; } }
   @media (min-width: 120em) {
     .card {
-      flex-basis: 18.8%; } }
+      flex-basis: 18.8%;
+      margin: 30px; } }
 
-/* Accordion Styles for Exercism coding exercises */
-#exercism .exercise {
+.exercism {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start; }
+  .exercism-hidden {
+    display: none; }
+
+#exercism details {
   border: solid 2px;
   border-radius: 4px;
-  margin: 2px;
+  margin: 3px;
   border-color: #303436;
   background-color: #fffeef;
   transition: background-color 0.3s cubic-bezier(0, -0.65, 1, 1.91), border-color 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
   @media (max-width: 48em) {
-    #exercism .exercise {
-      flex: 1 99.76%;
-      justify-content: space-around; } }
-  @media (min-width: 48em) {
-    #exercism .exercise {
+    #exercism details {
       flex: 1 49.52%;
       justify-content: space-around; } }
+  @media (min-width: 48em) {
+    #exercism details {
+      flex: 1 32.61333%; } }
   @media (min-width: 62em) {
-    #exercism .exercise {
+    #exercism details {
       flex-basis: 32.61333%; } }
   @media (min-width: 75em) {
-    #exercism .exercise {
+    #exercism details {
       margin: 4px;
       flex-basis: 24.04%; } }
   @media (min-width: 120em) {
-    #exercism .exercise {
+    #exercism details {
       margin: 6px;
-      flex-basis: 18.8%; } }
-
-#exercism label {
-  z-index: 20;
-  padding: 6px;
-  display: block;
-  cursor: pointer;
-  font-size: 19px;
-  min-height: 30px;
-  line-height: 33px;
-  position: relative; }
-
-#exercism label:hover:after,
-#exercism input:checked + label:hover:after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  right: 13px;
-  top: 7px; }
-
-/* Down arrow */
-#exercism input + label:hover:after,
-#exercism input:checked + label:hover:after {
-  content: "\25BC"; }
-
-/* Flipped it's an up arrow when the content is already expanded. */
-#exercism input:checked + label::after {
-  transform: rotateX(180deg); }
-
-#exercism input {
-  display: none; }
-
-#exercism article {
-  height: 0px;
-  /* initially hide the contents in each article */
-  z-index: 10;
-  overflow: hidden;
-  position: relative;
-  -webkit-transition: height 0.3s ease-in-out;
-  -moz-transition: height 0.3s ease-in-out;
-  -o-transition: height 0.3s ease-in-out;
-  -ms-transition: height 0.3s ease-in-out;
-  transition: height 0.3s ease-in-out; }
-
-#exercism article p {
-  line-height: 23px;
-  font-size: 14px;
-  padding: 20px 10px 0; }
-
-#exercism input:checked ~ article {
-  -webkit-transition: height 0.5s ease-in-out;
-  -moz-transition: height 0.5s ease-in-out;
-  -o-transition: height 0.5s ease-in-out;
-  -ms-transition: height 0.5s ease-in-out;
-  transition: height 0.5s ease-in-out; }
-
-#exercism input:checked ~ article {
-  position: static;
-  min-height: 200px;
-  max-height: 100vh; }
-  @media (min-width: 48em) {
-    #exercism input:checked ~ article {
-      left: 0;
-      right: 0;
-      /* 
-      position: absolute;
-      z-index: 30;
-      width: 300px;
-      margin: 0 auto;
-      */ } }
-
-#exercism input:checked ~ .medium-article {
-  min-height: 210px; }
-
-#exercism input:checked ~ .large-article {
-  min-height: 250px; }
+      flex-basis: 15.22667%; } }
 
 .main-header {
   background: #eee; }

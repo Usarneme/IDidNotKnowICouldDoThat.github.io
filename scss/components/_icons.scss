@@ -4,19 +4,22 @@
 
 #devicons div .icons,
 .social a {
-  padding: 10px;
-  // If available: FF only right now. Falls back to :center default
+  // If available. Falls back to :center default
   justify-content: space-evenly;
 }
 
 #devicons,
 #devicons div {
   @include flexy($disp: flex, $dir: null, $wrap: wrap, $justify: center);
-  padding: 10px 11px;  
+  padding: 8px;  
 }
 
 #devicons div {
   flex-direction: column;
+}
+
+.icons {
+  padding-bottom: 3px;
 }
 
 .icons,
