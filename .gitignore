@@ -1,5 +1,7 @@
-#sass-cache
+#git ignore files and directories
+
+#sass cache
 .sass-cache
-.sass-cache/
-.sass-cache/.
-.sass-cache/*
+
+#node modules
+/node_modules
