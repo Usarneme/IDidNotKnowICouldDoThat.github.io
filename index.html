@@ -8,6 +8,9 @@
   <meta name="description" content="It is amazing what you can do with an internet connection and a library card">
   <meta name="author" content="Tom Geraghty">
   <title>Did you know you could do that? I didn't...</title>
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+  <![endif]-->
   <!-- Fonts and Devicons -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="none" onload="this.media='all';">
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" media="none" onload="this.media='all';">
@@ -73,8 +76,8 @@
                 <h4>Tic Tac Toe Game</h4>
                 <hr>
                 <p><small>for Joshua</small></p>
-                <img class="portfolio-image" src="img/tictactoe.png" alt="Thumbnail image of the Tic Tac Toe app.">
             </header>
+            <img class="portfolio-image" src="img/tictactoe.png" alt="Thumbnail image of the Tic Tac Toe app.">
             <div class="notes">
                 Sometimes the only way to win is to not play the game. But give this fun tic tac toe game a try anyway.
             </div>
@@ -85,8 +88,8 @@
                 <h4>Calculator</h4>
                 <hr>
                 <p><small>for the maths</small></p>
-                <img class="portfolio-image" src="img/calculator.png" alt="Thumbnail image of the Calculator app.">
             </header>
+            <img class="portfolio-image" src="img/calculator.png" alt="Thumbnail image of the Calculator app.">
             <div class="notes">
                 A four function + - * / calculator. Available to download as a Progressive Web Application! You can save this as a standalone application on your phone/tablet/ChromeOS or desktop PC.
             </div>
@@ -97,8 +100,8 @@
                 <h4>Task List</h4>
                 <hr>
                 <p><small>for not forgetting</small></p>
-                <img class="portfolio-image" src="img/tasklist.png" alt="Thumbnail image of the Task List app.">
             </header>
+            <img class="portfolio-image" src="img/tasklist.png" alt="Thumbnail image of the Task List app.">
             <div class="notes">
                 A task list generator you can use for grocery lists or generally getting your life together.
             </div>
@@ -109,8 +112,8 @@
                 <h4>Meditations</h4>
                 <hr>
                 <p><small>for reading</small></p>
-                <img class="portfolio-image" src="img/meditations.png" alt="Thumbnail image of the Meditations app.">
-              </header>
+            </header>
+            <img class="portfolio-image" src="img/meditations.png" alt="Thumbnail image of the Meditations app.">
             <div class="notes">
                 Read a random passage from Marcus Aurelius' Meditations.
             </div>
@@ -121,8 +124,8 @@
                 <h4>Flashcards</h4>
                 <hr>
                 <p><small>for learning</small></p>
-                <img class="portfolio-image" src="img/flashcards.png" alt="Thumbnail image of the Flashcards app.">
             </header>
+            <img class="portfolio-image" src="img/flashcards.png" alt="Thumbnail image of the Flashcards app.">
             <div class="notes">
                 A simple flashcard web application made in JavaScript.
             </div>
@@ -133,8 +136,8 @@
                 <h4>Stoic Madlib Game</h4>
                 <hr>
                 <p><small>for Marcus</small></p>
-                <img class="portfolio-image" src="img/madlib.png" alt="Thumbnail image of the Stoic Madlib app.">
             </header>
+            <img class="portfolio-image" src="img/madlib.png" alt="Thumbnail image of the Stoic Madlib app.">
             <div class="notes">
                 A web app version of the purportedly popular madlib game using as a source material Meditations by Marcus Aurelius.
             </div>
@@ -617,7 +620,7 @@
       <div class="footer-col thanks">
           <h4>I HOPE YOU REALLY ENJOYED MY PROJECTS TODAY THANKS!</h4>
       </div>
-      <div class="footer-col">
+      <div class="footer-col learning-links">
           <h4>Websites Where I learned and Practiced!</h4>
           <ul>
               <li><a class="btn btn-footer" target="_blank" href="http://exercism.io/languages/javascript/exercises">Exercism</a></li>
@@ -641,13 +644,13 @@
           </a>
       </div>
 
-      <div class="footer-col other">
+      <div class="footer-col other-projects">
           <h4>My Other Projects!</h4>
           <ul>
               <li><a class="btn btn-footer" target="_blank" href="https://github.com/IDidNotKnowICouldDoThat/JSExercises/tree/master/javascript">JavaScript Coding Challenge Solutions</a></li>
               <li><a class="btn btn-footer" target="_blank" href="http://github.com/IDidNotKnowICouldDoThat/">My GitHub Repositories</a></li>
               <li><a class="btn btn-footer" target="_blank" href="http://rrspa.surge.sh/">React Router 4 Single Page Application (SPA)</a></li>
-              <li><a class="btn btn-footer" target="_blank" href="http://gifsearcher.surge.sh/">Search For Gifs</a></li>
+              <li><a class="btn btn-footer" target="_blank" href="http://gifsearch4.herokuapp.com/">Search For Gifs</a></li>
           </ul>
       </div>
     </div>
@@ -698,7 +701,7 @@
   </script>
 
   <script>
-  //  <!--- fonts and devicons lazy loader --->
+  //  <!--- font lazy loader --->
     var URLS = [
         'https://fonts.googleapis.com/css?family=Raleway'
     ];

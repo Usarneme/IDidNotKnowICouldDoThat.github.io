@@ -21,12 +21,12 @@ $font-stack-primary: monospace;
 $font-stack-secondary: 'Raleway', sans-serif;
 
 // Layout
-$max-width: 2500px;
+$max-width: 2600px;
 $gutter: 3px;
 
 // Breakpoints
-$break-xs: 36em; //576px
-$break-s: 48em; //768px @16px base pixel size
-$break-m: 62em; //992px 
-$break-l: 75em; //1200px
-$break-xl: 120em; //1920px
+$break-xs: 480px;
+$break-s: 768px;
+$break-m: 960px; 
+$break-l: 1440px;
+$break-xl: 1920px;

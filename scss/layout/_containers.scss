@@ -109,8 +109,8 @@
 }
 
 .card {
-  flex: 1 per-line(1);
-  justify-content: space-around;
+  @include flex(1 per-line(1));
+  @include justify-content(space-around);
   margin: $gutter 0;
   color: $color-secondary;
   padding: 25px 15px 25px;
@@ -126,26 +126,26 @@
     color: $color-primary;
   }
   @include mq('s') {
-    flex: 1 per-line(2);
+    @include flex(1 per-line(2));
     margin: 10px 5px;
   }
   @include mq('m') {
-    flex-basis: per-line(3);
+    @include flex(1 per-line(3));
   }
   @include mq('l') {
-    flex-basis: per-line(4);
+    @include flex(1 per-line(4));
     margin: 20px 10px;
   }
   @include mq('xl') {
-    flex-basis: per-line(5);
+    @include flex(1 per-line(5));
     margin: 30px;    
   }
 }
 
 .exercism {
   @include flexy($disp: flex, $wrap: wrap);
-  align-items: flex-start;
-  align-content: flex-start;
+  @include align-items(flex-start);
+  @include align-content(flex-start);
   &-hidden {
     display: none;
   }
@@ -161,21 +161,21 @@
   transition: background-color 0.3s cubic-bezier(0,-0.65,1,1.91), border-color 0.3s cubic-bezier(0,-0.65,1,1.91);
 
   @include mq('xs') {
-    flex: 1 per-line(2);
-    justify-content: space-around;
+    @include flex(1 per-line(2));
+    @include justify-content(space-around);
   }
   @include mq('s') {
-    flex: 1 per-line(3);
+    @include flex(1 per-line(3));
   }
   @include mq('m') {
-    flex-basis: per-line(3);
+    @include flex(1 per-line(4));
   }
   @include mq('l') {
     margin: 4px;
-    flex-basis: per-line(4);
+    @include flex(1 per-line(5));
   }
   @include mq('xl') {
     margin: 6px;
-    flex-basis: per-line(6);
+    @include flex(1 per-line(6));
   }
 }
