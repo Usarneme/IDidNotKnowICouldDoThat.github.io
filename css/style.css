@@ -517,7 +517,7 @@ p {
 
 a {
   text-decoration: none;
-  color: white; }
+  color: black; }
   a:hover {
     opacity: 0.8;
     color: black; }
@@ -542,28 +542,27 @@ summary ~ p {
   padding: 0.75em;
   margin: 6px auto;
   text-transform: uppercase;
-  border-color: #8F1D21;
-  background-color: #b9262b;
+  border-color: #303436;
   transition: background-color 0.3s cubic-bezier(0, -0.65, 1, 1.91), border-color 0.3s cubic-bezier(0, -0.65, 1, 1.91); }
   .btn-header:hover, .btn-social:hover, .btn-info:hover, .btn-footer:hover {
-    opacity: 0.8;
-    background-color: #e89093;
-    border-color: #f1babc; }
+    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: white; }
   .btn-header:active, .btn-social:active, .btn-info:active, .btn-footer:active {
     opacity: initial; }
 
-.btn-header {
-  background-color: initial;
-  border-color: #303436; }
-  .btn-header:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: #eee; }
-  .btn-header i {
-    color: #303436; }
+.btn-header i {
+  color: #303436; }
 .btn-social {
   display: inline-block; }
+.btn-info {
+  background-color: #eee; }
+  .btn-info:hover {
+    background-color: #303436; }
 .btn-footer {
-  background-color: #d73b40; }
+  border-color: rgba(255, 255, 255, 0.15);
+  background-color: #eee; }
 
 #devicons div .icons,
 .social a {
@@ -912,7 +911,7 @@ footer {
       -webkit-flex: 1 49.5384615385%;
       -ms-flex: 1 49.5384615385%;
       flex: 1 49.5384615385%;
-      margin: 5px; } }
+      margin: 1px; } }
   @media (min-width: 960px) {
     .footer-col {
       -webkit-box-flex: 1 32.641025641%;

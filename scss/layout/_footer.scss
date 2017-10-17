@@ -21,7 +21,7 @@ footer {
   background-color: $color-secondary;
   @include mq('s') {
     @include flex(1 per-line(2));
-    margin: 5px;
+    margin: 1px;
   }
   @include mq('m') {
     @include flex(1 per-line(3));

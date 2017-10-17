@@ -13,13 +13,13 @@
   padding: 0.75em;
   margin: $gutter*2 auto;
   text-transform: uppercase;
-  border-color: $color-primary;
-  background-color: lighten($color-primary, 10%);
+  border-color: $color-secondary;
   transition: background-color 0.3s cubic-bezier(0,-0.65,1,1.91), border-color 0.3s cubic-bezier(0,-0.65,1,1.91);
   &:hover {
-    opacity: 0.8;
-    background-color: lighten($color-primary, 40%);
-    border-color: lighten($color-primary-light, 20%);
+    opacity: 0.9;
+    background-color: rgba(255,255,255,0.15);
+    color: white;
+    border-color: white;
   }
   &:active {
     opacity: initial;
@@ -29,12 +29,6 @@
 .btn {
   &-header {
     @extend %btn;
-    background-color: initial;
-    border-color: $color-secondary;  
-    &:hover {
-        background-color: rgba(255,255,255,0.15);
-        border-color: #eee;
-      }
     i {
       color: $color-secondary;
     }
@@ -45,9 +39,18 @@
   }
   &-info {
     @extend %btn;
+    background-color: #eee;
+    &:hover {
+      background-color: #303436;
+    }
   }
   &-footer {
     @extend %btn;
-    background-color: lighten($color-primary, 20%);
+    border-color: rgba(255,255,255,0.15);
+    background-color: #eee;
+    &:hover {
+      // border-color: $color-secondary;
+      // background-color: $color-primary;
+    }
   }
 }
